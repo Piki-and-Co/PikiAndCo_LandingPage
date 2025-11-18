@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <title>Piki & Co</title>
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Piki & Co" />
+        </div>
+        <div class="nav-links">
+            <a href="#produit">Produit</a>
+            <a href="#partenaires">Partenaires</a>
+            <a href="#faq">FAQ</a>
+            <a href="#" class="btn-primary">Être prévenu du lancement</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Jouer, s’éveiller,<br>s’accomplir</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse semper a justo ac porttitor. Interdum et malesuada fames ac ante. </p>
+        <a href="#" class="btn-primary" style="display: inline-block; margin-bottom: 3rem;">Être prévenu du lancement</a>
+        <div class="hero-image">
+            <div>
+                <img src="assets/app.jpg" alt="Aperçu de l'application" class="apercu-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="container" id="produit">
+    <p class="section-title">Présentation du produit</p>
+    <h2 class="section-heading">Un jeu éducatif conçu pour développer les compétences essentielles tout en s’amusant</h2>
+
+    <div class="features-grid">
+
+        <div class="feature-card">
+            <div class="feature-icon">🧠</div>
+            <h3>Apprentissages basés sur la science</h3>
+            <p>Un jeu conçu avec des experts de l’éducation et de la psychologie.</p>
+            <ul class="feature-list">
+                <li>Développement logique et résolution de problèmes</li>
+                <li>Renforcement de la mémoire et de l’attention</li>
+                <li>Progression adaptée au rythme de l’enfant</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Suivi parental détaillé</h3>
+            <p>Comprenez les progrès de votre enfant en un coup d'œil.</p>
+            <ul class="feature-list">
+                <li>Tableau de bord clair et intuitif</li>
+                <li>Compétences développées visibles en temps réel</li>
+                <li>Recommandations personnalisées</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>100% sécurisé</h3>
+            <p>Un environnement conçu pour la sécurité et la tranquillité d'esprit.</p>
+            <ul class="feature-list">
+                <li>Sans publicité ni achat caché</li>
+                <li>Respect strict de la vie privée (RGPD / COPPA)</li>
+                <li>Contenu modéré et adapté selon l’âge</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Compétences essentielles renforcées</h3>
+            <p>Chaque mini-jeu cible un apprentissage précis.</p>
+            <ul class="feature-list">
+                <li>Lecture, logique, mathématiques et créativité</li>
+                <li>Développement émotionnel et autonomie</li>
+                <li>Adapté pour 3–12 ans</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🎮</div>
+            <h3>Une expérience ludique motivante</h3>
+            <p>Le plaisir de jouer au service de l’apprentissage.</p>
+            <ul class="feature-list">
+                <li>Quêtes, défis et récompenses</li>
+                <li>Avatar personnalisable</li>
+                <li>Univers progressifs et immersifs</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">👪</div>
+            <h3>Conçu pour toute la famille</h3>
+            <p>Un jeu pensé pour renforcer les moments complices.</p>
+            <ul class="feature-list">
+                <li>Mini-jeux parent-enfant</li>
+                <li>Challenges hebdomadaires en famille</li>
+                <li>Activités hors ligne à réaliser ensemble</li>
+            </ul>
+        </div>
+
+    </div>
+    </section>
+
+
+    
+    <!-- Testimonials -->
+    <section class="testimonials" id="partenaires">
+    <div class="container">
+        <p class="section-title">Partenaires</p>
+        <h2 class="section-heading">Ils nous font confiance</h2>
+        
+        <div class="testimonial-grid partners-grid">
+
+            <div class="partner-card">
+                <img src="assets/partenaires/partenaire1.png" alt="Partenaire 1">
+            </div>
+
+            <div class="partner-card">
+                <img src="assets/partenaires/partenaire2.png" alt="Partenaire 2">
+            </div>
+
+            <div class="partner-card">
+                <img src="assets/partenaires/partenaire2.png" alt="Partenaire 3">
+            </div>
+
+            <div class="partner-card">
+                <img src="assets/partenaires/partenaire1.png" alt="Partenaire 4">
+            </div>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+    <div class="container">
+        <p class="section-title">FAQ</p>
+
+    <details>
+        <summary>Est-ce que ce jeu va rendre fou mes enfants ?</summary>
+        <p>
+            Le jeu vidéo est apparu pour la première fois avec pong en 1972, si ça rendait les gens fous, on aurait déjà arrêté de les commercialiser
+        </p>
+    </details>
+
+    <!-- Template de question -->
+    <details>
+        <summary>{Titre question}</summary>
+        <p>
+            {Corps de la question}
+        </p>
+    </details>
+
+    <details>
+        <summary>Comment créer une FAQ en HTML sans JavaScript ?</summary>
+        <p>
+            Avec les balises <code>&lt;details&gt;</code> et <code>&lt;summary&gt;</code>,
+
+            qui sont supportées par tous les navigateurs modernes. C'est un jeu d'enfant ! 
+        </p>
+    </details>
+
+    <details>
+        <summary>Est-ce compatible avec tous les navigateurs ?</summary>
+        <p>
+            Les balises <code>&lt;details&gt;</code> et <code>&lt;summary&gt;</code> sont supportées
+
+            par Chrome, Firefox, Edge, Safari et Opera depuis plusieurs années.
+        </p>
+    </details>
+
+    <details>
+        <summary>Puis-je personnaliser le style des menus déroulants ?</summary>
+        <p>
+            Vous pouvez modifier le CSS pour adapter les couleurs, les polices, les bordures,
+
+            etc.
+        </p>
+    </details>
+    </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Prêt à entrer dans l’aventure <br> qui fait grandir ?</h2>
+        <a href="#" class="btn-white">Être prévenu du lancement</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Piki & Co. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
