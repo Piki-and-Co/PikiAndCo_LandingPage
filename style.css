@@ -10,7 +10,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: #ffffff;
-    background: url('assets/fond_gradient.png');
+    background: linear-gradient(to bottom, rgb(24, 15, 50), rgb(105, 29, 110));
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
