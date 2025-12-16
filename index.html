@@ -25,7 +25,13 @@
     <section class="hero">
 		<div class="hero-image">
             <div>
-                <img src="assets/LandingPage.png" alt="Aperçu de l'application" class="hero-image-img">
+				<picture>
+				  	<source srcset="assets/LandingPage.webp" type="image/webp">
+				  
+				  	<source srcset="assets/LandingPage.png" type="image/png">
+				  
+                	<img src="assets/LandingPage.png" alt="Rejoignez l'aventure !" class="hero-image-img" loading="lazy">
+				</picture>
             </div>
         </div>
         <h1>Jouer, s’éveiller,<br>s’accomplir</h1>

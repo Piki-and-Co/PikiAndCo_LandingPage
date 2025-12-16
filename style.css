@@ -7,7 +7,8 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;*/
+	font-family:"Montserrat-Regular", sans-serif;
     line-height: 1.6;
     color: #ffffff;
     background: url('assets/fond_gradient.png');
@@ -18,16 +19,18 @@ body {
 
 @font-face {
   font-family: 'Montserrat-Regular'; /* Nom que vous utiliserez dans votre CSS */
-  src: url('/assets/fonts/Montserrat/Montserrat-Regular.woff2') format('woff2'),
-  url('/assets/fonts/Montserrat/Montserrat-Regular.woff') format('woff');
+  src: url('assets/fonts/Montserrat-Regular.woff2') format('woff2'),
+  url('assets/fonts/Montserrat-Regular.woff') format('woff'),
+  url('assets/fonts/Montserrat-Regular.otf') format('otf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Caveat Brush'; /* Nom que vous utiliserez dans votre CSS */
-  src: url('/assets/fonts/Caveat_Brush/caveatbrush-regular.woff2') format('woff2'),
-  url('/assets/fonts/Caveat_Brush/caveatbrush-regular.woff') format('woff');
+  src: url('assets/fonts/caveatbrush-regular.woff2') format('woff2'),
+  url('assets/fonts/caveatbrush-regular.woff') format('woff'),
+  url('assets/fonts/caveatbrush-regular.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
