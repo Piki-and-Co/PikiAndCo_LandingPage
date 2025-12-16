@@ -60,7 +60,7 @@ nav {
 }
 
 .logo img{
-    height: 60px; 
+    height: 3.75rem; 
 }
 
 .nav-links {
@@ -204,7 +204,7 @@ nav {
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    /*transform: translateY(-5px);*/
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
@@ -258,9 +258,13 @@ nav {
 .two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 2rem;
     align-items: center;
     margin: 4rem 0;
+}
+
+.two-column.img-small {
+    grid-template-columns: 0.38fr 1fr;
 }
 
 .two-column img {

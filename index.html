@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" />
-    <title>Piki & Co</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.ico"/>
+	<title>Piki & Co</title>
     
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="logo">
-            <img src="assets/logo.png" alt="Piki & Co" />
+			<picture>
+				<source srcset="assets/logo.webp" type="image/webp">
+				<source srcset="assets/logo.png" type="image/png">
+				<img src="assets/logo.png" alt="Piki & Co" loading="lazy"/>
+			</picture>
+
         </div>
         <div class="nav-links">
             <a href="#produit">Produit</a>
             <a href="#partenaires">Partenaires</a>
             <a href="#faq">FAQ</a>
-            <a href="#" class="btn-primary">Rejoignez l'aventure !</a>
+            <a href="inscription/index.html" class="btn-primary">Rejoignez l'aventure !</a>
         </div>
     </nav>
 
@@ -26,10 +32,8 @@
 		<div class="hero-image">
             <div>
 				<picture>
-				  	<source srcset="assets/LandingPage.webp" type="image/webp">
-				  
-				  	<source srcset="assets/LandingPage.png" type="image/png">
-				  
+				  	<source srcset="assets/LandingPage.webp" type="image/webp" class="hero-image-img">
+				  	<source srcset="assets/LandingPage.png" type="image/png" class="hero-image-img">
                 	<img src="assets/LandingPage.png" alt="Rejoignez l'aventure !" class="hero-image-img" loading="lazy">
 				</picture>
             </div>
@@ -43,20 +47,38 @@
     <section class="container" id="manifest">
     <h2 class="section-heading">Construire et maintenir un équilibre mentale et émotionnel, le maintenir tout au long de la vie</h2>
 
-        <div class="two-column">
-			<div><img src="assets/Biumiz_Smile.png" alt="No problem !" class="two-column-img"></div>
+        <div class="two-column img-small">
+			<div>
+				<picture>
+				  	<source srcset="assets/Biumiz_Smile.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/Biumiz_Smile.png" class="two-column-img" type="image/png">
+					<img src="assets/Biumiz_Smile.png" alt="No problem !" class="two-column-img" loading="lazy">
+				</picture>
+			</div>
 			<div></br><p>Chacun et chacune d’entre nous veut s’accomplir et profiter d’une vie sereine, équilibrée, enrichissante, pleine d’opportunités, forte de relations solides et saines. Nous voulons toutes et tous être pleinement nous-mêmes, vivre selon nos propres choix et avoir assez confiance en nous pour agir et réaliser nos rêves. C’est aussi ce que chaque parent souhaite pour son enfant.</p></br>
 			</div>
 		</div>
 
-        <div class="two-column">
-			<div><img src="assets/Biumiz_Oups.png" alt="Oops..." class="two-column-img"></div>
+        <div class="two-column img-small">
+			<div>
+				<picture>
+				  	<source srcset="assets/Biumiz_Oups.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/Biumiz_Oups.png" class="two-column-img" type="image/png">
+					<img src="assets/Biumiz_Oups.png" alt="Oops..." class="two-column-img" loading="lazy">
+				</picture>
+			</div>
 			<div></br><p>L'existence peut s'avérer mouvementée, parfois difficile. Du simple aléas à l'événement grave, un individu fera face à d'inombrables situations plus ou moins pénibles au cours de sa vie. Parfois, un contexte éprouvant peut s'ajouter, comme la crise climatique, une pandémie ou un environnement social dégradant ou violent.</p></br>
 			</div>
 		</div>
         
-		<div class="two-column">
-			<div><img src="assets/Biumiz_OhNo.png" alt="Oh No..." class="two-column-img"></div>
+		<div class="two-column img-small">
+			<div>
+				<picture>
+				  	<source srcset="assets/Biumiz_OhNo.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/Biumiz_OhNo.png" class="two-column-img" type="image/png">
+					<img src="assets/Biumiz_OhNo.png" alt="Oh No..." class="two-column-img" loading="lazy">
+				</picture>
+			</div>
 			<div></br><p>Ces situations peuvent ébranler et altérer notre bien-être, notre équilibre et notre stabilité émotionnelle, jusqu’à fracturer notre santé mentale. Dans le cas d’un enfant, c’est tout son développement cognitif et émotionnel qui peut-être en jeu.</p></br>
 			</div>
 		</div>
@@ -69,7 +91,13 @@
 			<div></br><p>C’est là que Piki & Co s’engage concrètement à vos côtés, en imaginant de nouvelles solutions d’éveil et d’apprentissage propices à un développement personnel idéal.</p></br>
 			<p>En collaboration avec des chercheur·e·s français·e·s et des professionnel·le·s de la santé mentale et de l’enfance, nous construisons pour vous et vos enfants, dans le respect des recommandations d’usage du numérique, des outils innovants, mêlant le meilleur de la technologie et les dernières avancées en sciences humaines et sociales.</p>
 			</div>
-			<div><img src="assets/Biumiz-et-Tom.png" alt="Hey! That's cool!" class="two-column-img"></div>
+			<div>
+				<picture>
+				  	<source srcset="assets/Biumiz-et-Tom.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/Biumiz-et-Tom.png" class="two-column-img" type="image/png">
+					<img src="assets/Biumiz-et-Tom.png" alt="Hey! That's cool!" class="two-column-img" loading="lazy">
+				</picture>
+			</div>
 		</div>
 		
 		<h3 class="section-subheading">Les compétences psychosociales</h3>
@@ -110,8 +138,14 @@
 
     	</div>
 
-		<div class="two-column">
-			<div><img src="assets/Tom_Amazing.png" alt="Amazing !" class="two-column-img"></div>
+		<div class="two-column img-small">
+			<div>
+				<picture>
+				  	<source srcset="assets/Tom_Amazing.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/Tom_Amazing.png" class="two-column-img" type="image/png">
+					<img src="assets/Tom_Amazing.png" alt="Amazing !" class="two-column-img" loading="lazy">
+				</picture>
+			</div>
 			<div> 
 				<p>Lorsqu'elles sont bien développées, ces compétences ont un impact bénéfique sur la vie de la personne et sur la société :</p></br>
 				<ul>
@@ -125,7 +159,13 @@
 		</div>
     <h2 class="section-heading">Jouer et apprendre par les sens et l'émotion</h2>
 		<div class="two-column">
-			<div><img src="assets/Doudou_NewDA-HD_Droite.png" alt="Allons jouer !" class="two-column-img"></div>
+			<div>
+				<picture>
+				  	<source srcset="assets/Doudou_NewDA-HD_Droite.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/Doudou_NewDA-HD_Droite.png" class="two-column-img" type="image/png">
+					<img src="assets/Doudou_NewDA-HD_Droite.png" alt="Allons jouer !" class="two-column-img" loading="lazy">
+				</picture>
+			</div>
 			<div> 
 				<p>Le jeu représente le meilleur vecteur d’apprentissage car il engage le joueur ou la joueuse dans une expérience sensorielle et émotionnelle. Cet engagement dans le ressenti favorise l’acquisition de nouvelles notions et le développement de compétences.</p> </br>
 				<p>Nous concevons donc des expériences ludiques qui permettent, à vous et à vos enfants, de développer ces compétences humaines capitales.</p></br>
@@ -134,7 +174,13 @@
 		</div>
     <h2 class="section-heading">Le numérique comme vecteur d'interactions sociales</h2>
 		<div class="two-column">
-			<div><img src="assets/UnitéDiag_NewDA-HD_Droite.png" alt="Allons jouer !" class="two-column-img"></div>
+			<div>
+				<picture>
+				  	<source srcset="assets/UnitéDiag_NewDA-HD_Droite.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/UnitéDiag_NewDA-HD_Droite.png" class="two-column-img" type="image/png">
+					<img src="assets/UnitéDiag_NewDA-HD_Droite.png" alt="Allons jouer !" class="two-column-img" loading="lazy">
+				</picture>
+			</div>
 			<div> 
 				<p>Le numérique fait partie intégrante de vos vies et de celles de vos enfants, mais il ne doit pas en être le centre. C'est pourquoi nos jeux sont multi supports, vidéo et papier.</p></br>
 				<p>La partie jeu vidéo développe les compétences digitales et accompagne vers une (ré)appropriation douce et réfléchie du numérique. L'objectif est d'en avoir une future utilisation saine et intelligente.</p>
