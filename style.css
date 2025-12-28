@@ -51,9 +51,6 @@ body {
 
 /* Navigation */
 nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
     background: var(--light-purple);
     backdrop-filter: blur(0.625rem);
     padding: 0 1.2rem 0 1.2rem;
@@ -63,6 +60,17 @@ nav {
     z-index: 1000;
     border-bottom: 0.063rem solid var(--light-purple);
 	font-family:"Caveat Brush", cursive;
+}
+
+.navbar{
+    position: fixed;
+    top: -10rem;
+    width: 100%;
+	transition: top 0.3s;
+}
+
+.navbar.scrolled{
+	top: 0;
 }
 
 .logo {
@@ -139,6 +147,12 @@ nav {
 	font-family:"Caveat Brush", cursive;
 }
 
+.btn-nav:hover {
+	background:var(--light-yellow);
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.625rem 1.563rem rgba(249, 178, 51, 0.3);
+}
+
 .btn-primary {
     background:var(--dark-yellow);
     background-size: cover;
@@ -164,16 +178,16 @@ nav {
 /* Hero Section */
 .hero {
     margin-top: 0rem;
-    padding: 5rem 5% 3rem;
-    text-align: center;
+    padding: 1rem 5% 3rem;
     background-size: cover;
+    text-align: center;
 }
 
 .hero h1 {
   	font-family: "Caveat Brush", cursive;
     font-size: 3.5rem;
     font-weight: 400;
-    margin-bottom: 1.5rem;
+    /*margin-bottom: 1.5rem;*/
     line-height: 1.2;
 }
 
@@ -183,11 +197,12 @@ nav {
     max-width: 50rem;
     margin: 0 auto 2.5rem;
     line-height: 1.8;
+    text-align: center;
 }
 
 .hero-image {
     max-width: 62.5rem;
-    margin: 3rem auto 0;
+    margin: 0rem auto 0;
     border-radius: 0.75rem;
     overflow: hidden;
     box-shadow: 0 1.563rem 3.125rem rgba(0, 0, 0, 0.15);
@@ -199,11 +214,31 @@ nav {
     display: block;
 }
 
+.hero-two-column {
+    padding: 1rem 5% 1rem;
+    max-width: 62.5rem;
+    display: grid;
+    grid-template-columns: 0.25fr 0.7fr;
+    gap: 2rem;
+    align-items: center;
+	justify-items:start;
+	justify-content:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.hero-two-column img {
+    width: 100%;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.1);
+	justify-items:end;
+}
+
 /* Section Container */
 .container {
     max-width: 75rem;
     margin: 0 auto;
-    padding: 5rem 5%;
+    padding: 2.5rem 5%;
 }
 
 .section-title {
@@ -323,12 +358,6 @@ nav {
     box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.1);
 }
 
-.two-column img-tiny {
-    width: 50%;
-    border-radius: 0.75;
-    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.1);
-}
-
 /* Logo Grid */
 .logo-grid {
     display: grid;
@@ -425,16 +454,9 @@ nav {
 }
 
 .partner-card img {
-    max-width: 8.125rem;
+    max-width: 10rem;
     height: auto;
-    filter: grayscale(100%);
-    opacity: 0.8;
     transition: 0.3s ease;
-}
-
-.partner-card img:hover {
-    filter: grayscale(0%);
-    opacity: 1;
 }
 
 /* FAQ */

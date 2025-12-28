@@ -7,17 +7,28 @@
     <link rel="icon" type="image/x-icon" href="assets/logo.ico"/>
 	<title>Piki & Co</title>
     
+	<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.onscroll = function() {
+                const nav = document.querySelector('.navbar');
+                if (nav && window.scrollY > 1050) {
+                    nav.classList.add('scrolled');
+                } else if (nav) {
+                    nav.classList.remove('scrolled');
+                }
+            };
+        });
+    </script>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav class="navbar">
         <div class="logo">
-			<picture>
+			<a href="#"><picture>
 				<source srcset="assets/logo.webp" type="image/webp">
 				<source srcset="assets/logo.png" type="image/png">
 				<img src="assets/logo.png" alt="Piki & Co" loading="lazy"/>
-			</picture>
-
+			</picture></a>
         </div>
 		<div class="nav-links">
 			<li class="dropdown"><a class="nav-links link" href="#">A propos ▼</a>
@@ -45,7 +56,18 @@
 				</picture>
             </div>
         </div>
-        <h1>Jouer, s’éveiller,<br>s’accomplir</h1>
+        <div class="hero-two-column">
+			<div>
+				<picture>
+				  	<source srcset="assets/LogoPiki_White-BlackShadow-HD.webp" class="hero-two-column-img" type="image/webp">
+				  	<source srcset="assets/LogoPiki_White-BlackShadow-HD.png" class="hero-two-column-img" type="image/png">
+					<img src="assets/LogoPiki_White-BlackShadow-HD.png" alt="Piki & Co" class="hero-two-column-img" loading="lazy">
+				</picture>
+			</div>
+			<div>
+        		<h1>Jouer, s’éveiller, s’accomplir</h1>
+			</div>
+		</div>
 		<p>Accompagnez votre enfant dans le développement des compétences indispensables à sa future vie d'adulte, de l'utilisation saine et intelligente du numérique, aux compétences psychosociales, socle de la santé mentale positive.</p>
         <a href="inscription/index.html" class="btn-primary" style="display: inline-block; margin-bottom: 3rem;">Rejoignez l'aventure !</a>
     </section>
@@ -234,28 +256,67 @@
     <section class="testimonials" id="partenaires">
     <div class="container">
         <p class="section-title">Partenaires</p>
-        <h2 class="section-heading">Ils nous font confiance</h2>
+        <h2 class="section-heading">Nous travaillons ensemble</h2>
         
         <div class="testimonial-grid partners-grid">
 
             <div class="partner-card">
-                <img src="assets/partenaires/partenaire1.png" alt="Partenaire 1">
+				<picture>
+				  	<source srcset="assets/LOGO_CNRS_HD.webp" class="partner-card-img" type="image/webp">
+				  	<source srcset="assets/LOGO_CNRS_HD.png" class="partner-card-img" type="image/png">
+					<img src="assets/LOGO_CNRS_HD.png" alt="CNRS" class="partner-card-img" loading="lazy">
+				</picture>
             </div>
 
             <div class="partner-card">
-                <img src="assets/partenaires/partenaire2.png" alt="Partenaire 2">
+				<picture>
+				  	<source srcset="assets/Unistra2_HD_FondBlanc.webp" class="partner-card-img" type="image/webp">
+				  	<source srcset="assets/Unistra2_HD_FondBlanc.png" class="partner-card-img" type="image/png">
+					<img src="assets/Unistra2_HD_FondBlanc.png" alt="Unistra" class="partner-card-img" loading="lazy">
+				</picture>
             </div>
 
             <div class="partner-card">
-                <img src="assets/partenaires/partenaire2.png" alt="Partenaire 3">
+				<picture>
+				  	<source srcset="assets/CONECTUS-BaselineFR_HD2018_Blanc.webp" class="partner-card-img" type="image/webp">
+				  	<source srcset="assets/CONECTUS-BaselineFR_HD2018_Blanc.png" class="partner-card-img" type="image/png">
+					<img src="assets/CONECTUS-BaselineFR_HD2018_Blanc.png" alt="Conectus" class="partner-card-img" loading="lazy">
+				</picture>
             </div>
-
-            <div class="partner-card">
-                <img src="assets/partenaires/partenaire1.png" alt="Partenaire 4">
-            </div>
-
         </div>
     </div>
+	<div class="container">
+        <p class="section-title">Soutiens</p>
+        <h2 class="section-heading">Ils nous accompagnent</h2>
+        
+        <div class="testimonial-grid partners-grid">
+
+            <div class="partner-card">
+				<picture>
+				  	<source srcset="assets/Logo-Semia.webp" class="partner-card-img" type="image/webp">
+				  	<source srcset="assets/Logo-Semia.png" class="partner-card-img" type="image/png">
+					<img src="assets/Logo-Semia.png" alt="Semia, incubateur d'excellence" class="partner-card-img" loading="lazy">
+				</picture>
+            </div>
+
+            <div class="partner-card">
+				<picture>
+				  	<source srcset="assets/LesDeeptech_Blanc.webp" class="partner-card-img" type="image/webp">
+				  	<source srcset="assets/LesDeeptech_Blanc.png" class="partner-card-img" type="image/png">
+					<img src="assets/LesDeeptech_Blanc.png" alt="Communauté Les DeepTech !" class="partner-card-img" loading="lazy">
+				</picture>
+            </div>
+
+            <div class="partner-card">
+				<picture>
+				  	<source srcset="assets/France2030_Blanc.webp" class="partner-card-img" type="image/webp">
+				  	<source srcset="assets/France2030_Blanc.png" class="partner-card-img" type="image/png">
+					<img src="assets/France2030_Blanc.png" alt="Conectus" class="partner-card-img" loading="lazy">
+				</picture>
+            </div>
+        </div>
+    </div>
+
     </section>
 
     <!-- FAQ -->
@@ -264,11 +325,27 @@
         <p class="section-title">FAQ</p>
 
     <details>
-        <summary>Est-ce que ce jeu va rendre fou mes enfants ?</summary>
+        <summary>Les écrans, les jeux vidéo et les enfants : recommandations et points d'attention</summary>
         <p>
             Le jeu vidéo est apparu pour la première fois avec pong en 1972, si ça rendait les gens fous, on aurait déjà arrêté de les commercialiser
         </p>
     </details>
+
+	<details>
+        <summary>Quels sont les bienfaits des jeux vidéo ?</summary>
+		<p> <a href="https://www.mathieucerbai-neuropsy.com/jeux-vid%C3%A9o-et-sant%C3%A9-mentale"> Le site de Mathieu Cerbai et ses podcast</a>
+        </p>
+    </details>
+
+    <details>
+        <summary>Concrètement, qu'est ce qu'une "utilisation saine" des jeux vidéo ?</summary>
+        <p>
+            Les balises <code>&lt;details&gt;</code> et <code>&lt;summary&gt;</code> sont supportées
+
+            par Chrome, Firefox, Edge, Safari et Opera depuis plusieurs années.
+        </p>
+    </details>
+
 
     <!-- Template de question -->
     <details>
@@ -284,24 +361,7 @@
             Santé mentale = santé mentale positive + capacité à faire face à la détresse psychologique + absence de trouble psychique
         </p>
     </details>
-
-    <details>
-
-    <details>
-        <summary>Où peut-on en apprendre plus au sujet des bienfaits des jeux vidéo ?</summary>
-		<p> <a href="https://www.mathieucerbai-neuropsy.com/jeux-vid%C3%A9o-et-sant%C3%A9-mentale"> Le site de Mathieu Cerbai et ses podcast</a>
-        </p>
-    </details>
-
-    <details>
-        <summary>Concrètement, qu'est ce qu'une "utilisation saine" des jeux vidéo ?</summary>
-        <p>
-            Les balises <code>&lt;details&gt;</code> et <code>&lt;summary&gt;</code> sont supportées
-
-            par Chrome, Firefox, Edge, Safari et Opera depuis plusieurs années.
-        </p>
-    </details>
-
+ 
     <details>
         <summary>Qu'est ce qu'un jeu immersif ?</summary>
         <p>
