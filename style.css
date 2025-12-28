@@ -76,9 +76,14 @@ nav {
 }
 
 .nav-links {
-    display: flex;
+    list-style: none;
+	display: flex;
     gap: 2rem;
     align-items: center;
+}
+
+.nav-links li{
+	position: relative;
 }
 
 .nav-links a {
@@ -93,6 +98,29 @@ nav {
 }
 
 .nav-links a:hover {
+    color: var(--hair-blue);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:var(--light-purple);
+  min-width: 16rem;
+  list-style: none;
+  padding: 0;
+  box-shadow: 0rem 0.5rem 1rem rgba(0,0,0,0.2);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  padding: 0.75rem 1rem;
+  font-size: 1.25rem;
+}
+
+.dropdown-content a:hover {
     color: var(--hair-blue);
 }
 
