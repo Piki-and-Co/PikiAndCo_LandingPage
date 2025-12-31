@@ -109,6 +109,10 @@ nav {
     color: var(--hair-blue);
 }
 
+a {
+    color: var(--hair-blue);
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -462,23 +466,16 @@ nav {
 /* FAQ */
 details {
     margin-bottom: 0.938rem;
-    /* border: 0.063rem solid #ddd; */
-    /* border-radius: 0.313rem; */
     overflow: hidden;
 }
 
 summary {
     padding: 0.938rem;
-    /* background-color: #f8f9fa; */
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.1em;
     transition: background-color 0.3s;
 }
 
-summary::-webkit-details-marker {
-    display: none;
-}
 
 summary::after {
     content: "+";
@@ -487,16 +484,52 @@ summary::after {
     transition: transform 0.3s;
 }
 
-details[open] summary::after {
+details[open] > summary::after {
     content: "-";
 }
 
+.faq-parent{
+}
+
+.faq-parent > summary{
+    font-size: 1.1em;
+}
+
+.faq-child {
+    margin-left: 1.5rem; /* Décale la sous-question vers la droite */
+    margin-top: 0.5rem;
+}
+
+.faq-child > summary {
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0.5rem 0.938rem;
+}
+
 details p {
-    padding: 0.938rem;
     margin: 0;
+    padding: 0.25rem;
     /* background-color: #fff; */
 }
 
+/* Style de la liste principale */
+details ul {
+	list-style-type: disc;
+	margin-bottom: 0.5rem;
+    margin-left: 2rem;
+}
+
+/* Style de la liste de deuxième niveau */
+details ul ul {
+  list-style-type: circle;
+  margin-top: 0.5rem;
+  margin-left: 1.25rem; /* Ajoute un décalage vers la droite */
+}
+
+/* Style de la liste de troisième niveau (si besoin) */
+details ul ul ul {
+  list-style-type: square;
+}
 
 /* Footer */
 footer {
