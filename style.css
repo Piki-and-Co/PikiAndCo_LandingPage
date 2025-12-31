@@ -507,9 +507,37 @@ footer {
     text-align: center;
 }
 
+.footer-socials {
+	display: flex;
+  	justify-content: flex-end; /* Aligne le contenu à droite */
+  	padding: 1.25rem;
+}
+
+.footer-socials img {
+  margin-left: 1rem; /* Espace entre les images */
+  height: 3rem;      /* Taille de vos icônes */
+}
+
 footer p {
     margin-bottom: 1rem;
 }
+
+footer img {
+
+}
+
+.footer-three-column {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 0rem 0;
+	justify-items:center;
+	justify-content:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
 
 /* Responsive */
 @media (max-width: 48rem) {
