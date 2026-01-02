@@ -19,18 +19,18 @@ body {
 
 @font-face {
   font-family: 'Montserrat-Regular'; /* Nom que vous utiliserez dans votre CSS */
-  src: url('assets/fonts/Montserrat-Regular.woff2') format('woff2'),
-  url('assets/fonts/Montserrat-Regular.woff') format('woff'),
-  url('assets/fonts/Montserrat-Regular.otf') format('otf');
+  src: url('../assets/fonts/Montserrat-Regular.woff2') format('woff2'),
+  url('../assets/fonts/Montserrat-Regular.woff') format('woff'),
+  url('../assets/fonts/Montserrat-Regular.otf') format('otf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Caveat Brush'; /* Nom que vous utiliserez dans votre CSS */
-  src: url('assets/fonts/caveatbrush-regular.woff2') format('woff2'),
-  url('assets/fonts/caveatbrush-regular.woff') format('woff'),
-  url('assets/fonts/caveatbrush-regular.ttf') format('ttf');
+  src: url('../assets/fonts/caveatbrush-regular.woff2') format('woff2'),
+  url('../assets/fonts/caveatbrush-regular.woff') format('woff'),
+  url('../assets/fonts/caveatbrush-regular.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
@@ -466,7 +466,7 @@ strong {
 }
 
 .partner-card img {
-    max-width: 10rem;
+    max-width: 8rem;
     height: auto;
     transition: 0.3s ease;
 }
@@ -551,7 +551,6 @@ footer {
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="footGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgb(15,23,42);stop-opacity:1" /><stop offset="100%" style="stop-color:rgb(30,41,59);stop-opacity:1" /></linearGradient></defs><rect width="1200" height="400" fill="url(%23footGrad)"/></svg>');
     background-size: cover;
     color: #94a3b8;
-    padding: 3rem 5%;
     text-align: center;
 }
 
