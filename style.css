@@ -276,6 +276,14 @@ a {
     margin-bottom: 3rem;
 }
 
+.quoting {
+    font-size: 0.75rem;
+}
+
+strong {
+	color:var(--star-pink);
+}
+
 /* Features Grid */
 .features-grid {
     display: grid;
@@ -510,6 +518,7 @@ details h3{
 	font-weight: bold;
 	margin: 0;
 	padding: 0.25rem;
+	padding-left: 2rem;
 }
 
 details p {
