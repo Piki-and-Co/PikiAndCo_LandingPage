@@ -11,7 +11,7 @@ body {
 	font-family:"Montserrat-Regular", sans-serif;
     line-height: 1.6;
     color: var(--white);
-    background: url('assets/fond_gradient.png');
+    background: linear-gradient(to bottom, rgb(24, 15, 50), rgb(105, 29, 110));
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -601,11 +601,18 @@ footer img {
         grid-template-columns: 1fr;
     }
 
-    .nav-links {
+    /* hide all nav links except for the last one */
+    .nav-links a:not(:last-of-type) {
         display: none;
     }
 
     .features-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 350px) {
+    .nav-links {
+        display: none;
     }
 }
