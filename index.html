@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" />
-    <title>Piki & Co</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="assets/logo.ico"/>
+	<title>Piki & Co</title>
     
+	<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.onscroll = function() {
+                const nav = document.querySelector('.navbar');
+                if (nav && window.scrollY > 1050) {
+                    nav.classList.add('scrolled');
+                } else if (nav) {
+                    nav.classList.remove('scrolled');
+                }
+            };
+        });
+    </script>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav class="navbar">
         <div class="logo">
-            <img src="assets/logo.png" alt="Piki & Co" />
+			<a href="#"><picture>
+				<source srcset="assets/logo.webp" type="image/webp">
+				<source srcset="assets/logo.png" type="image/png">
+				<img src="assets/logo.png" alt="Piki & Co" loading="lazy"/>
+			</picture></a>
         </div>
-        <div class="nav-links">
-            <a href="#produit">Produit</a>
-            <a href="#partenaires">Partenaires</a>
-            <a href="#faq">FAQ</a>
-            <a href="#" class="btn-primary">Être prévenu du lancement</a>
+		<div class="nav-links">
+			<li class="dropdown"><a class="nav-links link" href="#">A propos ▼</a>
+				<ul class="dropdown-content">
+					<li><a href="#Mission">Notre mission</a></li>
+					<li><a href="#CPS">Les compétences psychosociales</a></li>
+					<li><a href="#Jeu">Jeu & apprentissage</a></li>
+					<li><a href="#Langues">Les langues étrangères</a></li>
+					<li><a href="#Numerique">Le numérique</a></li>
+				</ul></li>
+            <a class="nav-links link" href="#partenaires">Partenaires</a>
+            <a class="nav-links link" href="#faq">FAQ</a>
+            <a href="inscription/index.html" class="btn-nav">Rejoignez l'aventure !</a>
         </div>
     </nav>
 
@@ -25,88 +49,206 @@
     <section class="hero">
 		<div class="hero-image">
             <div>
-                <img src="assets/app.jpg" alt="Aperçu de l'application" class="apercu-img">
+				<picture>
+				  	<source srcset="assets/LandingPage.webp" type="image/webp" class="hero-image-img">
+				  	<source srcset="assets/LandingPage.png" type="image/png" class="hero-image-img">
+                	<img src="assets/LandingPage.png" alt="Rejoignez l'aventure !" class="hero-image-img" loading="lazy">
+				</picture>
             </div>
         </div>
-        <h1>Jouer, s’éveiller,<br>s’accomplir</h1>
-		<p>Accompagnez votre enfant dans le développement des compétences indispensables à sa futur vie d'adulte, de l'utilisation saine et intelligente du numérique, aux compétences de vie, socle de la santé mentale positive.</p>
-        <a href="#" class="btn-primary" style="display: inline-block; margin-bottom: 3rem;">Être prévenu du lancement</a>
+        <div class="hero-two-column">
+			<div>
+				<picture>
+				  	<source srcset="assets/LogoPiki_White-BlackShadow-HD.webp" class="hero-two-column-img" type="image/webp">
+				  	<source srcset="assets/LogoPiki_White-BlackShadow-HD.png" class="hero-two-column-img" type="image/png">
+					<img src="assets/LogoPiki_White-BlackShadow-HD.png" alt="Piki & Co" class="hero-two-column-img" loading="lazy">
+				</picture>
+			</div>
+			<div>
+        		<h1>Jouer, s’éveiller, s’accomplir</h1>
+			</div>
+		</div>
+		<p>Accompagnez votre enfant dans le développement des compétences indispensables à sa future vie d'adulte, de l'utilisation saine et intelligente du numérique, aux compétences psychosociales, socle de la santé mentale positive.</p>
+        <a href="inscription/index.html" class="btn-primary" style="display: inline-block; margin-bottom: 3rem;">Rejoignez l'aventure !</a>
     </section>
 
-    <!-- Product Section -->
-    <section class="container" id="produit">
-    <p class="section-title">Notre mission</p>
-    <h2 class="section-heading">Au delà du jeu, un espace pour bien grandir, en connexion avec sa famille</h2>
+    <!-- Our story Section -->
+    <section class="container" id="Mission">
+    <h2 class="section-heading">Construire et maintenir un équilibre mentale et émotionnel, tout au long de la vie</h2>
 
-    <div class="features-grid">
+        <div class="two-column img-small">
+			<div>
+				<picture>
+				  	<source srcset="assets/Biumiz_Smile.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/Biumiz_Smile.png" class="two-column-img" type="image/png">
+					<img src="assets/Biumiz_Smile.png" alt="No problem !" class="two-column-img" loading="lazy">
+				</picture>
+			</div>
+			<div></br><p>Chacun et chacune d’entre nous veut s’accomplir et profiter d’une vie sereine, équilibrée, enrichissante, pleine d’opportunités, forte de relations solides et saines. Nous voulons toutes et tous être pleinement nous-mêmes, vivre selon nos propres choix et avoir assez confiance en nous pour agir et réaliser nos rêves.<p/></br>
+				<p> C’est aussi ce que chaque parent souhaite pour son enfant.</p></br>
+			</div>
+		</div>
 
-        <div class="feature-card">
-            <div class="feature-icon">🧠</div>
-            <h3>Apprentissages basés sur la science</h3>
-            <p>Un jeu conçu avec des experts de l’éducation et de la psychologie.</p>
-            <ul class="feature-list">
-                <li>Développement logique et résolution de problèmes</li>
-                <li>Renforcement de la mémoire et de l’attention</li>
-                <li>Progression adaptée au rythme de l’enfant</li>
-            </ul>
-        </div>
+        <div class="two-column img-small">
+			<div>
+				<picture>
+				  	<source srcset="assets/Biumiz_Oups.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/Biumiz_Oups.png" class="two-column-img" type="image/png">
+					<img src="assets/Biumiz_Oups.png" alt="Oops..." class="two-column-img" loading="lazy">
+				</picture>
+			</div>
+			<div></br><p>L'existence peut s'avérer mouvementée, parfois difficile. Du simple aléas à l'événement grave, un individu fera face à d'inombrables situations plus ou moins pénibles au cours de sa vie. Parfois, un contexte éprouvant peut s'ajouter, comme la crise climatique, une pandémie ou un environnement social dégradant ou violent.</p></br>
+			</div>
+		</div>
+        
+		<div class="two-column img-small">
+			<div>
+				<picture>
+				  	<source srcset="assets/Biumiz_OhNo.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/Biumiz_OhNo.png" class="two-column-img" type="image/png">
+					<img src="assets/Biumiz_OhNo.png" alt="Oh No..." class="two-column-img" loading="lazy">
+				</picture>
+			</div>
+			<div></br><p>Ces situations peuvent ébranler et altérer notre bien-être, notre équilibre et notre stabilité émotionnelle, jusqu’à fracturer notre santé mentale.</p></br>
+				<p> Dans le cas d’un enfant, c’est tout son développement cognitif, émotionnel et social qui peut-être en jeu.</p></br>
+			</div>
+		</div>
+			
+		<h3 class="section-subheading">Malgré tout, il est tout à fait possible de traverser ces expériences douloureuses tout en se préservant et de rebâtir rapidement son équilibre mental et émotionnel...</h3>
 
-        <div class="feature-card">
-            <div class="feature-icon">📊</div>
-            <h3>Suivi parental détaillé</h3>
-            <p>Comprenez les progrès de votre enfant en un coup d'œil.</p>
-            <ul class="feature-list">
-                <li>Tableau de bord clair et intuitif</li>
-                <li>Compétences développées visibles en temps réel</li>
-                <li>Recommandations personnalisées</li>
-            </ul>
-        </div>
+		<h2 class="section-heading">Notre engagement</h2>
 
-        <div class="feature-card">
-            <div class="feature-icon">🔒</div>
-            <h3>100% sécurisé</h3>
-            <p>Un environnement conçu pour la sécurité et la tranquillité d'esprit.</p>
-            <ul class="feature-list">
-                <li>Sans publicité ni achat caché</li>
-                <li>Respect strict de la vie privée (RGPD / COPPA)</li>
-                <li>Contenu modéré et adapté selon l’âge</li>
-            </ul>
-        </div>
+		<div class="two-column">
+			<div></br><p>C’est là que Piki & Co s’engage concrètement à vos côtés, en imaginant de nouvelles solutions d’éveil et d’apprentissage propices à un développement personnel idéal.</p></br>
+				<p>En collaboration avec des chercheur·e·s français·e·s et des professionnel·le·s de la santé mentale et de l’enfance, nous construisons pour vous et vos enfants des outils innovants et engageants dont l'objectif est de soutenir la croissance cognitive, émotionnelle et relationnelle.</p></br>
+				<p>Dans le respect des recommandations d’usage du numérique, nous mêlons dans nos produits le meilleur de la technologie et les dernières avancées en sciences humaines et sociales. Le jeu et les langues étrangères sont les principaux vecteurs d'apprentissage que nous utilisons.</p>
+			</div>
+			<div>
+				<picture>
+				  	<source srcset="assets/Biumiz-et-Tom.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/Biumiz-et-Tom.png" class="two-column-img" type="image/png">
+					<img src="assets/Biumiz-et-Tom.png" alt="Hey! That's cool!" class="two-column-img" loading="lazy">
+				</picture>
+			</div>
+		</div>
+	</section>
+    
+	<section class="container" id="CPS">
+		<h2 class="section-heading">Les compétences psychosociales</h2>
+		
+		<p>Ce sont les compétences de vie qui permettent à tout individu de faire face aux contraintes et aux défis rencontrés et de maintenir son équilibre mental et émotionnel ou de rapidement le retrouver après un épisode difficile. Parfois, elles sont appelées <q>compétences comportementales</q> ou <q>compétences humaines</q>, les pays anglosaxons parlent de <q>life skills</q>.</p></br>
+		
+		<p>Ces compétences sont réparties en trois catégories : </p>
+		
+		<div class="features-grid">
+			<div class="feature-card">
+            	<div class="feature-icon">🧠</div>
+	            <h3>Les compétences cognitives</h3>
+    	        <ul class="feature-list">
+        	        <li>Avoir conscience de soi-même et bien connaître ses propres besoins et fonctionnements</li>
+            	    <li>Savoir se maîtriser, ne pas céder à ses impulsions ou ses envies sans réfléchir</li>
+                	<li>Savoir prendre des décisions constructives</li>
+ 	           </ul>
+    	    </div>
 
-        <div class="feature-card">
-            <div class="feature-icon">🎯</div>
-            <h3>Compétences essentielles renforcées</h3>
-            <p>Chaque mini-jeu cible un apprentissage précis.</p>
-            <ul class="feature-list">
-                <li>Lecture, logique, mathématiques et créativité</li>
-                <li>Développement émotionnel et autonomie</li>
-                <li>Adapté pour 3–12 ans</li>
-            </ul>
-        </div>
+			<div class="feature-card">
+            	<div class="feature-icon">🫂</div>
+	            <h3>Les compétences émotionnelle</h3>
+    	        <ul class="feature-list">
+        	        <li>Savoir reconnaître ses émotions</li>
+            	    <li>Savoir gérer et réguler ses émotions</li>
+ 	           </ul>
+    	    </div>
+			
+			<div class="feature-card">
+				<div class="feature-icon">👥</div>
+	            <h3>Les compétences sociales</h3>
+    	        <ul class="feature-list">
+        	        <li>Savoir écouter et communiquer avec empathie</li>
+            	    <li>Être capable de développer des relations saines</li>
+            	    <li>Être capable de résoudre des difficultés de manière constructive</li>
+ 	           </ul>
+    	    </div>
 
-        <div class="feature-card">
-            <div class="feature-icon">🎮</div>
-            <h3>Une expérience ludique motivante</h3>
-            <p>Le plaisir de jouer au service de l’apprentissage.</p>
-            <ul class="feature-list">
-                <li>Quêtes, défis et récompenses</li>
-                <li>Avatar personnalisable</li>
-                <li>Univers progressifs et immersifs</li>
-            </ul>
-        </div>
+    	</div>
 
-        <div class="feature-card">
-            <div class="feature-icon">👪</div>
-            <h3>Conçu pour toute la famille</h3>
-            <p>Un jeu pensé pour renforcer les moments complices.</p>
-            <ul class="feature-list">
-                <li>Mini-jeux parent-enfant</li>
-                <li>Challenges hebdomadaires en famille</li>
-                <li>Activités hors ligne à réaliser ensemble</li>
-            </ul>
-        </div>
-
-    </div>
+		<div class="two-column img-small">
+			<div>
+				<picture>
+				  	<source srcset="assets/Tom_Amazing.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/Tom_Amazing.png" class="two-column-img" type="image/png">
+					<img src="assets/Tom_Amazing.png" alt="Amazing !" class="two-column-img" loading="lazy">
+				</picture>
+			</div>
+			<div> 
+				<p>Lorsqu'elles sont bien développées, ces compétences ont un impact bénéfique sur la vie de la personne et sur la société :</p></br>
+				<ul>
+					<li>elles réduisent l'anxiété et le stress, permettent de prévenir certaines maladies comme la dépression et de réduire les risques cardio-vasculaire,</li>
+					<li>elles réduisent les conduites à risques comme les addictions ou les comportements violents,</li>
+					<li>elles améliorent le climat scolaire, favorisent la réussite et l'insertion professionnelle.</li>
+				</ul></br>
+				<p>Elles sont le socle de la santé mentale. Si elles peuvent se développer tout au long de la vie, la période déterminante reste de l'enfance jusqu'à l'entrée dans l'âge adulte...</p></br>
+				<p>Au travers de ses jeux, l'objectif de Piki & Co est de soutenir le développement de ces compétences chez les enfants.</p>
+			</div>
+		</div>
+	</section>
+    
+	<section class="container" id="Jeu">
+    <h2 class="section-heading">Jouer et apprendre par les sens et l'émotion</h2>
+		<div class="two-column img-small">
+			<div>
+				<picture>
+				  	<source srcset="assets/Doudou_NewDA-HD_Droite.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/Doudou_NewDA-HD_Droite.png" class="two-column-img" type="image/png">
+					<img src="assets/Doudou_NewDA-HD_Droite.png" alt="Allons jouer !" class="two-column-img" loading="lazy">
+				</picture>
+			</div>
+			<div> 
+				<p>Le jeu représente le meilleur vecteur d’apprentissage car il engage le joueur ou la joueuse dans une expérience sensorielle et émotionnelle. Cet engagement dans le ressenti favorise l’acquisition de nouvelles notions et le développement de compétences.</p> </br>
+				<p>Nous concevons donc des expériences ludiques engageantes et immersives qui permettent, à vos enfants et à toute la famille, de développer ces compétences humaines qui sont le socle de la santé mentale positive.</p></br>
+				<p>Nos jeux sont fabriqués sur mesure, parfaitement calibrés pour chaque tranche d’âge.</p></br>
+			</div>
+		</div>
+	</section>
+    
+	<section class="container" id="Langues">
+	<h2 class="section-heading">Apprendre une langue étrangère et s'ouvrir au monde</h2>
+		<div class="two-column img-small">
+			<div>
+				<picture>
+				  	<source srcset="assets/Tom_Laugh.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/Tom_Laugh.png" class="two-column-img" type="image/png">
+					<img src="assets/Tom_Laugh.png" alt="Apprenons une langue étrangère !" class="two-column-img" loading="lazy">
+				</picture>
+			</div>
+			<div> 
+				<p>Depuis une dizaine d'années, des études en psychologie et en psychologie du développement montrent que <q>[...] les enfants bilingues présentent certains avantages en ce qui a trait au développement sociocognitif, [...] de comprendre les croyances des autres, [...] pour résoudre un problème [...]</q>*.</p></br>
+				<p>Autrement dit, les enfants qui parlent au moins deux langues ont plus de facilités dans leur croissance cognitive, émotionnelle et relationnelle... à condition de développer leur savoir-faire de communication plutôt que d'accumuler du vocabulaire et de la grammaire.</p></br>
+				<p>C'est pourquoi nous utilisons l'apprentissage des langues étrangères comme outil de dévelpppement des compétences psychosociales et que nous avons développé une toute nouvelle pédagogie qui devient expérientielle, culturelle et immersive.</p></br>
+				<p>Aucune directive, aucun écrit, uniquement de l'oralité, uniquement du jeu.</p></br>
+				<p class="quoting" >* Elena Nicoladis, Ph.D., Monique Charbonnier, Ph.D., Anamaria Popescu, Doctorante University of Alberta / University of Padova. Octobre 2016, Éd. rév.<a href="https://www.enfant-encyclopedie.com/deuxieme-langue/selon-experts/deuxieme-languebilinguisme-chez-les-jeunes-enfants-et-impacts-sur-le" target="_blank" rel="noopener noreferrer">Deuxième langue/bilinguisme chez les jeunes enfants et impacts sur le développement sociocognitif et socio-affectif précoce</a>. <i>Encyclopédie sur le développement des jeunes enfants.</i></p>
+			</div>
+		</div>
+	</section>
+    
+	<section class="container" id="Numerique">
+    <h2 class="section-heading">Le numérique comme vecteur d'interactions sociales</h2>
+		<div class="two-column img-small">
+			<div>
+				<picture>
+				  	<source srcset="assets/UnitéDiag_NewDA-HD_Droite.webp" class="two-column-img" type="image/webp">
+				  	<source srcset="assets/UnitéDiag_NewDA-HD_Droite.png" class="two-column-img" type="image/png">
+					<img src="assets/UnitéDiag_NewDA-HD_Droite.png" alt="Allons jouer !" class="two-column-img" loading="lazy">
+				</picture>
+			</div>
+			<div> 
+				<p>Le numérique fait partie intégrante de vos vies et de celles de vos enfants, mais il ne doit pas en être le centre. C'est pourquoi nos jeux sont multi supports, vidéo et papier.</p></br>
+				<p>La partie jeu vidéo développe les compétences digitales et accompagne vers une (ré)appropriation douce et réfléchie du numérique. L'objectif est d'en avoir une future utilisation saine et intelligente.</p>
+				<p>C'est aussi le jeu vidéo qui immerge les enfants dans les nouvelles notions et leur offre un terrain d'expérimentation sécurisé au travers d'aventures drôles et merveilleuses.<p></br>
+				<p>La partie jeu de société met en pratique les nouvelles compétences et rassemble les joueurs et les joueuses avec leur entourage au sein d’un même univers ludique pour des moments de partage, de reconnexion et de lien.<p></br>
+				<p>Pour que l’humain reste au cœur de tout.<p>
+			</div>
+		</div>
     </section>
 
 
@@ -115,28 +257,68 @@
     <section class="testimonials" id="partenaires">
     <div class="container">
         <p class="section-title">Partenaires</p>
-        <h2 class="section-heading">Ils nous font confiance</h2>
+        <h2 class="section-heading">Nous travaillons ensemble</h2>
         
         <div class="testimonial-grid partners-grid">
 
             <div class="partner-card">
-                <img src="assets/partenaires/partenaire1.png" alt="Partenaire 1">
+				<picture>
+				  	<source srcset="assets/LOGO_CNRS_HD.webp" class="partner-card-img" type="image/webp">
+				  	<source srcset="assets/LOGO_CNRS_HD.png" class="partner-card-img" type="image/png">
+					<img src="assets/LOGO_CNRS_HD.png" alt="CNRS" class="partner-card-img" loading="lazy">
+				</picture>
             </div>
 
             <div class="partner-card">
-                <img src="assets/partenaires/partenaire2.png" alt="Partenaire 2">
+				<picture>
+				  	<source srcset="assets/Unistra2_HD_FondBlanc.webp" class="partner-card-img" type="image/webp">
+				  	<source srcset="assets/Unistra2_HD_FondBlanc.png" class="partner-card-img" type="image/png">
+					<img src="assets/Unistra2_HD_FondBlanc.png" alt="Unistra" class="partner-card-img" loading="lazy">
+				</picture>
             </div>
 
             <div class="partner-card">
-                <img src="assets/partenaires/partenaire2.png" alt="Partenaire 3">
+				<picture>
+				  	<source srcset="assets/CONECTUS-BaselineFR_HD2018_Blanc.webp" class="partner-card-img" type="image/webp">
+				  	<source srcset="assets/CONECTUS-BaselineFR_HD2018_Blanc.png" class="partner-card-img" type="image/png">
+					<img src="assets/CONECTUS-BaselineFR_HD2018_Blanc.png" alt="Conectus" class="partner-card-img" loading="lazy">
+				</picture>
+            </div>
+        </div>
+    </div>
+	<div class="container">
+        <p class="section-title">Soutiens</p>
+        <h2 class="section-heading">Ils nous accompagnent</h2>
+        
+        <div class="testimonial-grid partners-grid">
+
+            <div class="partner-card">
+				<picture>
+				  	<source srcset="assets/Logo-Semia.webp" class="partner-card-img" type="image/webp">
+				  	<source srcset="assets/Logo-Semia.png" class="partner-card-img" type="image/png">
+					<img src="assets/Logo-Semia.png" alt="Semia, incubateur d'excellence" class="partner-card-img" loading="lazy">
+				</picture>
             </div>
 
             <div class="partner-card">
-                <img src="assets/partenaires/partenaire1.png" alt="Partenaire 4">
+				<picture>
+				  	<source srcset="assets/LesDeeptech_Blanc.webp" class="partner-card-img" type="image/webp">
+				  	<source srcset="assets/LesDeeptech_Blanc.png" class="partner-card-img" type="image/png">
+					<img src="assets/LesDeeptech_Blanc.png" alt="Communauté Les DeepTech !" class="partner-card-img" loading="lazy">
+				</picture>
+            </div>
+            
+			<div class="partner-card">
+				<picture>
+				  	<source srcset="assets/Logo_FT_Est_Blanc.webp" class="partner-card-img" type="image/webp">
+				  	<source srcset="assets/Logo_FT_Est_Blanc.png" class="partner-card-img" type="image/png">
+					<img src="assets/Logo_FT_Est_Blanc.png" alt="La French Tech Est" class="partner-card-img" loading="lazy">
+				</picture>
             </div>
 
         </div>
     </div>
+
     </section>
 
     <!-- FAQ -->
@@ -144,60 +326,205 @@
     <div class="container">
         <p class="section-title">FAQ</p>
 
-    <details>
-        <summary>Est-ce que ce jeu va rendre fou mes enfants ?</summary>
-        <p>
-            Le jeu vidéo est apparu pour la première fois avec pong en 1972, si ça rendait les gens fous, on aurait déjà arrêté de les commercialiser
-        </p>
+    <details class="faq-parent">
+        <summary>Les écrans, les jeux vidéo et les enfants : recommandations et points d'attention</summary>
+		<p>Le jeu vidéo offre aux joueurs et joueuses une expérience copmlète, sensorielle et émotionnelle, ce qui en fait un média puissant d'apprentissage. Par ailleurs, au même titre que le cinéma ou la littérature, le jeu vidéo est un objet culturel à partager et constitue un support de diffusion d'idées, de sensibilisation, de réflexion et de débats.</p>
+		<p>Issus de différents documents officiels*, voici quelques points clefs à retenir :</p>
+		<ul>
+			<li>Pas d'écrans avant 3 ans, </li>
+			<li>A partir de 3 ans, limiter le temps d'écran à 1h maximum par jour, </li>
+			<li>Choisir des contenus adaptés à votre enfant, vis-à-vis de sa maturité cognitive et émotionnelle :
+			<ul>
+				<li>Type de jeu : immersif ou non, narratif ou de stratégie, d'action et d'aventures, etc.,</li>
+				<li>Richesse de l'expérience ludique : cadence de défilement des images, quantité de stimuli sonores ou haptiques, etc.,</li>
+				<li>Complexité du scénario et niveau de violence : la signalisation PEGI est là pour vous aider.</li>
+			</ul>
+			</li>
+		</ul>
+		<p>Il est important de garder à l'esprit que ce qui rend les écrans toxiques pour vos enfants est l'appauvrissement des interactions sociales qui en découlent. Les retards de développement sont en réalité causés par le manque de partage, d'échange, de discussion entre l'enfant et son entourage familial ou amical. Si vous utilisez le contenu vidéo, que ce soit un jeu ou un film, comme prétexte pour discuter et passer du temps ensemble, alors tout ira bien !</p>
+		<p class="quoting">* Rapport remis à l'Elysée en avril 2024 "Enfants et écrans, À la recherche du temps perdu"</p>
     </details>
+
+	<details class="faq-parent">
+        <summary>Quels sont les bienfaits des jeux vidéo ?</summary>
+		<p>Le jeu vidéo fait l'objet de recherches scientifiques depuis le début des années 80. Parrallèlement à l'aspect technologique traité par les sciences dures, son impact psychologique sur le joueur ou la joueuse et ses effets sur l'évolution des compétences sont des sujets largement traités en sciences humaines. D'après ces travaux, voici quelques compétences et capacités que les jeux vidéo permettent de développer : </p>
+		<ul>
+			<li>La curiosité et la capacité à oser,</li>
+			<li>La créativité,</li> 
+			<li>La persévérance,</li> 
+			<li>La capacité d'élaboration de stratégie, notamment des stratégies d'apprentissage,</li> 
+			<li>La planification,</li> 
+			<li>La coopération, l’esprit de communauté, la sociabilité et une culture participative,</li>
+			<li>La prise de décision,</li>
+			<li>L’attention,</li>
+			<li>Le temps de réaction,</li> 
+			<li>La résolution de problème,</li> 
+			<li>L’observation et l’interprétation au sein d’un environnement complexe,</li>
+			<li>La littéracie numérique,</li>
+			<li>La capacité à traiter plusieurs tâches simultanément,</li>
+			<li>Le repérage dans l’espace,</li> 
+			<li>Le plurilinguisme et les langues étrangères,</li>
+			<li>etc.</li>
+		</ul>
+		<details class="faq-child">
+			<summary>Pour aller plus loin</summary>
+			<p>Voici un article qui résume de manière simple l'impact du jeu vidéo sur les enfants et les adolescents, du point de vue psychologique et de celui du dévelppement des compétences : <a href="https://www.pedagojeux.fr/sujets-sensibles/limpact-du-jeu-sur-la-psychologie-de-mon-enfant/" target="_blank" rel="noopener noreferrer">Echange entre PédaGojeux et Mickaël Stora, psychologue et psychanaliste.</a></p>
+			<p>Voici une liste d'articles scientifiques qui étudient les bénéficent potentiels des jeux vidéo pour les joueurs et les joueuses :<p>
+			<ul>
+				<li>Bavelier, D., Green, C. S., Pouget, A., & Schrater, P. 2012. Brain plasticity through the life span: Learning to learn and action video games.<i>Annual Review of Neuroscience,</i> 35(1), 391–416.</li>
+				<li>Berry, V. 2012.<i> L’expérience virtuelle. Jouer, vivre, apprendre dans un jeu vidéo.</i> Presses universitaires de Rennes.</li>
+				<li>Gee, J. P. 2007. <i>What video games have to teach us about learning and literacy.</i> Palgrave Macmillan.</li>
+				<li>Greenfield, P. 1994. Les jeux vidéo comme instruments de socialisation cognitive. Dans <i>Les jeux vidéo, Réseaux, 12,</i> n°67, 33-56.</li>
+				<li>Jenkins, H. & American Council of Learned Societies. 2006. <i>Convergence culture where old and new media collidep.</i></li>
+				<li>Lacasa, P. 2013. <i>Learning in real and virtual worlds. Commercial video games as educational tools.</i> Palgrave Macmillan.</li>
+				<li>Thorne, S. L. 2008. Transcultural communication in open Internet environments and massively multiplayer online games. In Magnan, Sally Sieloff (dir.), <i>Mediating discourse online.</i> John Benjamins.</li>
+				<li>Thorne, S. L. & Fischer, I. 2012. Online gaming as sociable media. <i>Alsic,</i> Vol. 15, n°1.</li>
+				<li>Thorne, S. L., Fischer, I. & Lu, X. 2012. The semiotic ecology of an online game world. <i>ReCALL,</i> 24, n°3. 279-301.</li>
+			</ul>
+		</details>
+    </details>
+
+    <details class="faq-parent">
+        <summary>Concrètement, qu'est ce qu'une "utilisation saine" des jeux vidéo ?</summary>
+        <p>Pour que le jeu vidéo soit bénéfique à vous ou à votre enfants, quelques habitudes simples sont à mettre en place pour toute la famille.</p>
+		<h3>Limitez le temps passé sur un écran</h3>
+		<p>En dessous de 3 ans et idéallement jusqu'à 4 ans, il est fortement recommandé d'interdire complètement l'écran et donc les jeux vidéo. Ensuite, il est très important que le temps sur écran reste occasionnel, soit encadré par un adulte et ne dépasse pas une heure d'utilisation consécutive.</p>
+		<p>Pour que le numérique ne prenne pas une trop grande place dans le quotidien tout en laissant à l'enfant l'accès à ses jeux préférés, son utilisation peut être pensée de manière plus étalée dans le temps. Par exemple, zéro écran les jours d'école et une heure en tout sur le temps du week-end.</p>
+		<p>N'oubliez pas que votre enfant vous immite et a besoin de cohérence : il lui sera beaucoup plus facile de suivre ces règles si vous vous y conformez aussi !</p>
+		<h3>Veillez à ce que des activités alternatives soient toujours disponibles</h3>
+		<p>Que ce soit du coloriage, des jeux de construction, de la création artistique ou, si la météo le permet, aller jouer dehors, il est important que votre enfant puisse s'amuser autrement qu'en jouant sur un écran.</p>
+		<p>Pour développer sa créativité et son autonomie, vous pouvez le laisser s'ennuyer et l'encourager à choisir ou inventer lui-même ses activités, bien sûr, dans un cadre bien défini et sécrurisant.</p>
+		<h3>Utilisez le jeu comme sujet de conversation et d'échange.</h3>
+		<p>Le jeu vidéo est avant tout un média culturel à part entière qui déploie un univers imaginaire doté de contraintes (les règles du jeu) et dans lequel peuvent se dérouler des histoires. Comme avec un film ou un livre, il fournit un grand nombre de sujets de conversation pour alimenter les moments en famille et permet de sensibiliser les joueurs et joueuses à divers sujets comme, par exemple, la découverte du monde et de ses cultures, l'ouverture à l'autre ou l'écologie.</p>
+		<p>Voici quelques questions que vous pouvez poser à votre enfants pour créer des moments de partage et soutenir sa croissance cognitive, émotionnelle et sociale :</p>
+		<ul>
+			<li>Quelle histoire raconte ton jeu ? Qui sont les personnages et que font-ils ?</li>
+			<li>Quels sont les règles de ton jeu ? Comment vas tu faire pour gagner ?</li>
+			<li>Qu'est ce que tu ressens quand tu joue ? Qu'est ce que tu ressens quand tu gagnes ? Qu'est ce que tu ressens quand tu perds ?</li>
+			<li>Quelles émotions ressens tu vis-à-vis de l'histoire ? A quoi est ce que ça te fait penser ?</li>
+		</ul>
+		<p>Si vous êtes vous-même joueur ou joueuse, passer un peu de temps à jouer aux mêmes jeux que votre enfant ne fera qu'alimenter encore plus vos échanges !</p>
+		<h3>Pour aller plus loin</h3>
+		<p>Si vous souhaitez en apprendre plus sur les bonnes pratiques pour une utilisation saine du jeu vidéo au sein de la famille, plusieurs sites mettent à disposition des conseils et des ressources :</p>
+		<ul>
+			<li>Le site de <a href="https://pegi.info/fr/page/game-advice" target="_blank" rel="noopener noreferrer">la société à but non-lucratif PEGI,</a> également responsable de la classification du même nom,</li>
+			<li>Le site <a href="https://www.mon-enfant-et-les-ecrans.fr/" target="_blank" rel="noopener noreferrer">mon enfant et les écrans</a> porté par l'Union Nationale des Associations Familiales (UNAF).</li>
+		</ul>
+    </details>
+
 
     <!-- Template de question -->
-    <details>
-        <summary>{Titre question}</summary>
-        <p>
-            {Corps de la question}
-        </p>
+    <details class="faq-parent">
+        <summary>Qu'est ce que la santé mentale positive ?</summary>
+		<p>L'OMS d'éfinit la santé comme <q>un état de complet bien-être physique, mental et social</q>. Au delà de la santé physique, la santé mentale et le bien-être social sont donc des éléments importants de la santé d'une personne.</p>
+		<p>En ce qui concerne la santé mentale, Santé Publique France définit trois dimensions : </p>
+		<ul>
+			<li><strong>La santé mentale positive</strong>, représentée par le sentiment de bien-être général de la personne et son niveau d'épanouissement social, au sein de sa famille, de ses amis, au travail, etc.</li>
+			<li><strong>La résilience</strong> ou la capacité d'une personne à faire face à la détresse psychologique ressentie face aux situations éprouvantes mais faisant partie de la vie, comme un échec, une rupture, un deuil…</li>
+			<li>La présence ou l’absence de troubles psychiatriques, qui peuvent être passagers ou permanents, comme la dépression, l'autisme, etc.</li>
+		</ul>
+		<p><strong>La santé mentale positive est donc une composante de la santé mentale</strong> d'un individu. Il s'agit de son état d'esprit général couplé à la qualité de ses relations sociale et à son pouvoir d'agir dans son travail et au sein de sa communauté. La santé mentale positive repose sur les compétences psychosociales de la personne, c'est-à-dire ses compétences cognitives, émotionnelles et sociales qui consituent ses ressources psychologiques pour faire face aux contraintes et aux aléas de la vie et pour construire son équilibre mental et émotionnel.</p>
+		<h3>Pour aller plus loin</h3>
+		<p>Le site de l'agence nationale de santé publique, Santé Publique France, met à disposition <a href="https://www.santepubliquefrance.fr/maladies-et-traumatismes/sante-mentale" target="_blank" rel="noopener noreferrer">une page dédiée à la santé mentale</a>.</p>
+    </details>
+    
+	<details class="faq-parent">
+        <summary>Où peut-on en apprendre plus au sujet des compétences psychosociales ?</summary>
+        <p>Les compétences psychosociales d'une personne sont ses connaissances, ses savoir-faire et ses savoir-être cognitifs, émotionnels et sociaux. On peut les voir comme l'ensemble des processus qui lui permettent d'acquérir, de traiter, de stocker et d'utiliser des informations pour prendre soin d'elle-même, gérer ses émotions et interagir avec son environnement social.</p>
+		<p>Les compétences psychosociales sont le socle de la santé mentale positive et sont indispensables à une vie épanouie et sereine. Elles sont centrales dans le programme de promotion et de prévention en santé mentale de Santé Publique France. Leurs renforcement auprès des enfants et des jeunes fait l'objet d'actions prioritaires dans le cadre de la Grande Cause Nationale 2025 et 2026, la Santé Mentale.</p>
+		<p>Le site de l'agence nationale de santé publique, Santé Publique France, met à disposition <a href="https://www.santepubliquefrance.fr/competences-psychosociales" target="_blank" rel="noopener noreferrer">une page dédiée à ces compétences</a> où vous pourrez retrouver des ressources scientifiques détaillées ou vulgarisées ainsi que les actions menées par le Gouvernement.</p>
+    </details class="faq-parent">
+ 
+    <details class="faq-parent">
+        <summary>Qu'est ce qu'un jeu immersif ?</summary>
+        <p>Un jeu immersif est un jeu dans lequel <strong>le joueur ou la joueuse a l'impression de faire partie du monde virtuel et de participer à la scène qui se déroule devant ses yeux</strong>.</p>
+		<p>C'est la capacité d'un jeu à immerger le joueur ou la joueuse et à l'engager dans son univers qui en fait un média puissant d'apprentissage. Cela favorise la concentration, stimule les émotions et procure une expérience sensorielle complète. Dans ce contexte, l'ensemble du cerveau est engagé, contrairement à une leçon en classe, où seules quelques zones cérébrales sont mobilisées. Cet engagement complet favorise l'apprentissage et la mémorisation.<p>
+		<p>Cependant, l'immersion vidéoludique demande des efforts cognitifs et émotionnels. Il est donc très important de veiller à ce que le niveau d'immersion soit en cohérence avec la maturité de l'enfant. Typiquement, pour un enfant entre 4 et 10 ans, nous recommandons de se limiter aux mécanismes d'immersion systémique, narrative et émotionnelle.</p>
     </details>
 
-    <details>
-        <summary>Comment créer une FAQ en HTML sans JavaScript ?</summary>
-        <p>
-            Avec les balises <code>&lt;details&gt;</code> et <code>&lt;summary&gt;</code>,
-
-            qui sont supportées par tous les navigateurs modernes. C'est un jeu d'enfant ! 
-        </p>
+	<details class="faq-parent">
+		<summary>Quels mécanismes sont utilisés pour rendre un jeu immersif ?</summary>
+		<p>Le caractère immersif d'un jeu repose sur plusieurs mécanismes : </p>
+		<ul>
+			<li><strong>L'immersion systémique</strong> : les règles du jeu réagissent de manière logique aux actions du joueur, notamment grâce à une interactivité poussée. Par exemple, si le joueur fait tomber une lampe, elle se brisera ou s'il est malpoli avec un personnage du jeu, celui-ci se fâchera.</li>
+			<li><strong>L'immersion narrative et émotionnelle</strong> : le joueur ou la joueuse peut créer un lien psychologique avec l'histoire qui se déroule et les personnages qui la compose, notamment grâce à des dialogues naturels, au doublage de qualité, et à des personnages attachants et expressifs qui favorisent l'empathie et l'identification.</li>
+			<li><strong>L'immersion sensorielle</strong> : la technologie est utilisée pour absorber l'attention du joueur ou de la joueuse, notamment avec des graphismes réalistes, du son spacialisé voire, pour les jeux les plus évolués, l'utilisation de la réalité virtuelle avec un casque.</li>
+		</ul>
+	</details>
+    
+	<details class="faq-parent">
+        <summary>Qu'est ce qu'un jeu engageant ?</summary>
+		<p>Un jeu vidéo engageant est un jeu qui réussit à <strong>maintenir l'intérêt et la motivation du joueur ou de la joueuse sur le long terme</strong>. C'est ce qui donne envie de continuer à jouer, de progresser et de renouveller les sessions de jeu.</p>
+		<p>Cette notion d'engagement est centrale dans le cas d'un jeu vidéo utilisé dans un cadre éducatif. Un enfant engagé dans un jeu de stratégie développera sa patience, sa logique et sa capacité à échouer pour mieux recommencer, car le jeu le motive à ne pas abandonner.</p>
+		<p>Cependant, il est important de bien faire la différence entre engagement et captation forcée. Quand l'engagement est sain, le joueur ou la joueuse joue parce qu'il ou elle s'amuse et progresse. Dans le cas de la captation forcée, l'enfant se sent obligé de revenir au jeu pour débloquer des récompenses ou en raison d'une habitude forcée, créée artificiellement.</p>
+		<p>Quelques questions simples à poser à votre enfant vous permettront de vérifier que l'engagement généré par son jeu vidéo est sain : </p>
+		<ul>
+			<li>Qu'est ce que tu apprends quand tu joues ? Est ce que tu sais faire de nouvelles choses ? Lesquelles ?</li>
+			<li>Qu'est ce qui fait que tu aimes jouer à ce jeu ? Pour quelle raison tu continues ta partie ?</li>
+			<li>Si tu ne joue pas aujourd'hui, que va-t-il se passer ? Vas-tu perdre ou manquer quelque chose ?</li>
+		</ul>
     </details>
+	
+	<details class="faq-parent">
+		<summary>Quels mécanismes sont utilisés pour rendre un jeu engageant ?</summary>
+		<p>L'engagement repose sur un équilibre entre la psychologie et les mécaniques de jeu (ou gameplay).</p>
+		<ul>
+			<li>Le défi proposé par le jeu doit être à la hauteur des compétences de l'enfant : ni trop facile, ni trop dur.</li>
+		</ul>
+		<p>Si le jeu est trop facile, il ou elle va s'ennuyer et décrocher. Si le jeu est trop difficile, il ou elle va se frustrer et abandonner. C'est là où l'intelligence du jeu intervient : elle va ajuster la difficulté en fonction des capacités du joueur ou de la joueuse et de ses progrès.</p>
+		<ul>
+			<li>L'engagement est maintenu par un cycle permanent [actions → récompense → nouvelle action].</li>
+		</ul>
+		<p> Le gameplay va inclure des mécaniques de plaisir immédiat comme sauter, gagner un point d'expérience, réussir un défit, et des mécanismes de plaisir à long terme comme gagner un niveau, débloquer une nouvelle zone de l'univers ou découvrir la suite de l'histoire.</p>
+		<p>Pour que les mécanismes d'engagement d'un jeu soient efficaces, ils doivent répondre à trois besoins des joueurs et joueuses : </p>
+		<ul>
+			<li><strong>L'autonomie</strong>: l'impression d'avoir le choix, que ses décisions comptent et ont un impact dans l'univers du jeu,</li>
+			<li><strong>Le gain de compétences</strong> : l'impression de faire des progrès et de mieux maîtriser une ou des nouvelles compétences,</li>
+			<li><strong>L'identification ou l'appartenance</strong> : soit se reconnaître dans un ou plusieurs personnages et s'y sentir lier et/ou partager son expérience de jeu avec son entourage familiale, amicale, scolaire, etc.</li>
+		</ul>
 
-    <details>
-        <summary>Est-ce compatible avec tous les navigateurs ?</summary>
-        <p>
-            Les balises <code>&lt;details&gt;</code> et <code>&lt;summary&gt;</code> sont supportées
-
-            par Chrome, Firefox, Edge, Safari et Opera depuis plusieurs années.
-        </p>
     </details>
-
-    <details>
-        <summary>Puis-je personnaliser le style des menus déroulants ?</summary>
-        <p>
-            Vous pouvez modifier le CSS pour adapter les couleurs, les polices, les bordures,
-
-            etc.
-        </p>
-    </details>
-    </div>
+    
+	</div>
     </section>
 
 
     <!-- CTA Section -->
     <section class="cta-section">
         <h2>Prêt à entrer dans l’aventure <br> qui fait grandir ?</h2>
-        <a href="#" class="btn-white">Être prévenu du lancement</a>
+        <a href="inscription/index.html" class="btn-primary">Rejoignez l'aventure !</a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Piki & Co. Tous droits réservés.</p>
+		<div class="footer-three-column">
+			<p> </p>
+			<p>&copy; 2026 Piki & Co. Tous droits réservés.</p>
+			<div class="footer-socials">
+				<a href="https://www.instagram.com/piki.and.co/" target="_blank" rel="noopener noreferrer">
+					<picture>
+					<source srcset="assets/Social-Insta_White.webp" type="image/webp" class="footer-socials-img">
+					<source srcset="assets/Social-Insta_White.png" type="image/png" class="footer-socials-img">
+					<img src="assets/Social-Insta_White.png" alt="Instagram" class="footer-socials-img" loading="lazy">
+				</picture></a>
+				<a href="https://www.linkedin.com/company/piki-and-co/" target="_blank" rel="noopener noreferrer"><picture>
+					<source srcset="assets/Social-Linkedin_White.webp" type="image/webp" class="footer-socials-img">
+					<source srcset="assets/Social-Linkedin_White.png" type="image/png" class="footer-socials-img">
+					<img src="assets/Social-Linkedin_White.png" alt="Instagram" class="footer-socials-img" loading="lazy">
+					</picture></a>
+			</div>
+		</div>
+		<div class="footer-three-column">
+			<p> </p>
+			<p>Ce projet a été financé par l’État dans le cadre de France 2030.</p>
+			<div class="footer-socials">
+				<picture>
+				  	<source srcset="assets/France2030_Blanc.webp" class="partner-card-img" type="image/webp">
+				  	<source srcset="assets/France2030_Blanc.png" class="partner-card-img" type="image/png">
+					<img src="assets/France2030_Blanc.png" alt="Conectus" class="partner-card-img" loading="lazy">
+				</picture>
+			</div>
+		</div>
     </footer>
 </body>
 </html>
