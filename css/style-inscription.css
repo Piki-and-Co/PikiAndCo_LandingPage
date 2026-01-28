@@ -96,6 +96,37 @@ nav {
     box-shadow: 0 0.625rem 1.563rem rgba(249, 178, 51, 0.3);
 }
 
+.hero {
+    margin-top: 10rem;
+    padding: 1rem 5% 3rem;
+    background-size: cover;
+    text-align: center;
+}
+
+.hero p {
+    font-family: "Montserrat-Regular", sans-serif;
+	font-size: 1.3rem;
+    max-width: 50rem;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 2.5rem 5%;
+}
+
+.section-heading {
+    text-align: center;
+    font-family: "Montserrat-Regular", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+
 .sib-form.this-sib-form{
  text-align: center;
 }
