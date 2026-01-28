@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/style-inscription.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="../assets/logo.ico"/>
+	<title>Piki & Co</title>
+    
+	<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.onscroll = function() {
+                const nav = document.querySelector('.navbar');
+                if (nav && window.scrollY > 1050) {
+                    nav.classList.add('scrolled');
+                } else if (nav) {
+                    nav.classList.remove('scrolled');
+                }
+            };
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+			<a href="../index.html"><picture>
+				<source srcset="../assets/logo.webp" type="image/webp">
+				<source srcset="../assets/logo.png" type="image/png">
+				<img src="../assets/logo.png" alt="Piki & Co" loading="lazy"/>
+			</picture></a>
+        </div>
+		<a href="../index.html" class="btn-nav">Revenir à la page d'accueil</a>
+        </div>
+    </nav>
+    <section class="hero">
+		<h2 class="section-heading">Votre adresse email est validée !</h2>
+		<p>Vous allez maintenant recevoir les communications de Piki & Co.</p></br>
+		<p>A bientôt !</p>
+	</section>
+</body>
+
