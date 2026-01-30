@@ -153,6 +153,10 @@ nav {
 	max-width:540px;
 }
 
+#sib-form-container{
+	display: flex;
+}
+
 #sib-container{
 	text-align:center; 
 	background-color:rgba(255,255,255,1); 
@@ -265,6 +269,7 @@ label{
 	font-family:"Montserrat-Regular", sans-serif; 
 	color:#3c4858;
 	padding: 0rem 0;
+	cursor: pointer;
 }
 
 label[data-required]::after {
