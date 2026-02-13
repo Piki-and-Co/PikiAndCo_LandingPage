@@ -69,6 +69,14 @@ nav {
 	transition: top 0.3s;
 }
 
+.navbar-visible{
+    position: fixed;
+    top: 0rem;
+    width: 100%;
+	transition: top 0.3s;
+}
+
+
 .navbar.scrolled{
 	top: 0;
 }
@@ -283,6 +291,13 @@ a {
 strong {
 	color:var(--star-pink);
 }
+
+ul {
+	list-style-type: disc;
+	margin-bottom: 0.5rem;
+    margin-left: 2rem;
+}
+
 
 /* Features Grid */
 .features-grid {
