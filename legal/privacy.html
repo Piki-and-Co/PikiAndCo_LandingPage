@@ -6,24 +6,9 @@
     <link href="../css/style.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="../assets/logo.ico"/>
 	<title>Piki & Co</title>
-<!-- Matomo -->
-<script>
-  var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(["setCookieDomain", "*.piki-and-co.com"]);
-  _paq.push(["setDomains", ["*.piki-and-co.com"]]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//an.kjbconseil.com/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '6']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img referrerpolicy="no-referrer-when-downgrade" src="//an.kjbconseil.com/matomo.php?idsite=6&amp;rec=1" style="border:0;" alt="" /></p></noscript>
-<!-- End Matomo Code -->
+<!-- CMP tarteaucitron — Gestion du consentement cookies -->
+<script src="https://cdn.jsdelivr.net/npm/tarteaucitronjs@latest/tarteaucitron.js"></script>
+<script src="../js/tarteaucitron-init.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -132,6 +117,11 @@
 		<p style="text-align:center">3 Place de Fontenoy TSA 80715<p>
 		<p style="text-align:center">75334 Paris Cedex 07</p></br>
 	
+		<h3>Cookies et traceurs</h3>
+		<p>Notre site utilise des cookies pour mesurer son audience via l'outil <strong>Matomo</strong>, auto-hébergé sur nos propres serveurs en France. Ces cookies ne sont déposés qu'après votre consentement explicite, recueilli via notre bandeau de gestion des cookies (tarteaucitron.js).</p>
+		<p>Vous pouvez à tout moment modifier vos choix en cliquant sur le lien « <a href="#" onclick="tarteaucitron.userInterface.openPanel();return false;">Gérer mes cookies</a> » en bas de chaque page, ou consulter notre <a href="cookies.html">Politique de Cookies</a> pour plus de détails.</p>
+		<p>Les données de navigation collectées par Matomo sont anonymisées et ne sont ni revendues, ni transmises à des tiers.</p></br>
+
 		<h3>Réserve de modification de la Politique de protection des données</h3>
 		<p>La présente Politique de protection des données personnelles peut être amenée à évoluer. Elles ont été élaborées à partir d’un modèle libre qui peut être téléchargé sur le site <a href="https://donnees.net">https://donnees.net</a>.</p>
 		<p>Comme nous développons constamment nos services, nous nous réservons le droit de modifier cette Politique de confidentialité, conformément aux dispositions légales en vigueur. Toute modification est publiée sur ce document en temps opportun. Nous vous conseillons de consulter régulièrement cette page pour prendre connaissance des éventuelles modifications ou mises à jour apportées à notre politique de confidentialité.</p>
