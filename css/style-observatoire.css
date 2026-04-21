@@ -45,9 +45,14 @@ body {
 	--hair-blue:#92C5FC;
 	--dark-purple:#4b5563;
 	--light-purple:#E9E5F6;
+    --Slate-Blue:#94a3b8;
+    --Cool-Grey:#64748b;
+    --Dark-Slate:#334155;
+    --Navy-Slate:#1e293b;
+    --Muted-Periwinkle:#8BA3C7;
+    --Bright-Azure:#3B82F6;
+    --Royal-Blue:#1D4ED8;
 }
-
-
 
 /* Navigation */
 nav {
@@ -141,7 +146,7 @@ nav {
 }
 
 .hero h1 {
-    font-family: "Montserrat-Regular", sans-serif;
+    font-family: "Caveat Brush", cursive;
     font-size: 3.5rem;
     font-weight: 900;
     line-height: 1.2;
@@ -160,6 +165,20 @@ nav {
     max-width: 75rem;
     margin: 0 auto;
     padding: 2.5rem 5%;
+}
+
+.container a:link {
+	color: var(--hair-blue);
+}
+.container a:visited {
+    color: var(--Muted-Periwinkle);
+}
+/* hover doit etre après visited */
+.container a:hover { 
+    color: var(--Bright-Azure);
+}
+.container a:active {
+    color: var(--Royal-Blue);
 }
 
 .section-title {
@@ -190,8 +209,9 @@ nav {
 
 .emphasized-text {
     text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
 }
-
 .quoting {
     font-size: 0.75rem;
 }
@@ -318,7 +338,7 @@ iframe {
 footer {
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="footGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgb(15,23,42);stop-opacity:1" /><stop offset="100%" style="stop-color:rgb(30,41,59);stop-opacity:1" /></linearGradient></defs><rect width="1200" height="400" fill="url(%23footGrad)"/></svg>');
     background-size: cover;
-    color: #94a3b8;
+    color: var(--Slate-Blue);
     text-align: center;
 }
 
@@ -334,6 +354,19 @@ footer {
   height: 3rem;      /* Taille de vos icônes */
 }
 
+footer a:link {
+    color: var(--Slate-Blue);
+}
+footer a:visited {
+    color: var(--Cool-Grey);
+}
+/* hover doit etre après visited */
+footer a:hover { 
+    color: var(--Dark-Slate);
+}
+footer a:active {
+    color: var(--Navy-Slate);
+}
 footer p {
     margin-bottom: 1rem;
 }
