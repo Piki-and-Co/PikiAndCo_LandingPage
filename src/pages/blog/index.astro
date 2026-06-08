@@ -35,26 +35,25 @@ const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
     ) : (
       <div class="blog-grid">
         {posts.map(post => (
-          <a href={`/blog/${post.slug}`} style="text-decoration: none; color: inherit;">
-            <article class="blog-card">
-              <div class="blog-card-body">
-                {post.data.tags.length > 0 && (
-                  <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-                    {post.data.tags.map(tag => (
-                      <a href={`/blog/tags/${tag}`} class="blog-card-tag"
-                        onclick="event.stopPropagation()">#{tag}</a>
-                    ))}
-                  </div>
-                )}
-                <h3>{post.data.title}</h3>
-                <p>{post.data.description}</p>
-                <p class="blog-card-meta">
-                  {post.data.pubDate.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
-                  · {post.data.author}
-                </p>
-              </div>
-            </article>
-          </a>
+          <article class="blog-card">
+            <div class="blog-card-body">
+              {post.data.tags.length > 0 && (
+                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                  {post.data.tags.map(tag => (
+                    <a href={`/blog/tags/${tag}`} class="blog-card-tag">#{tag}</a>
+                  ))}
+                </div>
+              )}
+              <h3>
+                <a href={`/blog/${post.slug}`} class="blog-card-link">{post.data.title}</a>
+              </h3>
+              <p>{post.data.description}</p>
+              <p class="blog-card-meta">
+                {post.data.pubDate.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
+                · {post.data.author}
+              </p>
+            </div>
+          </article>
         ))}
       </div>
     )}

@@ -148,6 +148,7 @@ strong { color: var(--pikico-title); }
 }
 
 .blog-card {
+  position: relative;
   border: 1px solid var(--pikico-border);
   border-radius: 0.75rem;
   overflow: hidden;
@@ -163,7 +164,20 @@ strong { color: var(--pikico-title); }
   padding: 1.5rem;
 }
 
+/* Stretched link — couvre toute la carte sans imbriquer des <a> */
+.blog-card-link {
+  color: var(--pikico-title);
+  text-decoration: none;
+}
+.blog-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
 .blog-card-tag {
+  position: relative;
+  z-index: 1;
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 700;

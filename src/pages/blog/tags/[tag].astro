@@ -32,24 +32,23 @@ const { tag, posts } = Astro.props;
 
     <div class="blog-grid">
       {posts.map(post => (
-        <a href={`/blog/${post.slug}`} style="text-decoration: none; color: inherit;">
-          <article class="blog-card">
-            <div class="blog-card-body">
-              <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-                {post.data.tags.map(t => (
-                  <a href={`/blog/tags/${t}`} class={`blog-card-tag${t === tag ? ' blog-card-tag--active' : ''}`}
-                    onclick="event.stopPropagation()">#{t}</a>
-                ))}
-              </div>
-              <h3>{post.data.title}</h3>
-              <p>{post.data.description}</p>
-              <p class="blog-card-meta">
-                {post.data.pubDate.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
-                · {post.data.author}
-              </p>
+        <article class="blog-card">
+          <div class="blog-card-body">
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+              {post.data.tags.map(t => (
+                <a href={`/blog/tags/${t}`} class={`blog-card-tag${t === tag ? ' blog-card-tag--active' : ''}`}>#{t}</a>
+              ))}
             </div>
-          </article>
-        </a>
+            <h3>
+              <a href={`/blog/${post.slug}`} class="blog-card-link">{post.data.title}</a>
+            </h3>
+            <p>{post.data.description}</p>
+            <p class="blog-card-meta">
+              {post.data.pubDate.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
+              · {post.data.author}
+            </p>
+          </div>
+        </article>
       ))}
     </div>
   </div>
