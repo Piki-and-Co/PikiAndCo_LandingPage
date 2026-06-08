@@ -16,6 +16,8 @@
       new PagefindUI({
         element: '#search',
         showSubResults: false,
+        debounceTimeoutMs: 100,
+        excerptLength: 20,
         translations: {
           placeholder: 'Rechercher un article…',
           zero_results: 'Aucun résultat pour [SEARCH_TERM]',

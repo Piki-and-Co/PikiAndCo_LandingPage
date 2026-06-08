@@ -19,6 +19,9 @@ const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
     <!-- Recherche Pagefind -->
     <Search />
 
+    <!-- Listing masqué pendant une recherche Pagefind active -->
+    <div id="blog-listing">
+
     <!-- Filtre par tags -->
     {allTags.length > 0 && (
       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
@@ -57,5 +60,30 @@ const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
         ))}
       </div>
     )}
+
+    </div> <!-- /blog-listing -->
   </div>
 </PikiCoLayout>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const listing = document.getElementById('blog-listing');
+    if (!listing) return;
+
+    // Pagefind rend son <input> de façon asynchrone — on attend son apparition
+    const observer = new MutationObserver(() => {
+      const input = document.querySelector('.pagefind-ui__search-input');
+      if (!input) return;
+      observer.disconnect();
+
+      const toggle = () => {
+        listing.style.display = input.value.trim() ? 'none' : '';
+      };
+
+      input.addEventListener('input', toggle);
+    });
+
+    const searchEl = document.getElementById('search');
+    if (searchEl) observer.observe(searchEl, { childList: true, subtree: true });
+  });
+</script>
