@@ -1,0 +1,45 @@
+---
+import PikiCoLayout from './PikiCoLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  pubDate: Date;
+  tags?: string[];
+  author?: string;
+}
+
+const { title, description, pubDate, tags = [], author = 'Piki & Co' } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('fr-FR', {
+  year: 'numeric', month: 'long', day: 'numeric'
+});
+---
+
+<PikiCoLayout title={title} description={description}>
+  <div class="container section">
+    <article>
+      <header style="margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--pikico-border);">
+        <nav style="font-size: 0.875rem; color: var(--pikico-muted); margin-bottom: 1.5rem;">
+          <a href="/blog">← Tous les articles</a>
+        </nav>
+        {tags.length > 0 && (
+          <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1rem;">
+            {tags.map(tag => (
+              <a href={`/blog/tags/${tag}`} class="blog-card-tag">#{tag}</a>
+            ))}
+          </div>
+        )}
+        <h1>{title}</h1>
+        <p style="color: var(--pikico-muted); margin-top: 1rem; font-size: 0.9rem;">
+          Par {author} · {formattedDate}
+        </p>
+      </header>
+
+      <!-- data-pagefind-body : Pagefind indexe uniquement ce bloc -->
+      <div class="prose" data-pagefind-body>
+        <slot />
+      </div>
+    </article>
+  </div>
+</PikiCoLayout>

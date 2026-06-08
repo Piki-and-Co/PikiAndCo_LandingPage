@@ -1,0 +1,52 @@
+---
+import '@/styles/pikico.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Piki & Co — Jouer, s'éveiller, s'accomplir." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title} | Piki & Co</title>
+  <link rel="icon" type="image/x-icon" href="/assets/logo.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <slot name="head" />
+  <!-- TarteAuCitron — consentement cookies -->
+  <script src="https://cdn.jsdelivr.net/npm/tarteaucitronjs@latest/tarteaucitron.js" is:inline></script>
+  <script src="/js/tarteaucitron-init.js" is:inline></script>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a href="/" class="logo">
+        <img src="/assets/logo.png" alt="Piki & Co" height="48" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#mission">Notre mission</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/biumiz">Biumiz</a></li>
+        <li><a href="/inscription" class="btn btn-primary">Rejoindre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="footer">
+    <p>&copy; {new Date().getFullYear()} Piki & Co — Tous droits réservés</p>
+    <p><a href="/legal/mention">Mentions légales</a> · <a href="/legal/privacy">Politique de confidentialité</a> · <a href="/legal/cookies">Cookies</a></p>
+  </footer>
+</body>
+</html>

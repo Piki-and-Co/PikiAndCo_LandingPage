@@ -1,0 +1,277 @@
+/* ================================
+   Biumiz — Design System
+   Zone "produit" : ton vibrant
+   (conserve l'identité actuelle)
+   ================================ */
+
+@font-face {
+  font-family: 'Caveat Brush';
+  src: url('/assets/fonts/caveatbrush-regular.woff2') format('woff2'),
+       url('/assets/fonts/caveatbrush-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --biumiz-bg-start:    rgb(24, 15, 50);
+  --biumiz-bg-end:      rgb(105, 29, 110);
+  --white:              #ffffff;
+  --dark-yellow:        #ffc23b;
+  --light-yellow:       #ffe67d;
+  --shadow-yellow:      #f9b233;
+  --star-turquoise:     #5BFFBA;
+  --star-pink:          #FF88FE;
+  --hair-blue:          #92C5FC;
+  --dark-purple:        #4b5563;
+  --light-purple:       #E9E5F6;
+
+  --font-display:       'Caveat Brush', cursive;
+  --font-body:          'Montserrat', sans-serif;
+  --max-width:          75rem;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--white);
+  background: linear-gradient(to bottom, var(--biumiz-bg-start), var(--biumiz-bg-end));
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+h1, h2, h3 { line-height: 1.2; }
+h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 400; }
+h2 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 400; }
+
+a { color: var(--hair-blue); }
+strong { color: var(--star-pink); }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.section { padding: 5rem 0; }
+
+/* Nav Biumiz */
+.nav {
+  background: var(--light-purple);
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  font-family: var(--font-display);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--dark-purple);
+  font-weight: 500;
+  text-decoration: none;
+}
+.nav-links a:hover { color: var(--hair-blue); }
+
+/* Boutons Biumiz */
+.btn-primary {
+  background: var(--dark-yellow);
+  color: black;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: var(--light-yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(249, 178, 51, 0.3);
+}
+
+/* Feature cards */
+.feature-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--light-purple);
+  transition: box-shadow 0.3s;
+}
+.feature-card:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+.feature-card h3 { color: var(--dark-purple); }
+.feature-card p  { color: var(--dark-purple); }
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+/* Typographie sections */
+.section-title {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--hair-blue);
+  margin-bottom: 0.75rem;
+}
+.section-heading {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.section-subheading {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+.quoting { font-size: 0.75rem; color: rgba(255,255,255,0.6); }
+strong { color: var(--star-pink); }
+ul { list-style-type: disc; margin-bottom: 0.5rem; margin-left: 2rem; }
+ul ul { list-style-type: circle; margin-left: 1.25rem; margin-top: 0.5rem; }
+
+/* Hero */
+.hero {
+  padding: 1rem 5% 3rem;
+  text-align: center;
+}
+.hero p {
+  font-size: 1.2rem;
+  max-width: 50rem;
+  margin: 0 auto 2.5rem;
+  line-height: 1.8;
+}
+.hero-image {
+  max-width: 62.5rem;
+  margin: 0 auto 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.hero-image img { width: 100%; height: auto; display: block; }
+.hero-two-column {
+  padding: 1rem 5%;
+  max-width: 62.5rem;
+  display: grid;
+  grid-template-columns: 0.25fr 0.7fr;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.hero-two-column img { width: 100%; border-radius: 0.75rem; }
+
+/* Layouts deux colonnes */
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin: 3rem 0;
+}
+.two-column.img-small { grid-template-columns: 0.38fr 1fr; }
+.two-column img { width: 100%; border-radius: 0.75rem; }
+
+/* Feature cards */
+.feature-icon {
+  width: 3.75rem;
+  height: 3.75rem;
+  background: linear-gradient(135deg, var(--light-yellow), var(--dark-yellow));
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+.feature-list { list-style: none; margin-top: 1rem; margin-left: 0; }
+.feature-list li {
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  color: var(--dark-purple);
+  position: relative;
+}
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--star-pink);
+  font-weight: 700;
+}
+
+/* Partenaires */
+.testimonials { padding: 4rem 0; }
+.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr)); gap: 2rem; margin-top: 2rem; }
+.partners-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: 2rem; align-items: center; justify-items: center; }
+.partner-card img { max-width: 8rem; height: auto; opacity: 0.85; transition: opacity 0.3s; }
+.partner-card img:hover { opacity: 1; }
+
+/* CTA */
+.cta-section { padding: 5rem 5%; text-align: center; }
+.cta-section h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 2rem; }
+
+/* FAQ */
+.faq { padding: 3rem 0; }
+details { margin-bottom: 0.938rem; overflow: hidden; }
+summary { padding: 0.938rem; cursor: pointer; font-weight: bold; transition: background-color 0.3s; color: var(--white); }
+summary::after { content: "+"; float: right; margin-left: 0.625rem; }
+details[open] > summary::after { content: "−"; }
+details p, details ul, details h3 { padding: 0.25rem 0.938rem; color: rgba(255,255,255,0.85); }
+details h3 { font-weight: bold; padding-left: 2rem; }
+.faq-parent > summary { font-size: 1.05rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.faq-child { margin-left: 1.5rem; margin-top: 0.5rem; }
+.faq-child > summary { font-size: 0.95rem; font-weight: 600; }
+
+/* Footer Biumiz — socials */
+.footer-three-column {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr;
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+  padding: 1.5rem 5%;
+}
+.footer-socials { display: flex; gap: 0.5rem; justify-content: flex-end; }
+.footer-socials img { height: 2.5rem; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .two-column, .two-column.img-small { grid-template-columns: 1fr; }
+  .hero-two-column { grid-template-columns: 1fr; }
+  .footer-three-column { grid-template-columns: 1fr; text-align: center; }
+}
+
+/* Footer Biumiz */
+.footer {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #94a3b8;
+  padding: 3rem 5%;
+  text-align: center;
+  font-size: 0.875rem;
+}

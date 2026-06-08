@@ -1,0 +1,62 @@
+---
+import PikiCoLayout from '@/layouts/PikiCoLayout.astro';
+import Search from '@/components/Search.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
+---
+
+<PikiCoLayout title="Blog" description="Actualités, science et coulisses de l'aventure Piki & Co et Biumiz.">
+  <div class="container section">
+    <h1>Blog</h1>
+    <p style="color: var(--pikico-muted); margin-top: 0.5rem; max-width: 35rem; margin-bottom: 2.5rem;">
+      Science, équipe, parentalité — nos réflexions sur le jeu et le développement de l'enfant.
+    </p>
+
+    <!-- Recherche Pagefind -->
+    <Search />
+
+    <!-- Filtre par tags -->
+    {allTags.length > 0 && (
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
+        {allTags.map(tag => (
+          <a href={`/blog/tags/${tag}`} class="blog-card-tag" style="padding: 0.3rem 0.75rem; border: 1px solid var(--pikico-border); border-radius: 2rem; font-size: 0.8rem;">
+            #{tag}
+          </a>
+        ))}
+      </div>
+    )}
+
+    {posts.length === 0 ? (
+      <p style="color: var(--pikico-muted);">Les premiers articles arrivent bientôt.</p>
+    ) : (
+      <div class="blog-grid">
+        {posts.map(post => (
+          <a href={`/blog/${post.slug}`} style="text-decoration: none; color: inherit;">
+            <article class="blog-card">
+              <div class="blog-card-body">
+                {post.data.tags.length > 0 && (
+                  <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                    {post.data.tags.map(tag => (
+                      <a href={`/blog/tags/${tag}`} class="blog-card-tag"
+                        onclick="event.stopPropagation()">#{tag}</a>
+                    ))}
+                  </div>
+                )}
+                <h3>{post.data.title}</h3>
+                <p>{post.data.description}</p>
+                <p class="blog-card-meta">
+                  {post.data.pubDate.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  · {post.data.author}
+                </p>
+              </div>
+            </article>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</PikiCoLayout>

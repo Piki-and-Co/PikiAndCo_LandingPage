@@ -1,0 +1,220 @@
+/* ================================
+   Piki & Co — Design System
+   Zone "entreprise" : ton sobre
+   ================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tokens */
+:root {
+  /* Couleurs Piki & Co (sobre, dérivées de la palette Biumiz) */
+  --pikico-bg:          #FFFFFF;
+  --pikico-bg-tinted:   #F7F5FF;   /* blanc légèrement violacé */
+  --pikico-title:       #1E1040;   /* violet très sombre */
+  --pikico-text:        #374151;   /* gris foncé lisible */
+  --pikico-accent:      #6B46A0;   /* violet médium */
+  --pikico-cta:         #FFC23B;   /* jaune conservé, usage limité */
+  --pikico-cta-hover:   #FFE67D;
+  --pikico-border:      #E9E5F6;   /* light-purple de la charte */
+  --pikico-muted:       #6B7280;
+
+  /* Typographie */
+  --font-body:    'Montserrat', sans-serif;
+  --font-display: 'Montserrat', sans-serif;
+
+  /* Espacement */
+  --max-width: 75rem;
+  --section-gap: 5rem;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--pikico-text);
+  background: var(--pikico-bg);
+}
+
+/* Typographie */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--pikico-title);
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+
+a { color: var(--pikico-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+strong { color: var(--pikico-title); }
+
+/* Layout */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.section {
+  padding: var(--section-gap) 0;
+}
+
+.section--tinted {
+  background: var(--pikico-bg-tinted);
+}
+
+/* Boutons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--pikico-cta);
+  color: #1E1040;
+}
+.btn-primary:hover {
+  background: var(--pikico-cta-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 194, 59, 0.35);
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--pikico-accent);
+  border: 2px solid var(--pikico-accent);
+}
+.btn-outline:hover {
+  background: var(--pikico-accent);
+  color: white;
+  text-decoration: none;
+}
+
+/* Navigation */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--pikico-border);
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--pikico-text);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.nav-links a:hover {
+  color: var(--pikico-accent);
+  text-decoration: none;
+}
+
+/* Blog */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.blog-card {
+  border: 1px solid var(--pikico-border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  background: white;
+}
+.blog-card:hover {
+  box-shadow: 0 12px 30px rgba(107, 70, 160, 0.1);
+  transform: translateY(-3px);
+}
+
+.blog-card-body {
+  padding: 1.5rem;
+}
+
+.blog-card-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--pikico-accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.blog-card-tag:hover { color: var(--pikico-title); text-decoration: none; }
+.blog-card-tag--active { color: var(--pikico-title); }
+
+.blog-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.blog-card p {
+  font-size: 0.9rem;
+  color: var(--pikico-muted);
+  line-height: 1.6;
+}
+
+.blog-card-meta {
+  font-size: 0.8rem;
+  color: var(--pikico-muted);
+  margin-top: 1rem;
+}
+
+/* Article prose */
+.prose {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+.prose h2 { margin-top: 2.5rem; margin-bottom: 1rem; }
+.prose h3 { margin-top: 2rem; margin-bottom: 0.75rem; }
+.prose p  { margin-bottom: 1.25rem; }
+.prose ul, .prose ol { margin-left: 1.5rem; margin-bottom: 1.25rem; }
+
+/* Footer */
+.footer {
+  background: var(--pikico-title);
+  color: rgba(255,255,255,0.7);
+  padding: 3rem 5%;
+  text-align: center;
+  font-size: 0.875rem;
+}
+.footer a { color: var(--pikico-cta); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links { gap: 1rem; }
+  .nav-links li:not(:last-child) { display: none; }
+}
