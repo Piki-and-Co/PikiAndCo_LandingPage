@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name=description content="Jouer, s’éveiller, s’accomplir. Accompagnez votre enfant dans le développement des compétences indispensables à sa future vie d'adulte, de l'utilisation saine et intelligente du numérique, aux compétences psychosociales, socle de la santé mentale positive.">
+	<meta name=description content="Jouer, s’éveiller, s’accomplir. Accompagnez votre enfant dans le développement de ses compétences cognitives, émotionnelles et relationnelles.">
     <link href="css/style.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="assets/logo.ico"/>
 	<title>Piki & Co</title>
@@ -20,6 +20,9 @@
             };
         });
     </script>
+<!-- CMP tarteaucitron — Gestion du consentement cookies -->
+<script src="https://cdn.jsdelivr.net/npm/tarteaucitronjs@latest/tarteaucitron.js"></script>
+<script src="js/tarteaucitron-init.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -673,7 +676,7 @@
     <footer>
 		<div class="footer-three-column">
 			<p>
-			<a href="legal/mention.html">Mentions légales</a> &nbsp; <a href="legal/privacy.html">Politique de confidentialité</a> &nbsp; <a href="legal/cookies.html">Polotique de Cookies</a> 
+			<a href="legal/mention.html">Mentions légales</a> &nbsp; <a href="legal/privacy.html">Politique de confidentialité</a> &nbsp; <a href="legal/cookies.html">Politique de Cookies</a> &nbsp; <a href="#" onclick="tarteaucitron.userInterface.openPanel();return false;">Gérer mes cookies</a>
 			</p>
 			<p>&copy; 2026 Piki & Co. Tous droits réservés.</p>
 			<div class="footer-socials">
@@ -682,6 +685,18 @@
 					<source srcset="assets/Social-Insta_White.webp" type="image/webp" class="footer-socials-img">
 					<source srcset="assets/Social-Insta_White.png" type="image/png" class="footer-socials-img">
 					<img src="assets/Social-Insta_White.png" alt="Instagram" class="footer-socials-img" loading="lazy">
+				</picture></a>
+				<a href="https://www.tiktok.com/@piki.and.co" target="_blank" rel="noopener noreferrer">
+					<picture>
+					<source srcset="assets/Social-TikTok_White.webp" type="image/webp" class="footer-socials-img">
+					<source srcset="assets/Social-TikTok_White.png" type="image/png" class="footer-socials-img">
+					<img src="assets/Social-TikTok_White.png" alt="TitTok @piki.and.co" class="footer-socials-img" loading="lazy">
+				</picture></a>
+				<a href="https://www.youtube.com/@PikiAndCo" target="_blank" rel="noopener noreferrer">
+					<picture>
+					<source srcset="assets/Social-Youtube_White.webp" type="image/webp" class="footer-socials-img">
+					<source srcset="assets/Social-Youtube_White.png" type="image/png" class="footer-socials-img">
+					<img src="assets/Social-Youtube_White.png" alt="Youtube @PikiAndCo" class="footer-socials-img" loading="lazy">
 				</picture></a>
 				<a href="https://www.linkedin.com/company/piki-and-co/" target="_blank" rel="noopener noreferrer"><picture>
 					<source srcset="assets/Social-Linkedin_White.webp" type="image/webp" class="footer-socials-img">

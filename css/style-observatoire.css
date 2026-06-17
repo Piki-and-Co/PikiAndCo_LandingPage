@@ -1,0 +1,436 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;*/
+	font-family:"Montserrat-Regular", sans-serif;
+    line-height: 1.6;
+    color: var(--white);
+    background: linear-gradient(to bottom, rgb(24, 15, 50), rgb(105, 29, 110));
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+@font-face {
+  font-family: 'Montserrat-Regular'; /* Nom que vous utiliserez dans votre CSS */
+  src: url('../assets/fonts/Montserrat-Regular.woff2') format('woff2'),
+  url('../assets/fonts/Montserrat-Regular.woff') format('woff'),
+  url('../assets/fonts/Montserrat-Regular.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Caveat Brush'; /* Nom que vous utiliserez dans votre CSS */
+  src: url('../assets/fonts/caveatbrush-regular.woff2') format('woff2'),
+  url('../assets/fonts/caveatbrush-regular.woff') format('woff'),
+  url('../assets/fonts/caveatbrush-regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root{
+	--white:#ffffff;
+	--dark-yellow:#ffc23b;
+	--light-yellow:#ffe67d;
+	--shadow-yellow:#f9b233;
+	--star-turquoise:#5BFFBA;
+	--star-pink:#FF88FE;
+	--hair-blue:#92C5FC;
+	--dark-purple:#4b5563;
+	--light-purple:#E9E5F6;
+    --Slate-Blue:#94a3b8;
+    --Cool-Grey:#64748b;
+    --Dark-Slate:#334155;
+    --Navy-Slate:#1e293b;
+    --Muted-Periwinkle:#8BA3C7;
+    --Bright-Azure:#3B82F6;
+    --Royal-Blue:#1D4ED8;
+}
+
+/* Navigation */
+nav {
+    background: var(--light-purple);
+    backdrop-filter: blur(0.625rem);
+    padding: 0 1.2rem 0 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 0.063rem solid var(--light-purple);
+	font-family:"Caveat Brush", cursive;
+}
+
+.navbar{
+    position: fixed;
+    top: 0rem;
+    width: 100%;
+	transition: top 0.3s;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: auto;
+}
+
+.logo img{
+    height: 3.75rem; 
+}
+
+.btn-nav {
+    background:var(--dark-yellow);
+    background-size: cover;
+    color: black !important;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+	font-size:1.5rem;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+	font-family:"Caveat Brush", cursive;
+}
+
+.btn-nav:hover {
+	background:var(--light-yellow);
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.625rem 1.563rem rgba(249, 178, 51, 0.3);
+}
+
+.btn-primary {
+    background:var(--dark-yellow);
+    background-size: cover;
+    color: black !important;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+	font-size:2rem;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+	font-family:"Caveat Brush", cursive;
+}
+
+.btn-primary:hover {
+	background:var(--light-yellow);
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.625rem 1.563rem rgba(249, 178, 51, 0.3);
+}
+ 
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center; /* Centre la div horizontalement */
+    align-items: center;     /* Centre la div verticalement */
+    min-height: 100vh;       /* Prend toute la hauteur de l'écran */
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;  /* Aligne logo, titre, p, bouton en colonne */
+    align-items: center;     /* Centre chaque élément à l'intérieur */
+    text-align: center;
+    gap: 4rem;               /* L'espace magique entre vos éléments */
+    max-width: 50rem;        /* Empêche le texte de s'étaler trop largement */
+    padding: 1.25rem;
+}
+
+.hero h1 {
+    font-family: "Caveat Brush", cursive;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-family: "Montserrat-Regular", sans-serif;
+	font-size: 1.3rem;
+    max-width: 50rem;
+    line-height: 1.8;
+}
+
+
+/* Section Container */
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 2.5rem 5%;
+}
+
+.container a:link {
+	color: var(--hair-blue);
+}
+.container a:visited {
+    color: var(--Muted-Periwinkle);
+}
+/* hover doit etre après visited */
+.container a:hover { 
+    color: var(--Bright-Azure);
+}
+.container a:active {
+    color: var(--Royal-Blue);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: "Montserrat-Regular", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.094rem;
+}
+
+.section-heading {
+    text-align: center;
+    font-family: "Montserrat-Regular", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.section-subheading {
+    text-align: center;
+    font-family: "Montserrat-Regular", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+}
+
+.emphasized-text {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+}
+.quoting {
+    font-size: 0.75rem;
+}
+
+strong {
+	color:var(--star-pink);
+}
+
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    gap: 3rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    border: 0.063rem solid var(--light-purple);
+}
+
+.feature-card-fullwidth {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le contenu horizontalement */
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.feature-icon {
+    width: 3.75rem;
+    height: 3.75rem;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgb(255,230,125);stop-opacity:1" /><stop offset="100%" style="stop-color:rgb(255,194,59);stop-opacity:1" /></linearGradient></defs><rect width="100" height="100" fill="url(%23iconGrad)"/></svg>');
+    background-size: cover;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.feature-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color:var(--dark-purple);
+}
+
+.feature-card p {
+    color:var(--dark-purple);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Two Column Section */
+
+.form-container {
+    text-align: center; /* Pour centrer l'iframe */
+    padding: 20px;
+}
+
+iframe {
+    background: white;
+    max-width: 100%; /* Permet au formulaire de ne pas dépasser sur mobile */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Logo Grid */
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+    gap: 2rem;
+    align-items: center;
+    margin: 3rem 0;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.logo-item {
+    text-align: center;
+    padding: 1rem;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.logo-item:hover {
+    opacity: 1;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 5rem 5%;
+    text-align: center;
+    color: white;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn-white {
+    background: white;
+    color: #2563eb;
+    padding: 1rem 2.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.btn-white:hover {
+    transform: translateY(-0.188rem);
+    box-shadow: 0 0.938rem 1.875rem rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="footGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgb(15,23,42);stop-opacity:1" /><stop offset="100%" style="stop-color:rgb(30,41,59);stop-opacity:1" /></linearGradient></defs><rect width="1200" height="400" fill="url(%23footGrad)"/></svg>');
+    background-size: cover;
+    color: var(--Slate-Blue);
+    text-align: center;
+}
+
+.footer-socials {
+	display: flex;
+    gap: 0.5rem;
+  	justify-content: flex-end; /* Aligne le contenu à droite */
+  	padding: 1.25rem;
+}
+
+.footer-socials img {
+  margin-left: 1rem; /* Espace entre les images */
+  height: 3rem;      /* Taille de vos icônes */
+}
+
+footer a:link {
+    color: var(--Slate-Blue);
+}
+footer a:visited {
+    color: var(--Cool-Grey);
+}
+/* hover doit etre après visited */
+footer a:hover { 
+    color: var(--Dark-Slate);
+}
+footer a:active {
+    color: var(--Navy-Slate);
+}
+footer p {
+    margin-bottom: 1rem;
+}
+
+footer img {
+
+}
+
+.footer-three-column {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 0rem 0;
+	justify-items:center;
+	justify-content:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/* Responsive */
+@media (max-width: 48rem) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+
+    /* hide all nav links except for the last one */
+    .nav-links a:not(:last-of-type) {
+        display: none;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 350px) {
+    .nav-links {
+        display: none;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .two-column.img-small {
+        display: block;
+    }
+
+    .two-column.img-small img {
+        float: left;
+        width: 10rem;
+        padding: 1rem;
+    }
+}
