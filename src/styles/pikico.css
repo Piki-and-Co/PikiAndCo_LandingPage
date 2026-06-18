@@ -22,6 +22,7 @@
   --pikico-cta-hover:   #FFE67D;
   --pikico-border:      #E9E5F6;   /* light-purple de la charte */
   --pikico-muted:       #6B7280;
+  --star-pink:			#FF88FE;
 
   /* Typographie */
   --font-body:    'Montserrat', sans-serif;
@@ -71,6 +72,10 @@ strong { color: var(--pikico-title); }
 
 .section--tinted {
   background: var(--pikico-bg-tinted);
+}
+
+.title-highlitght {
+	color : var(--pikico-accent)
 }
 
 /* Boutons */

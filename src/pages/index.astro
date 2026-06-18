@@ -2,7 +2,19 @@
 import PikiCoLayout from '@/layouts/PikiCoLayout.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
-import logoImage from '../assets/logo.png';
+import logoPiki from '@assets/logo.webp';
+import logoBiumizFull from '@assets/Logo_Biumiz-Full.webp';
+
+import biovalley from '@assets/MembreBiovalley.webp';
+import frenchTech from '@assets/Logo_FT_Est_Blanc.webp';
+import semia from '@assets/Logo-Semia.webp';
+import deeptech from '@assets/LesDeeptech_Blanc.webp';
+import conectus from '@assets/CONECTUS-BaselineFR_HD2018_Blanc.webp';
+import france2030 from '@assets/France2030_Blanc.webp';
+import cnrs from '@assets/LOGO_CNRS_HD.webp';
+import lesDeepTech from 'assets/LesDeeptech_Blanc.webp';
+import unistra from '@assets/Unistra2_HD_FondBlanc.webp';
+
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -17,7 +29,6 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <section class="section hero-section">
     <div class="container hero-grid">
       <div class="hero-content">
-        <p class="hero-eyebrow">Pour les enfants de 4 à 10 ans</p>
         <h1>Jouer, s'éveiller,<br />s'accomplir.</h1>
         <p class="hero-lead">
 		En collaboration avec la recherche académique française, Piki&nbsp;&amp;&nbsp;Co développe des jeux
@@ -30,7 +41,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
         </div>
       </div>
       <div class="hero-visual">
-		<Image src={logoImage} alt="Piki & Co" width={309} height={220} loading="eager" format="webp"/>
+		<Image src={logoPiki} alt="Piki & Co" width={309} height={220} loading="eager" format="webp"/>
       </div>
     </div>
   </section>
@@ -39,30 +50,29 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <section class="section section--tinted" id="mission">
     <div class="container">
       <p class="section-eyebrow">Notre mission</p>
-      <h2 class="section-heading-pikico">Les compétences psychosociales (CPS), c'est quoi ?</h2>
+	  <h2 class="section-heading-pikico">Les compétences psychosociales (CPS) : le socle de <span class="title-highlitght">la santé mentale positive</span></h2>
       <p class="section-lead">
-        Définies par l'OMS, les compétences psychosociales sont les capacités qui permettent
-        à un individu de faire face aux exigences et aux défis de la vie quotidienne.
-        Elles sont <strong>indispensables à la santé mentale positive</strong> et au bien-être
-        dès le plus jeune âge.
+ 		Ce sont les compétences de vie ou compétences humaines qui permettent à votre enfant 
+		de faire face aux défis de l'existence, de maintenir son équilibre émotionnel et de construire 
+		des relations solides tout au long de sa vie. 
       </p>
       <div class="cps-grid">
+		<div class="cps-card">
+          <span class="cps-icon">🧠</span>
+          <h3>Compétences cognitives</h3>
+		  <p>Conscience de soi, maîtrise de soi, pensée critique, prise de décision constructive, etc.</p>
+        </div>
+		<div class="cps-card">
+          <span class="cps-icon">💛</span>
+          <h3>Compétences émotionnelles</h3>
+		  <p>Reconnître, comprendre et savoir réguler ses émotions au quotidien.</p>
+        </div>
         <div class="cps-card">
           <span class="cps-icon">🤝</span>
           <h3>Compétences sociales</h3>
-          <p>Empathie, communication efficace, coopération, résolution de conflits.</p>
+          <p>Empathie, communication efficace, création de lien, résolution de conflits.</p>
         </div>
-        <div class="cps-card">
-          <span class="cps-icon">🧠</span>
-          <h3>Compétences cognitives</h3>
-          <p>Esprit critique, créativité, prise de décision, résolution de problèmes.</p>
-        </div>
-        <div class="cps-card">
-          <span class="cps-icon">💛</span>
-          <h3>Compétences émotionnelles</h3>
-          <p>Conscience de soi, gestion des émotions, gestion du stress et de l'anxiété.</p>
-        </div>
-      </div>
+	  </div>
     </div>
   </section>
 
@@ -70,22 +80,25 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <section class="section" id="approche">
     <div class="container">
       <p class="section-eyebrow">Notre approche</p>
-      <h2 class="section-heading-pikico">Le numérique au service de l'enfant</h2>
+      <h2 class="section-heading-pikico">Jouer et apprendre par les sens et l'émotion</h2>
       <div class="values-grid">
         <div class="value-item">
           <div class="value-number">01</div>
           <h3>Fondé sur la science</h3>
           <p>
-            Nos outils s'appuient sur les recherches en psychologie positive, neurosciences
-            et pédagogie active pour garantir un impact réel sur le développement de l'enfant.
+		  	Nos jeux sont le résultats de plusieurs années de collaboration avec la recherche
+			académique française dans les domaines des sciences de l'éducation, de la psychologie
+			de l'apprentissage, de la didactique des langues et du Game Design. Cette collaboration
+			continue encore aujourd'hui.
           </p>
         </div>
         <div class="value-item">
           <div class="value-number">02</div>
           <h3>Le jeu comme vecteur</h3>
           <p>
-            Le jeu vidéo immersif est notre medium principal — engageant, motivant, et parfaitement
-            adapté aux enfants d'aujourd'hui pour apprendre sans s'en rendre compte.
+		  	Le jeu engage le joueur ou la joueuse dans une expérience sensorielle et émotionnelle. 
+			Cet engagement dans le ressenti favorise l’acquisition de nouvelles notions et le 
+			développement de compétences.
           </p>
         </div>
         <div class="value-item">
@@ -93,15 +106,8 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
           <h3>Conçu avec les familles</h3>
           <p>
             Parents, enseignants et professionnels de santé contribuent à la co-construction
-            de nos outils pour qu'ils répondent aux vrais besoins du terrain.
-          </p>
-        </div>
-        <div class="value-item">
-          <div class="value-number">04</div>
-          <h3>Bilinguisme intégré</h3>
-          <p>
-            Chaque expérience Biumiz intègre naturellement deux langues pour développer
-            les capacités cognitives liées au bilinguisme dès 4 ans.
+			de nos outils pour qu'ils répondent aux vrais besoins du terrain et soient parfaitement
+			adaptés aux enfants, quelque soit leur stade de développement.
           </p>
         </div>
       </div>
@@ -112,30 +118,25 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <section class="section section--tinted" id="biumiz">
     <div class="container product-spotlight">
       <div class="product-text">
-        <p class="section-eyebrow">Notre premier outil</p>
-        <h2 class="section-heading-pikico" style="text-align: left;">Biumiz — L'app qui fait grandir par le jeu</h2>
-        <p>
-          Une application mobile et web qui accompagne les enfants de 4 à 10 ans à travers
-          des aventures immersives pensées pour développer les CPS — tout en s'amusant,
-          en français et en anglais.
+        <p class="section-eyebrow">Notre premier jeu</p>
+        <h2 class="section-heading-pikico" style="text-align: left;">Biumiz — Le jeu qui fait grandir par les langues</h2>
+		<p>
+		En collaboration avec des chercheures de Paris 8 et de Strasbourg, Piki&nbsp;&amp;&nbsp;Co crée Biumiz, 
+		le premier jeu multisupports qui aide les enfants de 4 à 10 ans à développer leurs compétences psychosociales
+		en apprenant à communiquer en anglais tout en s’amusant en famille ou en classe.
         </p>
         <ul class="product-features">
-          <li>Jeux vidéo éducatifs et scénarios interactifs</li>
-          <li>Progression adaptée à l'âge et au rythme de l'enfant</li>
-          <li>Tableau de bord parents pour suivre les progrès</li>
-          <li>Gratuit, sans publicité, sans achat intégré</li>
+          <li>Jeux vidéo narratif et immersif</li>
+          <li>Contenus adaptée à l'âge et aux besoins de l'enfant</li>
+          <li>Tableau de bord de l'adulte pour suivre les progrès</li>
+		  <li>Soutien et coaching de l'adulte pour accompanger l'enfant</li>
+		  <li>Jeux de société pour prolonger l'expérience dans le réel</li>
+          <li>Sans publicité, sans achat intégré</li>
         </ul>
         <a href="/biumiz" class="btn btn-primary" style="margin-top: 1.5rem;">En savoir plus sur Biumiz</a>
       </div>
       <div class="product-image">
-        <img
-          src="/assets/logo.png"
-          alt="Application Biumiz"
-          width="300"
-          height="300"
-          loading="lazy"
-          style="opacity: 0.85;"
-        />
+		  <Image src={logoBiumizFull} alt="Biumiz" width={661} height={1014} loading="eager" format="webp"/>
       </div>
     </div>
   </section>
@@ -181,22 +182,46 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <!-- Partenaires -->
   <section class="section section--tinted" id="partenaires">
     <div class="container" style="text-align: center;">
-      <p class="section-eyebrow">Ils nous font confiance</p>
+      <p class="section-eyebrow">Ils nous font confiance et nous accompagnent</p>
       <h2 class="section-heading-pikico">Nos partenaires</h2>
-      <p style="color: var(--pikico-muted); max-width: 38rem; margin: 0 auto;">
-        Nous collaborons avec des établissements scolaires,
-        des professionnels de santé et des structures petite enfance.
-      </p>
+		 <div class="partners-grid">
+			 <div class="partner-card">
+				<Image src={conectus} alt="SATT Conectus d'Alsace" width={6184} height={2009} loading="eager" format="webp"/>
+			 </div>
+			 <div class="partner-card">
+				<Image src={cnrs} alt="Centre Nationale de la Recherche Scientifique" width={705} height={705} loading="eager" format="webp"/>
+			 </div>
+			 <div class="partner-card">
+				<Image src={unistra} alt="Université de Strasbourg" width={3310} height={1193} loading="eager" format="webp"/>
+			 </div>
+			 <div class="partner-card">
+				<Image src={deeptech} alt="Label Les DeepTech française" width={1891} height={1891} loading="eager" format="webp"/>
+			 </div>
+		</div>
+		 <div class="partners-grid">
+			 <div class="partner-card">
+				 <Image src={biovalley} alt="Biovalley France" width={4672} height={1244} loading="eager" format="webp"/>
+			 </div>
+			 <div class="partner-card">
+				<Image src={semia} alt="SEMIA Quest for Change" width={367} height={137} loading="eager" format="webp"/>
+			 </div>
+			 <div class="partner-card">
+				<Image src={frenchTech} alt="La FrenchTech Est" width={883} height={1093} loading="eager" format="webp"/>
+			 </div>
+			 <div class="partner-card">
+				<Image src={france2030} alt="Financé par le programme France 2030" width={322} height={316} loading="eager" format="webp"/>
+			 </div>
+		</div>
     </div>
   </section>
 
   <!-- CTA final -->
   <section class="section cta-final">
     <div class="container" style="text-align: center;">
-      <h2>Prêt à accompagner votre enfant ?</h2>
-      <p style="color: var(--pikico-muted); max-width: 36rem; margin: 1rem auto 2rem;">
-        Rejoignez les familles qui font confiance à Piki&nbsp;&amp;&nbsp;Co pour accompagner
-        leurs enfants dans un apprentissage ludique et bienveillant.
+      <h2>Prêt à construire l'avenir de votre enfant ?</h2>
+      <p style="color: var(--pikico-muted); max-width: 40rem; margin: 1rem auto 2rem;">
+	  Rejoignez les familles et professionnel.le.s qui font confiance Piki&nbsp;&amp;&nbsp;Co
+	  et qui développent les compétences psychosociales des enfants grâce au jeu.
       </p>
       <a href="/inscription" class="btn btn-primary">Rejoindre l'aventure</a>
     </div>
@@ -274,6 +299,21 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .cps-card h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
   .cps-card p { font-size: 0.9rem; color: var(--pikico-muted); }
 
+  /*Partner grid*/
+  .partners-grid {
+    	display: grid;
+	    grid-template-columns: repeat(auto-fit, minmax(9.375rem, 1fr));
+    	gap: 2rem;
+    	align-items: center;
+	    justify-items: center;
+	}
+
+	.partner-card img {
+    	max-width: 8rem;
+	    height: auto;
+    	transition: 0.3s ease;
+	}
+
   /* Values */
   .values-grid {
     display: grid;
@@ -306,7 +346,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
     line-height: 2;
   }
   .product-image img {
-    width: 14rem;
+    width: 28rem;
     height: auto;
     border-radius: 1rem;
   }
