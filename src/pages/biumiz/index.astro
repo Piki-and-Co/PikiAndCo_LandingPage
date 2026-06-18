@@ -1,6 +1,13 @@
 ---
 import BiumizLayout from '@/layouts/BiumizLayout.astro';
 
+import { Image } from 'astro:assets';
+import imgLandingPage from '@assets/LandingPage.webp';
+import conectus from '@assets/CONECTUS-BaselineFR_HD2018_Blanc.webp';
+import cnrs from '@assets/LOGO_CNRS_HD.webp';
+import unistra from '@assets/Unistra2_HD_FondBlanc.webp';
+import logoBiumizFull from '@assets/Logo_Biumiz-Full.webp';
+
 const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -66,277 +73,118 @@ const faqSchema = JSON.stringify({
 ---
 
 <BiumizLayout
-  title="L'app qui fait grandir par le jeu"
-  description="Biumiz accompagne les enfants de 4 à 10 ans dans le développement des compétences psychosociales via des jeux vidéo immersifs et engageants."
->
-  <Fragment slot="head">
-    <script type="application/ld+json" set:html={faqSchema} />
-  </Fragment>
+		title="Biumiz, le jeu qui fait grandir par les langues" 
+		description="Accompagnez votre enfant dans le développement de ses compétences cognitives, émotionnelles et relationnelles.">
+
+<!-- TODO Fragment slot="head">
+    <script type="application/ld+json" set:html={faqSchema}/>
+  </Fragment--!>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="hero-image">
-      <img
-        src="/assets/LandingPage.png"
-        srcset="
-          /assets/LandingPage_small.webp 256w,
-          /assets/LandingPage_small.png 256w,
-          /assets/LandingPage_medium.webp 512w,
-          /assets/LandingPage_medium.png 512w,
-          /assets/LandingPage_large.webp 1000w,
-          /assets/LandingPage_large.png 1000w
-        "
-        alt="Rejoignez l'aventure !"
-      />
-    </div>
-    <div class="hero-two-column">
-      <div>
-        <img
-          src="/assets/LogoPiki_White-BlackShadow-HD.png"
-          srcset="
-            /assets/LogoPiki_White-BlackShadow-HD_small.webp 256w,
-            /assets/LogoPiki_White-BlackShadow-HD_small.png 256w,
-            /assets/LogoPiki_White-BlackShadow-HD_medium.webp 512w,
-            /assets/LogoPiki_White-BlackShadow-HD_medium.png 512w,
-            /assets/LogoPiki_White-BlackShadow-HD.webp 3847w,
-            /assets/LogoPiki_White-BlackShadow-HD.png 3847w
-          "
-          sizes="200px"
-          alt="Piki & Co"
-        />
-      </div>
-      <div>
-        <h1>Jouer, s'éveiller, s'accomplir</h1>
-      </div>
-    </div>
-    <p>Accompagnez votre enfant dans le développement des compétences indispensables à sa future vie d'adulte, de l'utilisation saine et intelligente du numérique, aux compétences psychosociales, socle de la santé mentale positive.</p>
-    <a href="/inscription" class="btn-primary" style="display: inline-block; margin-bottom: 3rem;">Rejoignez l'aventure !</a>
-  </section>
-
-  <!-- Mission -->
-  <section class="container" id="Mission">
-    <h2 class="section-heading">Construire et maintenir un équilibre mental et émotionnel, tout au long de la vie</h2>
-
-    <div class="two-column img-small">
-      <div>
-        <img src="/assets/Biumiz_Smile.png"
-          srcset="/assets/Biumiz_Smile_small.webp 256w, /assets/Biumiz_Smile_small.png 256w, /assets/Biumiz_Smile_medium.webp 512w, /assets/Biumiz_Smile_medium.png 512w, /assets/Biumiz_Smile.webp 1061w, /assets/Biumiz_Smile.png 1061w"
-          sizes="200px" alt="No problem !" loading="lazy" />
-      </div>
-      <div>
-        <p>Chacun et chacune d'entre nous veut s'accomplir et profiter d'une vie sereine, équilibrée, enrichissante, pleine d'opportunités, forte de relations solides et saines. Nous voulons toutes et tous être pleinement nous-mêmes, vivre selon nos propres choix et avoir assez confiance en nous pour agir et réaliser nos rêves.</p>
-        <p>C'est aussi ce que chaque parent souhaite pour son enfant.</p>
-      </div>
-    </div>
-
-    <div class="two-column img-small">
-      <div>
-        <img src="/assets/Biumiz_Oups.png"
-          srcset="/assets/Biumiz_Oups_small.webp 256w, /assets/Biumiz_Oups_small.png 256w, /assets/Biumiz_Oups_medium.webp 512w, /assets/Biumiz_Oups_medium.png 512w, /assets/Biumiz_Oups.webp 1093w, /assets/Biumiz_Oups.png 1093w"
-          sizes="200px" alt="Oops..." loading="lazy" />
-      </div>
-      <div>
-        <p>L'existence peut s'avérer mouvementée, parfois difficile. Du simple aléa à l'événement grave, un individu fera face à d'innombrables situations plus ou moins pénibles au cours de sa vie. Parfois, un contexte éprouvant peut s'ajouter, comme la crise climatique, une pandémie ou un environnement social dégradant ou violent.</p>
-      </div>
-    </div>
-
-    <div class="two-column img-small">
-      <div>
-        <img src="/assets/Biumiz_OhNo.png"
-          srcset="/assets/Biumiz_OhNo_small.webp 256w, /assets/Biumiz_OhNo_small.png 256w, /assets/Biumiz_OhNo_medium.webp 512w, /assets/Biumiz_OhNo_medium.png 512w, /assets/Biumiz_OhNo.webp 930w, /assets/Biumiz_OhNo.png 930w"
-          sizes="200px" alt="Oh No..." loading="lazy" />
-      </div>
-      <div>
-        <p>Ces situations peuvent ébranler et altérer notre bien-être, notre équilibre et notre stabilité émotionnelle, jusqu'à fracturer notre santé mentale.</p>
-        <p>Dans le cas d'un enfant, c'est tout son développement cognitif, émotionnel et social qui peut être en jeu.</p>
-      </div>
-    </div>
-
-    <h3 class="section-subheading">Malgré tout, il est tout à fait possible de traverser ces expériences douloureuses tout en se préservant et de rebâtir rapidement son équilibre mental et émotionnel...</h3>
-
-    <h2 class="section-heading">Notre engagement</h2>
-
-    <div class="two-column">
-      <div>
-        <p>C'est là que Piki &amp; Co s'engage concrètement à vos côtés, en imaginant de nouvelles solutions d'éveil et d'apprentissage propices à un développement personnel idéal.</p>
-        <p>En collaboration avec des chercheurs et chercheuses françaises et des professionnel·le·s de la santé mentale et de l'enfance, nous construisons pour vous et vos enfants des outils innovants et engageants dont l'objectif est de soutenir la croissance cognitive, émotionnelle et relationnelle.</p>
-        <p>Dans le respect des recommandations d'usage du numérique, nous mêlons dans nos produits le meilleur de la technologie et les dernières avancées en sciences humaines et sociales. Le jeu et les langues étrangères sont les principaux vecteurs d'apprentissage que nous utilisons.</p>
-      </div>
-      <div>
-        <img src="/assets/Biumiz-et-Tom.png"
-          srcset="/assets/Biumiz-et-Tom_small.webp 256w, /assets/Biumiz-et-Tom_small.png 256w, /assets/Biumiz-et-Tom_medium.webp 512w, /assets/Biumiz-et-Tom_medium.png 512w, /assets/Biumiz-et-Tom.webp 2900w, /assets/Biumiz-et-Tom.png 2900w"
-          sizes="486px" alt="Hey! That's cool!" loading="lazy" />
+  <section class="section section--tinted hero-section">
+    <div class="hero-container">
+	  <div class="hero-content">
+		  <div class="logo-wrapper">
+			  <Image src={logoBiumizFull} alt="Biumiz" width={1014} height={661} loading="eager" format="webp"/>
+		  </div>
+		<p class="section-eyebrow">Pour les enfants de 4 à 10 ans</p>
+		  <h1 class="hero-title">Biumiz, le jeu qui construit 
+			  <span class="highlight">l'équilibre mental</span> de votre enfant</h1>
+		  <p class="hero-description">
+			Faites vivre de grandes histoirs à votre enfant avec Biumiz ! 
+			Plongé dans un univers ludique, positif, engageant et profondément respectueux de ses besoins,
+			votre enfant developpe ses compétences humaines en apprenant à communiquer en anglais,
+			tout en s'amusant en famille ou en classe !
+		  </p>
+	  </div>
+      <div class="hero-image-container">
+		  <div class="hero-image-wrapper">
+			<Image src={imgLandingPage} alt="Rejoingez Biumiz dans ses aventures !" width={8268} height={5374} loading="eager" format="webp"/>
+		  </div>
       </div>
     </div>
   </section>
+
 
   <!-- CPS -->
-  <section class="container" id="CPS">
-    <h2 class="section-heading">Les compétences psychosociales</h2>
-    <p>Ce sont les compétences de vie qui permettent à tout individu de faire face aux contraintes et aux défis rencontrés et de maintenir son équilibre mental et émotionnel ou de rapidement le retrouver après un épisode difficile. Parfois, elles sont appelées <q>compétences comportementales</q> ou <q>compétences humaines</q>, les pays anglosaxons parlent de <q>life skills</q>.</p>
-    <br />
-    <p>Ces compétences sont réparties en trois catégories :</p>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🧠</div>
-        <h3>Les compétences cognitives</h3>
-        <ul class="feature-list">
-          <li>Avoir conscience de soi-même et bien connaître ses propres besoins et fonctionnements</li>
-          <li>Savoir se maîtriser, ne pas céder à ses impulsions ou ses envies sans réfléchir</li>
-          <li>Savoir prendre des décisions constructives</li>
-        </ul>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🫂</div>
-        <h3>Les compétences émotionnelles</h3>
-        <ul class="feature-list">
-          <li>Savoir reconnaître ses émotions</li>
-          <li>Savoir gérer et réguler ses émotions</li>
-        </ul>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">👥</div>
-        <h3>Les compétences sociales</h3>
-        <ul class="feature-list">
-          <li>Savoir écouter et communiquer avec empathie</li>
-          <li>Être capable de développer des relations saines</li>
-          <li>Être capable de résoudre des difficultés de manière constructive</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="two-column img-small">
-      <div>
-        <img src="/assets/Tom_Amazing.png"
-          srcset="/assets/Tom_Amazing_small.webp 256w, /assets/Tom_Amazing_small.png 256w, /assets/Tom_Amazing_medium.webp 512w, /assets/Tom_Amazing_medium.png 512w, /assets/Tom_Amazing.webp 1076w, /assets/Tom_Amazing.png 1076w"
-          sizes="200px" alt="Amazing !" loading="lazy" />
-      </div>
-      <div>
-        <p>Lorsqu'elles sont bien développées, ces compétences ont un impact bénéfique sur la vie de la personne et sur la société :</p>
-        <ul>
-          <li>elles réduisent l'anxiété et le stress, permettent de prévenir certaines maladies comme la dépression et de réduire les risques cardio-vasculaires,</li>
-          <li>elles réduisent les conduites à risques comme les addictions ou les comportements violents,</li>
-          <li>elles améliorent le climat scolaire, favorisent la réussite et l'insertion professionnelle.</li>
-        </ul>
-        <br />
-        <p>Elles sont le socle de la santé mentale. Si elles peuvent se développer tout au long de la vie, la période déterminante reste de l'enfance jusqu'à l'entrée dans l'âge adulte...</p>
-        <br />
-        <p>Au travers de ses jeux, l'objectif de Piki &amp; Co est de soutenir le développement de ces compétences chez les enfants.</p>
-      </div>
+  <section class="section" id="CPS">
+	<div class="container">
+      <p class="section-eyebrow">Un jeu qui fait bien grandir</p>
+	  <h2 class="section-heading">Les compétences psychosociales (CPS) : le socle de <span class="highlight" style="display:block;">la santé mentale positive</span></h2>
+      <p class="section-lead">
+ 		Ce sont les compétences de vie ou compétences humaines qui permettent à votre enfant 
+		de faire face aux défis de l'existence, de maintenir son équilibre émotionnel et de construire 
+		des relations solides tout au long de sa vie. 
+      </p>
+      <div class="cps-grid">
+		<div class="cps-card">
+          <span class="cps-icon">🧠</span>
+          <h3>Compétences cognitives</h3>
+		  <p>Conscience de soi, maîtrise de soi, pensée critique, prise de décision constructive, etc.</p>
+        </div>
+		<div class="cps-card">
+          <span class="cps-icon">💛</span>
+          <h3>Compétences émotionnelles</h3>
+		  <p>Reconnaître, comprendre et savoir réguler ses émotions au quotidien.</p>
+        </div>
+        <div class="cps-card">
+          <span class="cps-icon">🤝</span>
+          <h3>Compétences sociales</h3>
+          <p>Empathie, communication efficace, création de lien, résolution de conflits.</p>
+        </div>
+	  </div>
+	  <footer class="impact-banner">
+	  	<p class="impact-text">
+			Lorsqu'elles sont bien développées, ces compétences <strong>réduisent l'anxiété, préviennent la dépression, améliorent le climat scolaire et favorisent la réussite</strong> (Santé Publique France, 2021 ; IREPS Pays de la Loire, 2026).</p>
+		</footer>
     </div>
   </section>
 
-  <!-- Jeu -->
-  <section class="container" id="Jeu">
-    <h2 class="section-heading">Jouer et apprendre par les sens et l'émotion</h2>
-    <div class="two-column img-small">
-      <div>
-        <img src="/assets/Doudou_NewDA-HD_Droite.png"
-          srcset="/assets/Doudou_NewDA-HD_Droite_small.webp 256w, /assets/Doudou_NewDA-HD_Droite_small.png 256w, /assets/Doudou_NewDA-HD_Droite_medium.webp 512w, /assets/Doudou_NewDA-HD_Droite_medium.png 512w, /assets/Doudou_NewDA-HD_Droite.webp 1696w, /assets/Doudou_NewDA-HD_Droite.png 1696w"
-          sizes="200px" alt="Allons jouer !" loading="lazy" />
-      </div>
-      <div>
-        <p>Le jeu représente le meilleur vecteur d'apprentissage car il engage le joueur ou la joueuse dans une expérience sensorielle et émotionnelle. Cet engagement dans le ressenti favorise l'acquisition de nouvelles notions et le développement de compétences.</p>
-        <p>Nous concevons donc des expériences ludiques engageantes et immersives qui permettent, à vos enfants et à toute la famille, de développer ces compétences humaines qui sont le socle de la santé mentale positive.</p>
-        <p>Nos jeux sont fabriqués sur mesure, parfaitement calibrés pour chaque tranche d'âge.</p>
-      </div>
-    </div>
+	<!-- Notre approche -->
+  <section class="section section--tinted" id="Approche">
+	<div class="container">
+      <p class="section-eyebrow">Les trois piliers de notre approche</p>
+	  <h2 class="section-heading">Comment ça marche ?</h2>
+	</div>
   </section>
 
-  <!-- Langues -->
-  <section class="container" id="Langues">
-    <h2 class="section-heading">Apprendre une langue étrangère et s'ouvrir au monde</h2>
-    <div class="two-column img-small">
-      <div>
-        <img src="/assets/Tom_Laugh.png"
-          srcset="/assets/Tom_Laugh_small.webp 256w, /assets/Tom_Laugh_small.png 256w, /assets/Tom_Laugh_medium.webp 512w, /assets/Tom_Laugh_medium.png 512w, /assets/Tom_Laugh.webp 883w, /assets/Tom_Laugh.png 883w"
-          sizes="200px" alt="Apprenons une langue étrangère !" loading="lazy" />
-      </div>
-      <div>
-        <p>Depuis une dizaine d'années, des études en psychologie et en psychologie du développement montrent que <q>[...] les enfants bilingues présentent certains avantages en ce qui a trait au développement sociocognitif, [...] de comprendre les croyances des autres, [...] pour résoudre un problème [...]</q>*.</p>
-        <p>Autrement dit, les enfants qui parlent au moins deux langues ont plus de facilités dans leur croissance cognitive, émotionnelle et relationnelle... à condition de développer leur savoir-faire de communication plutôt que d'accumuler du vocabulaire et de la grammaire.</p>
-        <p>C'est pourquoi nous utilisons l'apprentissage des langues étrangères comme outil de développement des compétences psychosociales et que nous avons développé une toute nouvelle pédagogie qui devient expérientielle, culturelle et immersive.</p>
-        <p>Aucune directive, aucun écrit, uniquement de l'oralité, uniquement du jeu.</p>
-        <p class="quoting">* Elena Nicoladis, Ph.D., Monique Charbonnier, Ph.D., Anamaria Popescu, Doctorante — University of Alberta / University of Padova. Octobre 2016. <a href="https://www.enfant-encyclopedie.com/deuxieme-langue/selon-experts/deuxieme-languebilinguisme-chez-les-jeunes-enfants-et-impacts-sur-le" target="_blank" rel="noopener noreferrer">Deuxième langue/bilinguisme chez les jeunes enfants et impacts sur le développement sociocognitif et socio-affectif précoce</a>. <i>Encyclopédie sur le développement des jeunes enfants.</i></p>
-      </div>
-    </div>
+	<!-- les composants -->
+  <section class="section" id="composants">
+	<div class="container">
+	  <p class="section-eyebrow">Biumiz, le jeu narratif multi-support</p>
+	  <h2 class="section-heading">Un univers ludique jusque dans le réel</h2>
+	</div>
   </section>
-
-  <!-- Numérique -->
-  <section class="container" id="Numerique">
-    <h2 class="section-heading">Le numérique comme vecteur d'interactions sociales</h2>
-    <div class="two-column img-small">
-      <div>
-        <img src="/assets/UnitéDiag_NewDA-HD_Droite.png"
-          srcset="/assets/UnitéDiag_NewDA-HD_Droite_small.webp 256w, /assets/UnitéDiag_NewDA-HD_Droite_small.png 256w, /assets/UnitéDiag_NewDA-HD_Droite_medium.webp 512w, /assets/UnitéDiag_NewDA-HD_Droite_medium.png 512w, /assets/UnitéDiag_NewDA-HD_Droite.webp 1266w, /assets/UnitéDiag_NewDA-HD_Droite.png 1266w"
-          sizes="200px" alt="Unité de diagnostic" loading="lazy" />
-      </div>
-      <div>
-        <p>Le numérique fait partie intégrante de vos vies et de celles de vos enfants, mais il ne doit pas en être le centre. C'est pourquoi nos jeux sont multi supports, vidéo et papier.</p>
-        <p>La partie jeu vidéo développe les compétences digitales et accompagne vers une (ré)appropriation douce et réfléchie du numérique. L'objectif est d'en avoir une future utilisation saine et intelligente.</p>
-        <p>C'est aussi le jeu vidéo qui immerge les enfants dans les nouvelles notions et leur offre un terrain d'expérimentation sécurisé au travers d'aventures drôles et merveilleuses.</p>
-        <p>La partie jeu de société met en pratique les nouvelles compétences et rassemble les joueurs et les joueuses avec leur entourage au sein d'un même univers ludique pour des moments de partage, de reconnexion et de lien.</p>
-        <p>Pour que l'humain reste au cœur de tout.</p>
-      </div>
-    </div>
+  
+  <!-- Conçu pour vous -->
+  <section class="section section--tinted" id="PourVous">
+	<div class="container">
+	  <p class="section-eyebrow">Conçu pour vous et avec vous</p>
+	  <h2 class="section-heading">Un produit ancré dans votre quotidien</h2>
+	</div>
   </section>
 
   <!-- Partenaires -->
-  <section class="testimonials" id="partenaires">
-    <div class="container">
-      <p class="section-title">Partenaires</p>
-      <h2 class="section-heading">Nous travaillons ensemble</h2>
-      <div class="testimonial-grid partners-grid">
-        <div class="partner-card">
-          <img src="/assets/LOGO_CNRS_HD.png"
-            srcset="/assets/LOGO_CNRS_HD_small.webp 256w, /assets/LOGO_CNRS_HD_small.png 256w, /assets/LOGO_CNRS_HD_medium.webp 512w, /assets/LOGO_CNRS_HD_medium.png 512w, /assets/LOGO_CNRS_HD.webp 705w, /assets/LOGO_CNRS_HD.png 705w"
-            sizes="128px" alt="CNRS" loading="lazy" />
-        </div>
-        <div class="partner-card">
-          <img src="/assets/Unistra2_HD_FondBlanc.png"
-            srcset="/assets/Unistra2_HD_FondBlanc_small.webp 256w, /assets/Unistra2_HD_FondBlanc_small.png 256w, /assets/Unistra2_HD_FondBlanc_medium.webp 512w, /assets/Unistra2_HD_FondBlanc_medium.png 512w, /assets/Unistra2_HD_FondBlanc.webp 3310w, /assets/Unistra2_HD_FondBlanc.png 3310w"
-            sizes="128px" alt="Unistra" loading="lazy" />
-        </div>
-        <div class="partner-card">
-          <img src="/assets/CONECTUS-BaselineFR_HD2018_Blanc.png"
-            srcset="/assets/CONECTUS-BaselineFR_HD2018_Blanc_small.webp 256w, /assets/CONECTUS-BaselineFR_HD2018_Blanc_small.png 256w, /assets/CONECTUS-BaselineFR_HD2018_Blanc_medium.webp 512w, /assets/CONECTUS-BaselineFR_HD2018_Blanc_medium.png 512w, /assets/CONECTUS-BaselineFR_HD2018_Blanc.webp 6184w, /assets/CONECTUS-BaselineFR_HD2018_Blanc.png 6184w"
-            sizes="128px" alt="Conectus" loading="lazy" />
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <p class="section-title">Soutiens</p>
-      <h2 class="section-heading">Ils nous accompagnent</h2>
-      <div class="testimonial-grid partners-grid">
-        <div class="partner-card">
-          <img src="/assets/Logo-Semia.png"
-            srcset="/assets/Logo-Semia_small.webp 256w, /assets/Logo-Semia_small.png 256w, /assets/Logo-Semia.webp 367w, /assets/Logo-Semia.png 367w"
-            sizes="128px" alt="Semia, incubateur d'excellence" loading="lazy" />
-        </div>
-        <div class="partner-card">
-          <picture>
-            <source srcset="/assets/MembreBiovalley.webp" type="image/webp" />
-            <img src="/assets/MembreBiovalley.png" alt="Membre de Biovalley France" loading="lazy" />
-          </picture>
-        </div>
-        <div class="partner-card">
-          <img src="/assets/LesDeeptech_Blanc.png"
-            srcset="/assets/LesDeeptech_Blanc_small.webp 256w, /assets/LesDeeptech_Blanc_small.png 256w, /assets/LesDeeptech_Blanc_medium.webp 512w, /assets/LesDeeptech_Blanc_medium.png 512w, /assets/LesDeeptech_Blanc.webp 1891w, /assets/LesDeeptech_Blanc.png 1891w"
-            sizes="128px" alt="Communauté Les DeepTech" loading="lazy" />
-        </div>
-        <div class="partner-card">
-          <img src="/assets/Logo_FT_Est_Blanc.png"
-            srcset="/assets/Logo_FT_Est_Blanc_small.webp 256w, /assets/Logo_FT_Est_Blanc_small.png 256w, /assets/Logo_FT_Est_Blanc_medium.webp 512w, /assets/Logo_FT_Est_Blanc_medium.png 512w, /assets/Logo_FT_Est_Blanc.webp 883w, /assets/Logo_FT_Est_Blanc.png 883w"
-            sizes="128px" alt="La French Tech Est" loading="lazy" />
-        </div>
-      </div>
+  <section class="section" id="partenaires">
+	<div class="container">
+      <p class="section-eyebrow">Nous travaillons ensemble</p>
+      <h2 class="section-heading">Nos partenaires</h2>
+		 <div class="partners-grid">
+			 <div class="partner-card">
+				<Image src={conectus} alt="SATT Conectus d'Alsace" width={6184} height={2009} loading="eager" format="webp"/>
+			 </div>
+			 <div class="partner-card">
+				<Image src={cnrs} alt="Centre Nationale de la Recherche Scientifique" width={705} height={705} loading="eager" format="webp"/>
+			 </div>
+			 <div class="partner-card">
+				<Image src={unistra} alt="Université de Strasbourg" width={3310} height={1193} loading="eager" format="webp"/>
+			 </div>
+		</div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="faq" id="faq">
+  <section class="section section--tinted faq" id="faq">
     <div class="container">
       <p class="section-title">FAQ</p>
 
@@ -435,9 +283,140 @@ const faqSchema = JSON.stringify({
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
+  <section class="section cta-section">
     <h2>Prêt à entrer dans l'aventure<br />qui fait grandir ?</h2>
     <a href="/inscription" class="btn-primary">Rejoignez l'aventure !</a>
   </section>
 
 </BiumizLayout>
+
+<style>
+/* Base de la section avec le violet foncé d'origine */
+  .hero-section {
+	  color: var(--white);
+	  padding: 4rem 2rem;
+	  overflow: hidden;
+  }
+
+  /* Layout en grille : 2 colonnes sur PC, 1 seule colonne empilée sur mobile */
+  .hero-container {
+    max-width: 90rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 48rem) {
+    .hero-container {
+      grid-template-columns: 0.9fr 1.1fr; /* La colonne de texte est légèrement plus large */
+    }
+  }
+
+  /* Éléments de gauche */
+  .logo-wrapper {
+    width: 14rem;
+    height: auto;
+    margin-bottom: 2.5rem;
+  }
+	.logo-wrapper img {
+	  width: 100%;
+	  height: auto;
+	  display: block; /* Évite un petit espace vide sous l'image */
+	}
+
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: 800; /* Très gras */
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  @media (min-width: 64rem) {
+    .hero-title {
+      font-size: 3.5rem; /* Titre très grand sur grand écran */
+    }
+  }
+
+  /* Application de votre règle : Grand mais pas gras/épais */
+  .hero-description {
+    font-size: 1.125rem;
+    font-weight: 400; /* Épaisseur normale/fine */
+    line-height: 1.6;
+    max-width: 540px;
+  }
+
+  /* Éléments de droite (Image et Badge) */
+  .hero-image-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-image-wrapper {
+    position: relative; /* Indispensable pour caler le badge par-dessus */
+    width: 100%;
+    max-width: 180rem;
+  }
+
+  .hero-image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 1.25rem; /* Coins bien arrondis comme sur la maquette */
+    display: block;
+  }
+  
+  .section-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+  .section-lead {
+    text-align: center;
+    max-width: 44rem;
+    margin: 0 auto 3rem;
+    color: var(--pikico-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  /* CPS cards */
+  .cps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+  }
+  .cps-card {
+    background: white;
+    border: 2px solid var(--light-purple);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+	box-shadow: 0 10px 30px -10px rgba(18, 19, 44, 0.3);
+  }
+  .cps-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+  .cps-card h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
+  .cps-card p { font-size: 0.9rem; color: var(--pikico-muted); }
+  
+  .impact-banner {
+    background-color: var(--light-purple);
+    border-radius: 0.75rem;
+    padding: 1.25rem 2rem;
+    max-width: 42rem;
+    text-align: center;
+	margin: 3rem auto 0;
+  }
+
+  .impact-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .impact-text strong {
+    color: var(--star-pink);
+  }
+
+</style>

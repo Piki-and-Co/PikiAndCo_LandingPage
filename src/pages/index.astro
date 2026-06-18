@@ -23,8 +23,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 
 <PikiCoLayout
   title="Accueil"
-  description="Jouer, s'éveiller, s'accomplir. Accompagnez votre enfant dans le développement des compétences psychosociales grâce à une utilisation saine du numérique."
->
+  description="Accompagnez votre enfant dans le développement de ses compétences cognitives, émotionnelles et relationnelles.">
   <!-- Hero -->
   <section class="section hero-section">
     <div class="container hero-grid">
@@ -65,7 +64,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 		<div class="cps-card">
           <span class="cps-icon">💛</span>
           <h3>Compétences émotionnelles</h3>
-		  <p>Reconnître, comprendre et savoir réguler ses émotions au quotidien.</p>
+		  <p>Reconnaître, comprendre et savoir réguler ses émotions au quotidien.</p>
         </div>
         <div class="cps-card">
           <span class="cps-icon">🤝</span>
@@ -103,7 +102,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
         </div>
         <div class="value-item">
           <div class="value-number">03</div>
-          <h3>Conçu avec les familles</h3>
+          <h3>Conçu avec vous</h3>
           <p>
             Parents, enseignants et professionnels de santé contribuent à la co-construction
 			de nos outils pour qu'ils répondent aux vrais besoins du terrain et soient parfaitement
@@ -119,7 +118,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
     <div class="container product-spotlight">
       <div class="product-text">
         <p class="section-eyebrow">Notre premier jeu</p>
-        <h2 class="section-heading-pikico" style="text-align: left;">Biumiz — Le jeu qui fait grandir par les langues</h2>
+		<h2 class="section-heading-pikico" style="text-align: left;">Biumiz, le jeu qui construit l'équilibre mental de votre enfant</h2>
 		<p>
 		En collaboration avec des chercheures de Paris 8 et de Strasbourg, Piki&nbsp;&amp;&nbsp;Co crée Biumiz, 
 		le premier jeu multisupports qui aide les enfants de 4 à 10 ans à développer leurs compétences psychosociales
@@ -352,7 +351,9 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   }
 
   /* CTA final */
-  .cta-final { background: var(--pikico-title); }
+  .cta-final { 
+	  background: var(--pikico-title); 
+  }
   .cta-final h2 { color: white; }
 
   /* Responsive */
