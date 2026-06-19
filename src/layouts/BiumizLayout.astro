@@ -1,5 +1,13 @@
 ---
-import '@/styles/biumiz.css';
+import '@styles/biumiz.css';
+import { Image } from 'astro:assets';
+
+import logoImage from '@assets/logo.webp';
+import linkedin from '@assets/Social-Linkedin_White.webp';
+import instagram from '@assets/Social-Insta_White.webp';
+import tiktok from '@assets/Social-TikTok_White.webp';
+import youtube from '@assets/Social-Youtube_White.webp';
+import facebook from '@assets/Social-Facebook_White.webp';
 
 interface Props {
   title: string;
@@ -76,8 +84,8 @@ const appSchema = JSON.stringify({
 <body>
   <header>
     <nav class="nav">
-      <a href="/">
-        <img src="/assets/logo.png" alt="Piki & Co" width="48" height="48" loading="eager" />
+      <a href="/" class="logo">
+		<Image src={logoImage} alt="Piki & Co" width={68} height={48} loading="eager" format="webp"/>
       </a>
       <ul class="nav-links">
         <li><a href="/biumiz#fonctionnalites">Fonctionnalités</a></li>
@@ -93,12 +101,23 @@ const appSchema = JSON.stringify({
   </main>
 
   <footer class="footer">
-    <p>&copy; {new Date().getFullYear()} Piki & Co — Tous droits réservés</p>
+    <p>&copy; {new Date().getFullYear()} Piki&nbsp;&amp;&nbsp;Co — Tous droits réservés</p>
     <nav class="footer-socials" aria-label="Réseaux sociaux">
-      <a href="https://www.linkedin.com/company/piki-and-co" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://www.tiktok.com/@piki.and.co" target="_blank" rel="noopener noreferrer">TikTok</a>
-      <a href="https://www.instagram.com/piki.and.co/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="https://www.facebook.com/61588273838732" target="_blank" rel="noopener noreferrer">Facebook</a>
+		<a href="https://www.linkedin.com/company/piki-and-co" target="_blank" rel="noopener noreferrer">
+			<Image src={linkedin} alt="Linkedin company page Piki & Co" width={48} height={48} loading="eager" format="webp"/>
+		</a>
+		<a href="https://www.tiktok.com/@piki.and.co" target="_blank" rel="noopener noreferrer">
+			<Image src={tiktok} alt="TikTok profile Piki & Co" width={48} height={48} loading="eager" format="webp"/>
+		</a>	
+		<a href="https://www.instagram.com/piki.and.co/" target="_blank" rel="noopener noreferrer">
+			<Image src={instagram} alt="Instagram profile Piki & Co" width={48} height={48} loading="eager" format="webp"/>
+		</a>
+		<a href="https://www.facebook.com/61588273838732" target="_blank" rel="noopener noreferrer">
+			<Image src={facebook} alt="Facebook profile Piki & Co" width={48} height={48} loading="eager" format="webp"/>
+		</a>
+		<a href="https://www.youtube.com/@PikiAndCo" target="_blank" rel="noopener noreferrer">
+			<Image src={youtube} alt="Youtube chanel Piki & Co" width={48} height={48} loading="eager" format="webp"/>
+		</a>
     </nav>
     <p><a href="/legal/mention">Mentions légales</a> · <a href="/legal/privacy">Politique de confidentialité</a> · <a href="/legal/cookies">Cookies</a></p>
   </footer>

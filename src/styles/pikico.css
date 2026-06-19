@@ -12,6 +12,9 @@
 /* Tokens */
 :root {
   /* Couleurs Piki & Co (sobre, dérivées de la palette Biumiz) */
+
+  --biumiz-bg-start:    rgb(24, 15, 50);
+  --biumiz-bg-end:      rgb(105, 29, 110);
   --pikico-bg:          #FFFFFF;
   --pikico-bg-tinted:   #E4D7E8;   /* blanc légèrement violacé */
   --pikico-bg-tinted2:  #F7F5FF;   /* blanc légèrement violacé */
