@@ -1,41 +1,41 @@
 /* ================================
-   Biumiz — Design System
-   Zone "produit" : ton vibrant
-   (conserve l'identité actuelle)
-   ================================ */
+	Biumiz — Design System
+	Zone "produit" : ton vibrant
+	(conserve l'identité actuelle)
+================================ */
 
 @font-face {
-  font-family: 'Caveat Brush';
-  src: url('/assets/fonts/caveatbrush-regular.woff2') format('woff2'),
-       url('/assets/fonts/caveatbrush-regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Caveat Brush';
+	src: url('/assets/fonts/caveatbrush-regular.woff2') format('woff2'),
+	   url('/assets/fonts/caveatbrush-regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 :root {
-  --biumiz-bg-start:    rgb(24, 15, 50);
-  --biumiz-bg-end:      rgb(105, 29, 110);
-  --white:              #ffffff;
-  --dark-yellow:        #ffc23b;
-  --light-yellow:       #ffe67d;
-  --shadow-yellow:      #f9b233;
-  --star-turquoise:     #5BFFBA;
-  --star-pink:          #FF88FE;
-  --hair-blue:          #92C5FC;
-  --dark-purple:        #4b5563;
-  --light-purple:       #E9E5F6;
+	--biumiz-bg-start:    rgb(24, 15, 50);
+	--biumiz-bg-end:      rgb(105, 29, 110);
+	--white:              #ffffff;
+	--dark-yellow:        #ffc23b;
+	--light-yellow:       #ffe67d;
+	--shadow-yellow:      #f9b233;
+	--star-turquoise:     #5BFFBA;
+	--star-pink:          #FF88FE;
+	--hair-blue:          #92C5FC;
+	--dark-purple:        #4b5563;
+	--light-purple:       #E9E5F6;
 
-  --font-display:       'Caveat Brush', cursive;
-  --font-body:          'Montserrat', sans-serif;
-  
-  --max-width:          75rem;
-  --section-gap: 5rem;
+	--font-display:       'Caveat Brush', cursive;
+	--font-body:          'Montserrat', sans-serif;
+
+	--max-width:          75rem;
+	--section-gap: 5rem;
 }
 
 *, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html { 
@@ -43,26 +43,41 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
-  line-height: 1.6;
-  background-attachment: fixed;
-  min-height: 100vh;
-  color: var(--dark-purple);
+	font-family: var(--font-body);
+	line-height: 1.6;
+	background-attachment: fixed;
+	min-height: 100vh;
+	color: var(--dark-purple);
 }
 
-h1, h2, h3 { line-height: 1.2; }
-h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 400; }
-h2 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 400; }
+h1, h2, h3 { 
+	line-height: 1.2; 
+}
+h1 { 
+	font-family: var(--font-display); 
+	font-size: clamp(2.5rem, 6vw, 3.5rem); 
+	font-weight: 400; 
+}
+h2 { 
+	font-family: var(--font-display); 
+	font-size: clamp(2rem, 5vw, 2.75rem); 
+	font-weight: 400; 
+}
 
-a { color: var(--hair-blue); }
-strong { color: var(--star-pink); }
+a { 
+	color: var(--hair-blue); 
+}
+
+strong { 
+	color: var(--star-pink); 
+}
 
 .container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 5%;
-  text-align: center;
-  /*align-items: center;*/
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 0 5%;
+	text-align: center;
+	/*align-items: center;*/
 }
 
 .section { 
@@ -71,76 +86,77 @@ strong { color: var(--star-pink); }
 }
 
 .section--tinted {
-  background: linear-gradient(to bottom, var(--biumiz-bg-start), var(--biumiz-bg-end)) !important;
-  color: var(--white) !important;
+	background: linear-gradient(to bottom, var(--biumiz-bg-start), var(--biumiz-bg-end)) !important;
+	color: var(--white) !important;
 }
 
 .highlight {
-    color: var(--dark-yellow);
+	color: var(--dark-yellow);
 }
 
 /* Boutons Biumiz */
 .btn-primary {
-  background: var(--dark-yellow);
-  color: black;
-  padding: 0.7rem 1.5rem;
-  border-radius: 0.5rem;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-  display: inline-block;
-  text-decoration: none;
+	background: var(--dark-yellow);
+	color: black;
+	padding: 0.3rem 1rem;
+	border-radius: 0.5rem;
+	font-family: var(--font-display);
+	font-size: 1.5rem;
+	font-weight: 600;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s;
+	display: inline-block;
+	text-decoration: none;
 }
+
 .btn-primary:hover {
-  background: var(--light-yellow);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(249, 178, 51, 0.3);
+	background: var(--light-yellow);
+	transform: translateY(-2px);
+	box-shadow: 0 10px 25px rgba(249, 178, 51, 0.3);
 }
 
 /* Nav Biumiz */
 .nav {
-  background: var(--light-purple);
-  padding: 0 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 4rem;
-  width: 100%;
-  font-family: var(--font-display);
+	background: var(--light-purple);
+	padding: 0 5%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 4rem;
+	width: 100%;
+	font-family: var(--font-display);
 }
 
 .nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  align-items: center;
+	display: flex;
+	gap: 2rem;
+	list-style: none;
+	align-items: center;
 }
 
 .nav-links a {
-  color: var(--dark-purple);
-  font-weight: 500;
-  font-size: 1.5rem;
-  text-decoration: none;
+	color: var(--dark-purple);
+	font-weight: 500;
+	font-size: 1.5rem;
+	text-decoration: none;
 }
-.nav-links a:hover { color: var(--hair-blue); }
+.nav-links a:hover {
+	color: var(--hair-blue); 
+}
 
 /* Footer Biumiz */
 .footer {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: #94a3b8;
-  padding: 3rem 5%;
-  text-align: center;
-  font-size: 0.875rem;
+	background: #0f172a;
+	color: #94a3b8;
+	padding: 3rem 5%;
+	text-align: center;
+	font-size: 0.875rem;
 }
 
 /* Responsive */
 @media (max-width: 48rem) {
-  body {
-    background-attachment: scroll; /* Le fond défile normalement */
-  }
+	body {
+		background-attachment: scroll; /* Le fond défile normalement */
+	}
 }
-
-
