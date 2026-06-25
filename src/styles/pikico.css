@@ -27,6 +27,7 @@
   --pikico-muted:       #6B7280;
   --star-pink:			#FF88FE;
 
+
   /* Typographie */
   --font-body:    'Montserrat', sans-serif;
   --font-display: 'Montserrat', sans-serif;
@@ -129,6 +130,9 @@ strong { color: var(--pikico-title); }
   justify-content: space-between;
   align-items: center;
   height: 4rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .nav-links {

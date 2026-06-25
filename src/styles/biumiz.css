@@ -131,6 +131,9 @@ strong {
 	height: 4rem;
 	width: 100%;
 	font-family: var(--font-display);
+	position: sticky;
+	top: 0;
+    z-index: 100;
 }
 
 .nav-links {
