@@ -7,83 +7,49 @@ import conectus from '@assets/CONECTUS-BaselineFR_HD2018_Blanc.webp';
 import cnrs from '@assets/LOGO_CNRS_HD.webp';
 import unistra from '@assets/Unistra2_HD_FondBlanc.webp';
 import logoBiumizFull from '@assets/Logo_Biumiz-Full.webp';
-import biumizSmile from '@assets/Biumiz_Smile.webp';
-import tomAmazed from '@assets/Tom_Amazing.webp';
-import tomLaugh from '@assets/Tom_Laugh.webp';
-import doudou from '@assets/Doudou_NewDA-HD_Droite.webp';
-import uniteDiag from '@assets/UnitéDiag_NewDA-HD_Droite.webp';
-import fleur from '@assets/FleurChoupi.webp';
 
-const faqSchema = JSON.stringify({
+const IndexFaqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Les écrans, les jeux vidéo et les enfants : quelles recommandations ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pas d'écrans avant 3 ans. À partir de 3 ans, limiter à 1h maximum par jour. Choisir des contenus adaptés à la maturité cognitive et émotionnelle de l'enfant. Le jeu vidéo offre une expérience sensorielle et émotionnelle complète qui en fait un média puissant d'apprentissage, à condition d'une utilisation saine.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Quels sont les bienfaits des jeux vidéo pour les enfants ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les jeux vidéo permettent de développer : la curiosité, la créativité, la persévérance, la capacité d'élaboration de stratégie, la coopération, la prise de décision, l'attention, la résolution de problème, la littéracie numérique et le plurilinguisme.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Qu'est-ce qu'une utilisation saine des jeux vidéo ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Limiter le temps d'écran (pas d'écran avant 3 ans, 1h max consécutive ensuite), veiller à ce que des activités alternatives soient disponibles, et utiliser le jeu comme sujet de conversation et d'échange en famille.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Qu'est-ce que la santé mentale positive ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "L'OMS définit la santé comme un état de complet bien-être physique, mental et social. La santé mentale positive correspond au sentiment de bien-être général et d'épanouissement social. Elle repose sur les compétences psychosociales (CPS) de la personne.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Qu'est-ce que les compétences psychosociales (CPS) ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les CPS sont des ressources psychologiques permettant de faire face aux aléas de la vie. Elles sont centrales dans le programme de Santé Publique France et font l'objet d'actions prioritaires dans le cadre de la Grande Cause Nationale 2025-2026 sur la Santé Mentale.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Qu'est-ce qu'un jeu immersif ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Un jeu immersif est un jeu dans lequel le joueur a l'impression de faire partie du monde virtuel. Cette capacité à immerger le joueur en fait un média puissant d'apprentissage : concentration, émotions, expérience sensorielle complète.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Qu'est-ce qu'un jeu engageant ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Un jeu engageant maintient l'intérêt et la motivation sur le long terme. Il repose sur un équilibre entre défi et compétences, et répond à trois besoins : l'autonomie, le gain de compétences et l'identification ou l'appartenance.",
-      },
-    },
-  ],
+  {
+	"@type": "Question",
+	"name": "A partir de quel âge mon enfant peut jouer ?",
+	"acceptedAnswer": {
+	"@type": "Answer",
+	"text": "Conformément aux recommandations officielles, Biumiz est conçu pour les enfants à partir de 4 ans. Il est découpé en plusieurs niveaux, chacun calibré par tranche d'âge. Une session du jeu vidéo Biumiz dur 15 minutes maximum. Nous recommandons 1 à 2 session par semaine.",
+      }
+	},
+	{
+	"@type": "Question",
+	"name": "Les jeux vidéo ne sont-ils pas nocifs pour les enfants ?",
+	"acceptedAnswer": {
+	"@type": "Answer",
+	"text": "Ce qui rend les écrans nocifs, c'est l'appauvrissement des interactions sociales. Nos jeux sont conçus pour être un prétexte à l'échange en famille ou en classe. Le jeu vidéo immerge l'enfant dans les notions, puis le jeu de société rassemble tout le monde pour pratiquer ensemble.",
+      }
+	},
+	{
+	"@type": "Question",
+	"name": "Les enseignants peuvent-ils utiliser Biumiz en classe ?",
+	"acceptedAnswer": {
+	"@type": "Answer",
+	"text": "Absolument ! Nos jeux sont alignés avec les programmes de l'Education Nationale, avec le Cadre Européen Commun de Référence pour les Langues et les recommandations de Santé Publique France sur les CPS. Les différents supports papiers et numériques offrent une flexibilité pédagogique complète.",
+      }
+
+	}
+   ],
 });
 ---
 
 <BiumizLayout
 		title="Biumiz, le jeu qui fait grandir par les langues" 
-		description="Accompagnez votre enfant dans le développement de ses compétences cognitives, émotionnelles et relationnelles.">
+		description="Accompagnez votre enfant dans le développement de ses compétences cognitives, émotionnelles et relationnelles."
+		faqScema = {IndexFaqSchema}
+		>
+
 
 <!-- TODO Fragment slot="head">
-    <script type="application/ld+json" set:html={faqSchema}/>
+    <script type="application/ld+json" set:html={IndexFaqSchema}/>
   </Fragment--!>
 
 <!-- Hero -->
@@ -110,165 +76,10 @@ const faqSchema = JSON.stringify({
 				</div>
 			</div>
 		</div>
-	</section>
-
-
-	<!-- CPS -->
-	<section class="section" id="CPS">
-		<div class="container">
-			<p class="section-eyebrow">Un jeu qui fait bien grandir</p>
-			<h2 class="section-heading">Les compétences psychosociales (CPS) : le socle de 
-				<span class="highlight" style="display:block;">la santé mentale positive</span></h2>
-			<p class="section-lead">
-				Ce sont les compétences de vie ou compétences humaines qui permettent à votre enfant 
-				de faire face aux défis de l'existence, de maintenir son équilibre émotionnel et de construire 
-				des relations solides tout au long de sa vie. 
-			</p>
-			<div class="cps-grid">
-				<div class="cps-card">
-					<span class="cps-icon">🧠</span>
-					<h3>Compétences cognitives</h3>
-					<p>Conscience de soi, maîtrise de soi, pensée critique, prise de décision constructive, etc.</p>
-				</div>
-				<div class="cps-card">
-					<span class="cps-icon">💛</span>
-					<h3>Compétences émotionnelles</h3>
-					<p>Reconnaître, comprendre et savoir réguler ses émotions au quotidien.</p>
-				</div>
-				<div class="cps-card">
-					<span class="cps-icon">🤝</span>
-					<h3>Compétences sociales</h3>
-					<p>Empathie, communication efficace, création de lien, résolution de conflits.</p>
-				</div>
-			</div>
-			<footer class="impact-banner">
-				<p class="impact-text">
-					Lorsqu'elles sont bien développées, ces compétences <strong>réduisent l'anxiété, 
-					préviennent la dépression, améliorent le climat scolaire et favorisent la réussite</strong> 
-				</p>
-				<p class="quoting"> (Santé Publique France, 2021 ; IREPS Pays de la Loire, 2026).</p>
-			</footer>
-		</div>
-	</section>
-
-	<!-- Notre approche -->
-	<section class="section section--tinted" id="Approche">
-		<div class="container">
-			<p class="section-eyebrow">Les trois piliers de notre approche</p>
-			<h2 class="section-heading">Comment ça marche ?</h2>
-			<p class="section-lead">
-			Issue d'une collaboration pérenne avec des laboratoires de recherche publique en sciences humaines, 
-			notre approche innovante s'appuie sur trois piliers.
-			</p>
-			<div class="piliers-list">
-				<div class="pilier-row">
-					<div class="pilier-image">
-						<Image src={biumizSmile} alt="S'ouvrir par les langues" 
-						width={1061} height={1031} format="webp" />
-					</div>
-					<div class="pilier-content">
-						<h3 class="pilier-title"><span class="pilier-number">1</span> S'ouvrir par les langues</h3>
-						<p class="pilier-text">
-							Les enfants bilingues sont avantagés dans leur développement cognitif, émotionnel et social... 
-							A condition d'avoir développer les savoir-faire d'interaction et de communication*.
-							<br/>Notre toute nouvelle pédagogie est expérientielle, culturelle et immersive. L'enfant apprend
-							à interagir et à communiquer en anglais via des simulations du réel. 
-						</p>
-						<p class="quoting">* Nicoladis, E. et al., 2016 ; Fan, S. P. et al. 2015</p>
-					</div>
-				</div>
-
-				<div class="pilier-row pilier-row--reverse">
-					<div class="pilier-image">
-						<Image src={tomLaugh} alt="Apprendre par le jeu" 
-						width={883} height={858} format="webp" />
-					</div>
-					<div class="pilier-content">
-						<h3 class="pilier-title"><span class="pilier-number">2</span> Apprendre par le jeu</h3>
-						<p class="pilier-text">
-							Le jeu engage les sens et les émotions, ce qui favorise l'acquisition de nouvelles compétences.
-							Il est donc le meilleur vecteur d'apprentissage*.
-							<br/>Nos expériences ludiques sont calibrées 
-							par tranche d'âge. 
-							<br/>Aucune directive, uniquement du jeu. 
-						</p>
-						<p class="quoting">* Gee, J.P., 2007 ; Berry, V., 2012</p>
-
-					</div>
-				</div>
-				<div class="pilier-row">
-					<div class="pilier-image">
-						<Image src={tomAmazed} alt="Le numérique au service du lien"
-						width={1076} height={1073} format="webp" />
-					</div>
-					<div class="pilier-content">
-						<h3 class="pilier-title"><span class="pilier-number">3</span> Le numérique au service du lien</h3>
-						<p class="pilier-text">
-							Le jeu vidéo pour l'immersion et la découverte des nouvelles notions, le jeu de société 
-							pour la pratique dans le réel et le partage en famille.<br/>
-							Le numérique comme vecteur d'interactions sociales, pas de remplacement.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- les composants -->
-	<section class="section" id="Composants">
-		<div class="container">
-			<p class="section-eyebrow">Biumiz, le jeu narratif multi-support</p>
-			<h2 class="section-heading">Un univers ludique jusque dans le réel</h2>
-			<p class="section-lead">
-				Biumiz repose sur trois composants, ce qui en fait un jeu transmédia ou multi-supports.
-			</p>
-			<div class="piliers-list">
-				<div class="pilier-row">
-					<div class="pilier-image">
-						<Image src={uniteDiag} alt="Le jeu vidéo" 
-						width={1266} height={897} format="webp" />
-					</div>
-					<div class="pilier-content">
-						<h3 class="pilier-title"><span class="pilier-number">1</span> Le jeu vidéo</h3>
-						<p class="pilier-text">
-							Dans le jeu vidéo, l’enfant interagit oralement en anglais et vit des aventures 
-							spécifiquement conçues pour stimuler sa curiosité, son autonomie et son intelligence émotionnelle
-						</p>
-					</div>
-				</div>
-				<div class="pilier-row pilier-row--reverse">
-					<div class="pilier-image">
-						<Image src={fleur} alt="Application compagnon et livret" 
-						width={1500} height={1380} format="webp" />
-					</div>
-					<div class="pilier-content">
-						<h3 class="pilier-title"><span class="pilier-number">2</span> L'accompagnement de l'adulte</h3>
-						<p class="pilier-text">
-							Avec l’application compagnon et le livret, l’adulte dispose de tous les outils dont il a besoin 
-							pour soutenir le développement de l’enfant, suivre ses progrès et l’accompagner dans ses aventures 
-							en anglais. 
-						</p>
-					</div>
-				</div>
-				<div class="pilier-row">
-					<div class="pilier-image">
-						<Image src={doudou} alt="Jeu de société"
-						width={1696} height={1921} format="webp" />
-					</div>
-					<div class="pilier-content">
-						<h3 class="pilier-title"><span class="pilier-number">3</span> Le jeu de société</h3>
-						<p class="pilier-text">
-							Le jeu de société prolonge l’expérience dans le réel et crée des moments de partage 
-							pour entraîner les compétences relationnelles.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
+	</section>	
+	
 	<!-- Conçu pour vous -->
-	<section class="section section--tinted" id="PourVous">
+	<section class="section " id="PourVous">
 		<div class="container">
 			<p class="section-eyebrow">Conçu pour vous et avec vous</p>
 			<h2 class="section-heading">Un produit ancré dans votre quotidien</h2>
@@ -276,9 +87,9 @@ const faqSchema = JSON.stringify({
 				Depuis ses tous débuts, Biumiz est co-construit avec des parents et des professionnel·le·s des enfants
 				pour être au plus proche de vos besoins et de votre réalité. 				
 			</p>
-			<div class="cps-grid">
-				<div class="cps-card">
-					<span class="cps-icon">👨‍👩‍👧‍👦</span>
+			<div class="grid">
+				<div class="card">
+					<span class="icon">👨‍👩‍👧‍👦</span>
 					<h3>Parents</h3>
 					<p>Offrez à votre enfants les compétences nécessaire à son épanouissement 
 						et son bien-être mental et émotionnel tout au long de sa vie. 
@@ -291,8 +102,8 @@ const faqSchema = JSON.stringify({
 						<li>Adapté à chaque tranche d'âge</li>
 					</ul>
 				</div>
-				<div class="cps-card">
-					<span class="cps-icon">🎓</span>
+				<div class="card">
+					<span class="icon">🎓</span>
 					<h3>Enseignant·e·s de primaire</h3>
 					<p>Un outil clef en main pour développer les compétences psychosociales de vos élèves et 
 					enseigner l'anglais.</p>
@@ -310,7 +121,7 @@ const faqSchema = JSON.stringify({
 	</section>
 
 	<!-- Partenaires -->
-	<section class="section" id="partenaires">
+	<section class="section section--tinted" id="partenaires">
 		<div class="container">
 			<p class="section-eyebrow">Nous travaillons ensemble</p>
 			<h2 class="section-heading">Nos partenaires</h2>
@@ -331,7 +142,7 @@ const faqSchema = JSON.stringify({
 		</div>
 	</section>
 
-	<section class="section section--tinted" id="equipe">
+	<section class="section" id="equipe">
 		<div class="container">
 			<p class="section-eyebrow">Les créateurs.trices de Biumiz</p>
 			<h2 class="section-heading">L'équipe</h2>
@@ -339,108 +150,22 @@ const faqSchema = JSON.stringify({
 	</section>
 
   <!-- FAQ -->
-  <section class="section faq" id="faq">
+  <section class="section section--tinted faq" id="faq">
     <div class="container">
-      <p class="section-title">FAQ</p>
-
+      <p class="section-eyebrow">Question fréquentes</p>
       <details class="faq-parent">
-        <summary>Les écrans, les jeux vidéo et les enfants : recommandations et points d'attention</summary>
-        <p>Le jeu vidéo offre aux joueurs et joueuses une expérience complète, sensorielle et émotionnelle, ce qui en fait un média puissant d'apprentissage.</p>
-        <p>Issus de différents documents officiels*, voici quelques points clefs à retenir :</p>
-        <ul>
-          <li>Pas d'écrans avant 3 ans,</li>
-          <li>À partir de 3 ans, limiter le temps d'écran à 1h maximum par jour,</li>
-          <li>Choisir des contenus adaptés à votre enfant vis-à-vis de sa maturité cognitive et émotionnelle.</li>
-        </ul>
-        <p>Il est important de garder à l'esprit que ce qui rend les écrans toxiques pour vos enfants est l'appauvrissement des interactions sociales qui en découlent. Si vous utilisez le contenu vidéo comme prétexte pour discuter et passer du temps ensemble, alors tout ira bien !</p>
-        <p class="quoting">* Rapport remis à l'Élysée en avril 2024 "Enfants et écrans, À la recherche du temps perdu"</p>
+        <summary>A partir de quel âge mon enfant peut jouer ?</summary>
+		<p>Conformément aux recommandations officielles, Biumiz est conçu pour les enfants à partir de 4 ans. Il est découpé en plusieurs niveaux, chacun calibré par tranche d'âge. Une session du jeu vidéo Biumiz dur 15 minutes maximum, à raison d'une à deux session par semaine.</p>
       </details>
-
       <details class="faq-parent">
-        <summary>Quels sont les bienfaits des jeux vidéo ?</summary>
-        <p>D'après les travaux en sciences humaines, voici quelques compétences que les jeux vidéo permettent de développer :</p>
-        <ul>
-          <li>La curiosité et la capacité à oser,</li>
-          <li>La créativité, la persévérance,</li>
-          <li>La capacité d'élaboration de stratégie,</li>
-          <li>La coopération, l'esprit de communauté,</li>
-          <li>La prise de décision, l'attention, le temps de réaction,</li>
-          <li>La résolution de problème,</li>
-          <li>La littéracie numérique,</li>
-          <li>Le plurilinguisme et les langues étrangères.</li>
-        </ul>
-        <details class="faq-child">
-          <summary>Pour aller plus loin</summary>
-          <p>Un article qui résume l'impact du jeu vidéo sur les enfants : <a href="https://www.pedagojeux.fr/sujets-sensibles/limpact-du-jeu-sur-la-psychologie-de-mon-enfant/" target="_blank" rel="noopener noreferrer">Échange entre PédaGojeux et Mickaël Stora, psychologue et psychanaliste.</a></p>
-        </details>
+        <summary>Les jeux vidéo ne sont-ils pas nocifs pour les enfants ?</summary>
+		<p>Ce qui rend les écrans nocifs, c'est l'appauvrissement des interactions sociales. Nos jeux sont conçus pour être un prétexte à l'échange en famille ou en classe. Le jeu vidéo immerge l'enfant dans les notions, puis le jeu de société rassemble tout le monde pour pratiquer ensemble.</p>
       </details>
-
       <details class="faq-parent">
-        <summary>Concrètement, qu'est-ce qu'une "utilisation saine" des jeux vidéo ?</summary>
-        <p>Pour que le jeu vidéo soit bénéfique, quelques habitudes simples sont à mettre en place pour toute la famille.</p>
-        <h3>Limitez le temps passé sur un écran</h3>
-        <p>En dessous de 3 ans, il est fortement recommandé d'interdire complètement l'écran. Ensuite, le temps sur écran doit rester occasionnel et ne pas dépasser une heure d'utilisation consécutive.</p>
-        <h3>Veillez à ce que des activités alternatives soient toujours disponibles</h3>
-        <p>Coloriage, jeux de construction, création artistique ou jeux dehors — il est important que votre enfant puisse s'amuser autrement qu'en jouant sur un écran.</p>
-        <h3>Utilisez le jeu comme sujet de conversation et d'échange</h3>
-        <p>Comme avec un film ou un livre, le jeu vidéo fournit des sujets de conversation pour alimenter les moments en famille.</p>
-        <ul>
-          <li>Quelle histoire raconte ton jeu ? Qui sont les personnages ?</li>
-          <li>Quelles sont les règles de ton jeu ?</li>
-          <li>Qu'est-ce que tu ressens quand tu joues ? Quand tu réussis ? Quand tu te trompes ?</li>
-        </ul>
-        <p>Quelques ressources utiles : <a href="https://pegi.info/fr/page/game-advice" target="_blank" rel="noopener noreferrer">PEGI</a>, <a href="https://www.mon-enfant-et-les-ecrans.fr/" target="_blank" rel="noopener noreferrer">Mon enfant et les écrans (UNAF)</a>.</p>
-      </details>
-
-      <details class="faq-parent">
-        <summary>Qu'est-ce que la santé mentale positive ?</summary>
-        <p>L'OMS définit la santé comme <q>un état de complet bien-être physique, mental et social</q>. Santé Publique France définit trois dimensions de la santé mentale :</p>
-        <ul>
-          <li><strong>La santé mentale positive</strong> : sentiment de bien-être général et épanouissement social.</li>
-          <li><strong>La résilience</strong> : capacité à faire face à la détresse psychologique.</li>
-          <li>La présence ou l'absence de troubles psychiatriques.</li>
-        </ul>
-        <p><strong>La santé mentale positive repose sur les compétences psychosociales</strong> de la personne — ses ressources psychologiques pour faire face aux aléas de la vie.</p>
-        <p><a href="https://www.santepubliquefrance.fr/maladies-et-traumatismes/sante-mentale" target="_blank" rel="noopener noreferrer">Page dédiée à la santé mentale — Santé Publique France</a></p>
-      </details>
-
-      <details class="faq-parent">
-        <summary>Où peut-on en apprendre plus sur les compétences psychosociales ?</summary>
-        <p>Les CPS sont centrales dans le programme de promotion de la santé mentale de Santé Publique France. Leur renforcement auprès des enfants fait l'objet d'actions prioritaires dans le cadre de la Grande Cause Nationale 2025-2026, la Santé Mentale.</p>
-        <p><a href="https://www.santepubliquefrance.fr/competences-psychosociales" target="_blank" rel="noopener noreferrer">Page dédiée aux compétences psychosociales — Santé Publique France</a></p>
-      </details>
-
-      <details class="faq-parent">
-        <summary>Qu'est-ce qu'un jeu immersif ?</summary>
-        <p>Un jeu immersif est un jeu dans lequel <strong>le joueur ou la joueuse a l'impression de faire partie du monde virtuel</strong>. C'est la capacité d'un jeu à immerger le joueur qui en fait un média puissant d'apprentissage : concentration, émotions, expérience sensorielle complète.</p>
-        <p>Pour un enfant entre 4 et 10 ans, nous recommandons de se limiter aux mécanismes d'immersion systémique, narrative et émotionnelle.</p>
-      </details>
-
-      <details class="faq-parent">
-        <summary>Quels mécanismes sont utilisés pour rendre un jeu immersif ?</summary>
-        <ul>
-          <li><strong>L'immersion systémique</strong> : les règles réagissent de manière logique aux actions du joueur.</li>
-          <li><strong>L'immersion narrative et émotionnelle</strong> : lien psychologique avec l'histoire et les personnages.</li>
-          <li><strong>L'immersion sensorielle</strong> : graphismes, son spatialisé, retours haptiques.</li>
-        </ul>
-      </details>
-
-      <details class="faq-parent">
-        <summary>Qu'est-ce qu'un jeu engageant ?</summary>
-        <p>Un jeu vidéo engageant <strong>maintient l'intérêt et la motivation sur le long terme</strong>. Il repose sur un équilibre entre défi et compétences, et répond à trois besoins :</p>
-        <ul>
-          <li><strong>L'autonomie</strong> : l'impression que ses décisions ont un impact,</li>
-          <li><strong>Le gain de compétences</strong> : le sentiment de progresser,</li>
-          <li><strong>L'identification ou l'appartenance</strong> : se reconnaître dans un personnage et partager son expérience.</li>
-        </ul>
+        <summary>Les enseignants peuvent-ils utiliser Biumiz en classe ?</summary>
+		<p>Absolument ! Nos jeux sont alignés avec les programmes de l'Education Nationale, avec le Cadre Européen Commun de Référence pour les Langues et les recommandations de Santé Publique France sur les CPS. Les différents supports papiers et numériques offrent une flexibilité pédagogique complète.</p>
       </details>
     </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section cta-section">
-    <h2>Prêt à entrer dans l'aventure<br />qui fait grandir ?</h2>
-    <a href="/inscription" class="btn-primary">Rejoignez l'aventure !</a>
   </section>
 
 </BiumizLayout>
@@ -519,6 +244,15 @@ const faqSchema = JSON.stringify({
 		border-radius: 1.25rem;
 		display: block;
 	}
+	.section { 
+		padding: var(--section-gap) 0; 
+		background: var(--light-purple);
+	}
+
+	.section--tinted {
+		background: linear-gradient(to bottom, var(--biumiz-bg-start), var(--biumiz-bg-end)) !important;
+		color: var(--white) !important;
+	}
 
 	.section-eyebrow {
 		font-size: 0.8rem;
@@ -543,16 +277,15 @@ const faqSchema = JSON.stringify({
 		line-height: 1.8;
 		opacity: 0.9;
 	}
-
-	/* CPS cards */
-	.cps-grid {
+	
+	.grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
 		gap: 1.5rem;
 		margin-bottom: 3rem;
 	}
 
-	.cps-card {
+	.card {
 		background: white;
 		border: 2px solid var(--light-purple);
 		border-radius: 0.75rem;
@@ -562,133 +295,20 @@ const faqSchema = JSON.stringify({
 		color: var(--dark-purple); /* Assure la lisibilité du texte dans la carte */
 	}
 
-	.cps-icon { 
+	.icon { 
 		font-size: 2.5rem; 
 		display: block; 
 		margin-bottom: 1rem; 
 	}
 
-	.cps-card h3 { 
+	.card h3 { 
 		margin-bottom: 0.5rem;
 		font-size: 1.1rem;
 		color: var(--dark-purple);
 	}
 
-	.cps-card p { 
+	.card p { 
 		font-size: 0.9rem; 
-	}
-
-	.impact-banner {
-		background-color: var(--light-purple);
-		border-radius: 0.75rem;
-		padding: 1.25rem 2rem;
-		max-width: 42rem;
-		text-align: center;
-		margin: 3rem auto 0;
-	}
-
-	.impact-text {
-		font-size: 0.95rem;
-		line-height: 1.5;
-		color: var(--dark-purple);
-	}
-	
-	.piliers-list {
-		display: flex;
-		flex-direction: column;
-		gap: 4rem; /* Espace entre les lignes de piliers */
-		width: 100%;
-	}
-
-	/* --- CHANGER DE CÔTÉ (GRID) --- */
-	.pilier-row {
-		display: grid;
-		grid-template-columns: 1fr; /* 1 colonne par défaut sur mobile */
-		gap: 2rem;
-		align-items: center;
-		text-align: center;
-	}
-
-	@media (min-width: 48rem) {
-		.pilier-row {
-			grid-template-columns: 1fr 1fr; /* 2 colonnes égales sur PC */
-			text-align: left;
-		}
-
-		/* La magie du CSS : pour la deuxième ligne, on inverse l'ordre visuel */
-		.pilier-row--reverse .pilier-image {
-			order: 2;
-		}
-
-		.pilier-row--reverse .pilier-content {
-			order: 1;
-		}
-	}
-
-	.pilier-image {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		overflow: visible !important; /* Force le contenu qui dépasse à rester visible */
-		padding-bottom: 1rem; /* Donne un peu d'espace en bas pour le halo */
-	}
-
-	.pilier-image img {
-		max-width: 22rem; /* Ajuste la taille des mascottes pour qu'elles restent élégantes */
-		display: block;
-		width: 100%; /* Occupe la largeur du wrapper */
-		height: auto !important; /* Force le navigateur à recalculer la hauteur proportionnellement */
-		object-fit: contain;
-	}
-
-	.pilier-content {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-
-	.pilier-title {
-		font-family: var(--font-body); /* Montserrat ou sans-serif pour garder le style épuré de l'image */
-		font-size: 1.5rem;
-		font-weight: 700;
-		margin-bottom: 1rem;
-		display: flex;
-		align-items: center;
-		justify-content: center; /* Centré sur mobile */
-		gap: 0.75rem;
-	}
-
-	@media (min-width: 48rem) {
-		.pilier-title {
-		  justify-content: flex-start; /* Aligné à gauche sur PC */
-		}
-	}
-
-	.pilier-number {
-		background-color: var(--dark-yellow);
-		color: black;
-		font-size: 1rem;
-		font-weight: 700;
-		width: 2rem;
-		height: 2rem;
-		border-radius: 50%;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		flex-shrink: 0; /* Empêche le rond de se déformer */
-	}
-
-	.pilier-text {
-		font-size: 1.05rem;
-		line-height: 1.7;
-		max-width: 38rem;
-		margin: 0 auto;
-	}
-
-	@media (min-width: 48rem) {
-		.pilier-text {
-		  margin: 0; /* Aligné au bord gauche sur PC */
-		}
 	}
 
 	.partners-grid { 
@@ -753,7 +373,6 @@ const faqSchema = JSON.stringify({
 	details.faq-parent { 
 		margin-bottom: 1rem; 
 		overflow: hidden; 
-		background-color: var(--light-purple); /* Donne un fond pour faire ressortir le texte */
 		border-radius: 0.5rem;
 		text-align: left;
 	}
@@ -763,7 +382,6 @@ const faqSchema = JSON.stringify({
 		cursor: pointer; 
 		font-weight: bold; 
 		transition: background-color 0.3s; 
-		color: var(--dark-purple); /* Texte sombre lisible */
 		list-style: none;
 	}
 	summary::-webkit-details-marker { display: none; } /* Enleve la flèche native */
@@ -774,7 +392,6 @@ const faqSchema = JSON.stringify({
 	details.faq-parent ul, 
 	details.faq-parent h3 { 
 		padding: 0.5rem 1.5rem; 
-		color: var(--dark-purple) !important; /* Force l'écriture en couleur lisible */
 	}
 
 	details.faq-parent ul {
@@ -791,20 +408,7 @@ const faqSchema = JSON.stringify({
 	.faq-child { 
 		margin-left: 1.5rem; 
 		margin-top: 0.5rem; 
-		background-color: rgba(255, 255, 255, 0.5);
 		border-radius: 0.25rem;
 	}
 	.faq-child > summary { font-size: 0.95rem; font-weight: 600; }
-
-	.cta-section { 
-		padding: 5rem 5%; 
-		text-align: center; 
-		background: #0f172a;
-	}
-	.cta-section h2 { 
-		font-family: var(--font-display); 
-		font-size: clamp(1.8rem, 4vw, 2.5rem); 
-		margin-bottom: 2rem; 
-		color: #94a3b8;
-	}
 </style>

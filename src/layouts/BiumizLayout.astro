@@ -3,6 +3,7 @@ import '@styles/biumiz.css';
 import { Image } from 'astro:assets';
 
 import logoImage from '@assets/logo.webp';
+import logoBiumizFull from '@assets/Logo_Biumiz-Full.webp';
 import linkedin from '@assets/Social-Linkedin_White.webp';
 import instagram from '@assets/Social-Insta_White.webp';
 import tiktok from '@assets/Social-TikTok_White.webp';
@@ -13,12 +14,14 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  faqSchema?: string;
 }
 
 const {
   title,
   description = "Biumiz — L'application qui accompagne votre enfant.",
   image,
+  faqSchema,
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
@@ -45,42 +48,45 @@ const appSchema = JSON.stringify({
 
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content={description} />
-  <meta name="author" content="Piki & Co" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <title>{title} | Biumiz</title>
-  <link rel="canonical" href={canonicalUrl} />
-  <link rel="icon" type="image/x-icon" href="/assets/logo.ico" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={description} />
+		<meta name="author" content="Piki & Co" />
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		<title>{title} | Biumiz</title>
+		<link rel="canonical" href={canonicalUrl} />
+		<link rel="icon" type="image/svg+xml" href="/assets/Logo_Biumiz-Full.svg" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={canonicalUrl} />
-  <meta property="og:title" content={`${title} | Biumiz`} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={ogImage} />
-  <meta property="og:locale" content="fr_FR" />
-  <meta property="og:site_name" content="Biumiz by Piki & Co" />
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:title" content={`${title} | Biumiz`} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:locale" content="fr_FR" />
+		<meta property="og:site_name" content="Biumiz by Piki & Co" />
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={`${title} | Biumiz`} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={ogImage} />
+		<!-- Twitter / X -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={`${title} | Biumiz`} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json" set:html={appSchema} />
+		<!-- JSON-LD -->
+		<script type="application/ld+json" set:html={appSchema} />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <slot name="head" />
-  <!-- TarteAuCitron — consentement cookies -->
-  <script src="https://cdn.jsdelivr.net/npm/tarteaucitronjs@latest/tarteaucitron.js" is:inline></script>
-  <script src="/js/tarteaucitron-init.js" is:inline></script>
-</head>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+		<slot name="head" />
+		<!-- TarteAuCitron — consentement cookies -->
+		<script src="https://cdn.jsdelivr.net/npm/tarteaucitronjs@latest/tarteaucitron.js" is:inline></script>
+		<script src="/js/tarteaucitron-init.js" is:inline></script>
+
+		{faqSchema && <script type="application/ld+json" set:html={faqSchema} />}
+	</head>
+
 <body>
   <header>
     <nav class="nav">
@@ -88,10 +94,10 @@ const appSchema = JSON.stringify({
 		<Image src={logoImage} alt="Piki & Co" width={68} height={48} loading="eager" format="webp"/>
       </a>
       <ul class="nav-links">
-        <li><a href="/biumiz#Approche">Notre approche</a></li>
-        <li><a href="/biumiz#Composants">Les composants</a></li>
-        <li><a href="/biumiz#faq">FAQ</a></li>
-        <li><a href="/">Piki & Co</a></li>
+        <li><a href="/biumiz">Accueil</a></li>
+		  <li><a href="/biumiz/cps">Les compétences humaines</a></li>
+		<li><a href="/biumiz/approche">Notre approche</a></li>
+		<li><a href="/biumiz/lejeu">Le jeu</a></li>
         <li><a href="/inscription" class="btn-primary">Rejoindre l'aventure !</a></li>
       </ul>
     </nav>
@@ -100,6 +106,11 @@ const appSchema = JSON.stringify({
   <main>
     <slot />
   </main>
+  
+  <section class="section cta-section">
+    <h2>Prêt à entrer dans l'aventure<br />qui fait grandir ?</h2>
+    <a href="/inscription" class="btn-primary">Rejoignez l'aventure !</a>
+  </section>
 
   <footer class="footer">
     <p>&copy; {new Date().getFullYear()} Piki&nbsp;&amp;&nbsp;Co — Tous droits réservés</p>

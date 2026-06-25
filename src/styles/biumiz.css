@@ -24,6 +24,7 @@
 	--hair-blue:          #92C5FC;
 	--dark-purple:        #4b5563;
 	--light-purple:       #E9E5F6;
+	--deep-blue:		  #152CCE;
 
 	--font-display:       'Caveat Brush', cursive;
 	--font-body:          'Montserrat', sans-serif;
@@ -80,19 +81,23 @@ strong {
 	/*align-items: center;*/
 }
 
-.section { 
-	padding: var(--section-gap) 0; 
-	background: var(--light-purple);
-}
-
-.section--tinted {
-	background: linear-gradient(to bottom, var(--biumiz-bg-start), var(--biumiz-bg-end)) !important;
-	color: var(--white) !important;
-}
-
 .highlight {
 	color: var(--dark-yellow);
 }
+
+.cta-section {
+	padding: 5rem 5%;
+	text-align: center;
+	background: #0f172a;
+}
+
+.cta-section h2 {
+	font-family: var(--font-display);
+	font-size: clamp(1.8rem, 4vw, 2.5rem);
+	margin-bottom: 2rem;
+	color: #94a3b8;
+}
+
 
 /* Boutons Biumiz */
 .btn-primary {
