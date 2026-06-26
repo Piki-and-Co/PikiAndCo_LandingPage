@@ -15,10 +15,11 @@ import cnrs from '@assets/LOGO_CNRS_HD.webp';
 import lesDeepTech from 'assets/LesDeeptech_Blanc.webp';
 import unistra from '@assets/Unistra2_HD_FondBlanc.webp';
 
-import photoAmandine from '@assets/EmoteBiumiz.webp';
-import photoKevin from '@assets/EmoteTom.webp';
-import photoOlivier from '@assets/EmoteTom.webp';
-import photoLaurence from '@assets/EmoteBiumiz.webp';
+import photoAmandine from '@assets/PhotoAmandine.webp';
+import photoKevin from '@assets/PhotoKevin.webp';
+import photoOlivier from '@assets/PhotoOlivier.webp';
+import photoLaurence from '@assets/PhotoLaurence.webp';
+import photoYannick from '@assets/PhotoYannick.webp';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -29,7 +30,7 @@ const team = [
 		prenom: "Amandine",
 		nom: "Piguel",
 		poste: "Présidente (CEO) & Fondatrice",
-		description: "Définit et pilote la stratégie de développement de l'entreprise. ",
+		description: "Définit et pilote la stratégie de développement de l'entreprise.",
 		photo: photoAmandine
 	},
 
@@ -50,10 +51,17 @@ const team = [
 	{
 		prenom: "Olivier",
 		nom: "Luet",
-		poste: "Directeur marketing (CMO)",
-		description: " responsable du développement commercial secteur B2B & éducatif",
+		poste: "Directeur marketing (CMO) B2B",
+		description: "Responsable du développement commercial secteur B2B & éducatif",
 		photo: photoOlivier
-	}
+		},
+		{
+		prenom: "Yannick",
+		nom: "Imhoff",
+		poste: "Directeur marketing (CMO) B2C",
+		description: "Responsable du développement commercial secteur B2C & jeu vidéo",
+		photo: photoYannick
+		}
 ];
 
 ---
