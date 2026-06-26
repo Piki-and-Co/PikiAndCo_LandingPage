@@ -63,10 +63,10 @@ const team = [
 		photo: photoCharlotte
 	},
 	{
-	prénom: "Wren",
-	nom: "Davies",
-	poste: "Graphiste/Illustratrice",
-	description: "Au côté de Charlotte dessine les décors et les personnages du jeu",
+		prenom: "Wren",
+		nom: "Davies",
+		poste: "Graphiste/Illustratrice",
+		description: "Au côté de Charlotte dessine les décors et les personnages du jeu",
 		photo: photoWren
 	},
 	{
@@ -211,15 +211,28 @@ const IndexFaqSchema = JSON.stringify({
 				</div>
 			</div>
 		</div>
-	</section>
+	</section>	
 
-	<section class="section" id="equipe">
-		<div class="container">
-			<h2 class="section-heading">L'équipe</h2>
-		</div>
-	</section>
+  <!-- FAQ -->
+  <section class="section faq" id="faq">
+    <div class="container">
+      <p class="section-eyebrow">Question fréquentes</p>
+      <details class="faq-parent">
+        <summary>A partir de quel âge mon enfant peut jouer ?</summary>
+		<p>Conformément aux recommandations officielles, Biumiz est conçu pour les enfants à partir de 4 ans. Il est découpé en plusieurs niveaux, chacun calibré par tranche d'âge. Une session du jeu vidéo Biumiz dur 15 minutes maximum, à raison d'une à deux session par semaine.</p>
+      </details>
+      <details class="faq-parent">
+        <summary>Les jeux vidéo ne sont-ils pas nocifs pour les enfants ?</summary>
+		<p>Ce qui rend les écrans nocifs, c'est l'appauvrissement des interactions sociales. Nos jeux sont conçus pour être un prétexte à l'échange en famille ou en classe. Le jeu vidéo immerge l'enfant dans les notions, puis le jeu de société rassemble tout le monde pour pratiquer ensemble.</p>
+      </details>
+      <details class="faq-parent">
+        <summary>Les enseignants peuvent-ils utiliser Biumiz en classe ?</summary>
+		<p>Absolument ! Nos jeux sont alignés avec les programmes de l'Education Nationale, avec le Cadre Européen Commun de Référence pour les Langues et les recommandations de Santé Publique France sur les CPS. Les différents supports papiers et numériques offrent une flexibilité pédagogique complète.</p>
+      </details>
+    </div>
+  </section>
 
-	<section class="section " id="Equipe">
+	<section class="section section--tinted" id="Equipe">
 		<div class="container" style="text-align: center;">
 			<p class="section-eyebrow">Les créateurs.trices de Biumiz</p>
 			<h2 class="section-heading-pikico">L'équipe</h2>
@@ -243,26 +256,6 @@ const IndexFaqSchema = JSON.stringify({
 			</div>
 		</div>
 	</section>
-
-
-  <!-- FAQ -->
-  <section class="section section--tinted faq" id="faq">
-    <div class="container">
-      <p class="section-eyebrow">Question fréquentes</p>
-      <details class="faq-parent">
-        <summary>A partir de quel âge mon enfant peut jouer ?</summary>
-		<p>Conformément aux recommandations officielles, Biumiz est conçu pour les enfants à partir de 4 ans. Il est découpé en plusieurs niveaux, chacun calibré par tranche d'âge. Une session du jeu vidéo Biumiz dur 15 minutes maximum, à raison d'une à deux session par semaine.</p>
-      </details>
-      <details class="faq-parent">
-        <summary>Les jeux vidéo ne sont-ils pas nocifs pour les enfants ?</summary>
-		<p>Ce qui rend les écrans nocifs, c'est l'appauvrissement des interactions sociales. Nos jeux sont conçus pour être un prétexte à l'échange en famille ou en classe. Le jeu vidéo immerge l'enfant dans les notions, puis le jeu de société rassemble tout le monde pour pratiquer ensemble.</p>
-      </details>
-      <details class="faq-parent">
-        <summary>Les enseignants peuvent-ils utiliser Biumiz en classe ?</summary>
-		<p>Absolument ! Nos jeux sont alignés avec les programmes de l'Education Nationale, avec le Cadre Européen Commun de Référence pour les Langues et les recommandations de Santé Publique France sur les CPS. Les différents supports papiers et numériques offrent une flexibilité pédagogique complète.</p>
-      </details>
-    </div>
-  </section>
 
 </BiumizLayout>
 
