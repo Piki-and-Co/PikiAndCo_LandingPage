@@ -129,15 +129,48 @@ strong {
 	justify-content: space-between;
 	align-items: center;
 	height: 4rem;
-	width: 100%;
 	font-family: var(--font-display);
 	position: sticky;
 	top: 0;
     z-index: 100;
 }
+.menu-toggle {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 4px;
+}
+
+.menu-toggle .bar {
+	width: 30px;
+	height: 3px;
+	background-color: var(--dark-purple);
+	border-radius: 2px;
+	transition: all 0.3s ease;
+}
+
+.nav-menu {
+	position: absolute;
+	top: 4rem; /* Se cale pile sous la navbar de 4rem */
+	left: 0;
+	width: 100%;
+	background: var(--light-purple);
+	padding: 2rem 0;
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+	display: none;
+}
+
+.nav-menu.is-open {
+	display: block;
+}
 
 .nav-links {
 	display: flex;
+	flex-direction: column;
 	gap: 2rem;
 	list-style: none;
 	align-items: center;
@@ -151,6 +184,25 @@ strong {
 }
 .nav-links a:hover {
 	color: var(--hair-blue); 
+}
+
+@media (min-width: 48rem) {
+	.menu-toggle {
+		display: none;
+	}
+
+	.nav-menu {
+		position: static;
+		display: block !important; /* Force l'affichage permanent sur PC */
+		width: auto;
+		padding: 0;
+		box-shadow: none;
+	}
+
+	.nav-links {
+		flex-direction: row; /* Repasse à l'horizontale */
+		gap: 2rem;
+	}
 }
 
 /* Footer Biumiz */

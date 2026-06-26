@@ -98,7 +98,7 @@ const appSchema = JSON.stringify({
         <li><a href="/biumiz">Accueil</a></li>
 		  <li><a href="/biumiz/cps">Les CPS</a></li>
 		<li><a href="/biumiz/approche">Innovation</a></li>
-		<li><a href="/biumiz/lejeu">Le jeu</a></li>
+		<li><a href="/biumiz/lejeu">Biumiz</a></li>
         <li><a href="/inscription" class="btn-primary">S'inscrire!</a></li>
       </ul>
     </nav>
@@ -135,3 +135,15 @@ const appSchema = JSON.stringify({
   </footer>
 </body>
 </html>
+
+<script>
+	const menuToggle = document.querySelector('.menu-toggle');
+	const navMenu = document.querySelector('.nav-menu');
+
+	if (menuToggle && navMenu) {
+		menuToggle.addEventListener('click', () => {
+			navMenu.classList.toggle('is-open');
+			menuToggle.classList.toggle('active');
+		});
+	}
+</script>
