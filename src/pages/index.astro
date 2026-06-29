@@ -64,11 +64,62 @@ const team = [
 		}
 ];
 
+const personSchemas = [
+  {
+    name: "Amandine Piguel",
+    jobTitle: "Présidente (CEO) & Fondatrice",
+    photo: "PhotoAmandine.webp",
+    linkedin: "https://www.linkedin.com/in/amandine-piguel/",
+  },
+  {
+    name: "Laurence Schmoll",
+    jobTitle: "Chercheuse & Fondatrice",
+    photo: "PhotoLaurence.webp",
+    linkedin: "https://www.linkedin.com/in/laurence-schmoll-38b226149/",
+  },
+  {
+    name: "Kevin Blenner",
+    jobTitle: "Directeur technique (CTO)",
+    photo: "PhotoKevin.webp",
+    linkedin: "https://www.linkedin.com/in/kevinblenner/",
+  },
+  {
+    name: "Olivier Luet",
+    jobTitle: "Directeur marketing (CMO) B2B",
+    photo: "PhotoOlivier.webp",
+    linkedin: "https://www.linkedin.com/in/olivierluet/",
+  },
+  {
+    name: "Yannick Imhoff",
+    jobTitle: "Directeur marketing (CMO) B2C",
+    photo: "PhotoYannick.webp",
+    linkedin: "https://www.linkedin.com/in/yannick-imhoff-expert-marketing-communication/",
+  },
+].map(p => JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": p.name,
+  "jobTitle": p.jobTitle,
+  "image": `https://piki-and-co.com/assets/${p.photo}`,
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Piki & Co",
+    "url": "https://piki-and-co.com",
+  },
+  "sameAs": [p.linkedin],
+}));
+
 ---
 
 <PikiCoLayout
 title="Accueil"
 description="Accompagnez votre enfant dans le développement de ses compétences cognitives, émotionnelles et relationnelles.">
+	<Fragment slot="head">
+		{personSchemas.map(schema => (
+			<script type="application/ld+json" set:html={schema} />
+		))}
+	</Fragment>
+
 	<!-- Hero -->
 	<section class="section hero-section">
 		<div class="container hero-grid">
