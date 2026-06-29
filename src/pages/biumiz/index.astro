@@ -115,7 +115,7 @@ const IndexFaqSchema = JSON.stringify({
 <BiumizLayout
 		title="Biumiz, le jeu qui fait grandir par les langues" 
 		description="Accompagnez votre enfant dans le développement de ses compétences cognitives, émotionnelles et relationnelles."
-		faqScema = {IndexFaqSchema}
+		faqSchema = {IndexFaqSchema}
 		>
 
 
@@ -271,24 +271,25 @@ const IndexFaqSchema = JSON.stringify({
 
 	/* Layout en grille : 2 colonnes sur PC, 1 seule colonne empilée sur mobile */
 	.hero-container {
-		max-width: 90rem;
 		margin: 0 auto;
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 3rem;
 		align-items: center;
+		width: 100%;
+		max-width: 24rem;
 	}
 
 	@media (min-width: 48rem) {
 		.hero-container {
 			grid-template-columns: 0.9fr 1.1fr; /* La colonne de texte est légèrement plus large */
+			max-width: 90rem;
 		}
 	}
 
-	.hero-ctas { 
-		display: flex; 
-		gap: 1rem; 
-		flex-wrap: wrap; 
+	.hero-ctas .btn-primary { 
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
 	}
 
 	/* Éléments de gauche */
