@@ -1,0 +1,55 @@
+---
+import PikiCoLayout from '@/layouts/PikiCoLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const tags = [...new Set(posts.flatMap(p => p.data.tags))];
+  return tags.map(tag => ({
+    params: { tag },
+    props: {
+      tag,
+      posts: posts
+        .filter(p => p.data.tags.includes(tag))
+        .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+    },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<PikiCoLayout title={`Tag : ${tag}`} description={`Articles Piki & Co sur le thème : ${tag}`}>
+  <div class="container section">
+    <nav style="font-size: 0.875rem; color: var(--pikico-muted); margin-bottom: 2rem;">
+      <a href="/blog">← Tous les articles</a>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+      <h1 style="font-size: 1.75rem;">#{tag}</h1>
+      <span style="font-size: 0.875rem; color: var(--pikico-muted);">{posts.length} article{posts.length > 1 ? 's' : ''}</span>
+    </div>
+
+    <div class="blog-grid">
+      {posts.map(post => (
+        <article class="blog-card">
+          <div class="blog-card-body">
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+              {post.data.tags.map(t => (
+                <a href={`/blog/tags/${t}`} class={`blog-card-tag${t === tag ? ' blog-card-tag--active' : ''}`}>#{t}</a>
+              ))}
+            </div>
+            <h3>
+              <a href={`/blog/${post.slug}`} class="blog-card-link">{post.data.title}</a>
+            </h3>
+            <p>{post.data.description}</p>
+            <p class="blog-card-meta">
+              {post.data.pubDate.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
+              · {post.data.author}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</PikiCoLayout>

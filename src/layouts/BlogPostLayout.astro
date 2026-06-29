@@ -1,0 +1,76 @@
+---
+import PikiCoLayout from './PikiCoLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  pubDate: Date;
+  tags?: string[];
+  author?: string;
+  image?: string;
+}
+
+const { title, description, pubDate, tags = [], author = 'Piki & Co', image } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('fr-FR', {
+  year: 'numeric', month: 'long', day: 'numeric'
+});
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+
+const schema: Record<string, unknown> = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "datePublished": pubDate.toISOString(),
+  "url": canonicalUrl,
+  "author": {
+    "@type": "Organization",
+    "name": author,
+    "url": "https://piki-and-co.com",
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Piki & Co",
+    "url": "https://piki-and-co.com",
+    "logo": { "@type": "ImageObject", "url": "https://piki-and-co.com/assets/logo.png" },
+  },
+  "inLanguage": "fr-FR",
+};
+if (image) schema.image = new URL(image, Astro.site).href;
+
+const blogPostSchema = JSON.stringify(schema);
+---
+
+<PikiCoLayout title={title} description={description} image={image}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={blogPostSchema} />
+  </Fragment>
+
+  <div class="container section">
+    <article>
+      <header style="margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--pikico-border);">
+        <nav style="font-size: 0.875rem; color: var(--pikico-muted); margin-bottom: 1.5rem;">
+          <a href="/blog">← Tous les articles</a>
+        </nav>
+        {tags.length > 0 && (
+          <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1rem;">
+            {tags.map(tag => (
+              <a href={`/blog/tags/${tag}`} class="blog-card-tag">#{tag}</a>
+            ))}
+          </div>
+        )}
+        <h1>{title}</h1>
+        <p style="color: var(--pikico-muted); margin-top: 1rem; font-size: 0.9rem;">
+          Par {author} · {formattedDate}
+        </p>
+      </header>
+
+      <!-- data-pagefind-body : Pagefind indexe uniquement ce bloc -->
+      <div class="prose" data-pagefind-body>
+        <slot />
+      </div>
+    </article>
+  </div>
+</PikiCoLayout>

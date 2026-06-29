@@ -1,0 +1,603 @@
+---
+import PikiCoLayout from '@/layouts/PikiCoLayout.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import logoPiki from '@assets/logo.webp';
+import logoBiumizFull from '@assets/Logo_Biumiz-Full.webp';
+
+import biovalley from '@assets/MembreBiovalley.webp';
+import frenchTech from '@assets/Logo_FT_Est_Blanc.webp';
+import semia from '@assets/Logo-Semia.webp';
+import deeptech from '@assets/LesDeeptech_Blanc.webp';
+import conectus from '@assets/CONECTUS-BaselineFR_HD2018_Blanc.webp';
+import france2030 from '@assets/France2030_Blanc.webp';
+import cnrs from '@assets/LOGO_CNRS_HD.webp';
+import lesDeepTech from 'assets/LesDeeptech_Blanc.webp';
+import unistra from '@assets/Unistra2_HD_FondBlanc.webp';
+
+import photoAmandine from '@assets/PhotoAmandine.webp';
+import photoKevin from '@assets/PhotoKevin.webp';
+import photoOlivier from '@assets/PhotoOlivier.webp';
+import photoLaurence from '@assets/PhotoLaurence.webp';
+import photoYannick from '@assets/PhotoYannick.webp';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+  
+const team = [
+	{
+		prenom: "Amandine",
+		nom: "Piguel",
+		poste: "Présidente (CEO) & Fondatrice",
+		description: "Définit et pilote la stratégie de développement de l'entreprise.",
+		photo: photoAmandine
+	},
+
+	{
+		prenom: "Laurence",
+		nom: "Schmoll",
+		poste: "Chercheuse & Fondatrice",
+		description: "Spécialiste en didactique des langues et conception de jeux sérieux, elle definit la stratégie d'innovation en sciences humaines.",
+		photo: photoLaurence
+	},
+	{
+		prenom: "Kevin",
+		nom: "Blenner",
+		poste: "Directeur technique (CTO)",
+		description: "Ingénieur en développement logiciel expérimenté, il définit et pilot la stratégie technologique.",
+		photo: photoKevin
+		},
+	{
+		prenom: "Olivier",
+		nom: "Luet",
+		poste: "Directeur marketing (CMO) B2B",
+		description: "Responsable du développement commercial secteur B2B & éducatif",
+		photo: photoOlivier
+		},
+		{
+		prenom: "Yannick",
+		nom: "Imhoff",
+		poste: "Directeur marketing (CMO) B2C",
+		description: "Responsable du développement commercial secteur B2C & jeu vidéo",
+		photo: photoYannick
+		}
+];
+
+---
+
+<PikiCoLayout
+title="Accueil"
+description="Accompagnez votre enfant dans le développement de ses compétences cognitives, émotionnelles et relationnelles.">
+	<!-- Hero -->
+	<section class="section hero-section">
+		<div class="container hero-grid">
+			<div class="hero-content">
+				<h1>Jouer, s'éveiller,<br />s'accomplir.</h1>
+				<p class="hero-lead">
+				En collaboration avec la recherche académique française, Piki&nbsp;&amp;&nbsp;Co développe des jeux
+				narratifs, immersifs et multi-supports pour vous accompagner dans le développement des compétences 
+				psychosociales de votre enfant, socle de sa santé mentale et émotionnelle tout au long de sa vie.
+				</p>
+				<div class="hero-ctas">
+					<a href="/biumiz" class="btn btn-primary">Découvrir Biumiz</a>
+					<a href="#mission" class="btn btn-outline">Notre mission</a>
+				</div>
+			</div>
+			<div class="hero-visual">
+				<Image src={logoPiki} alt="Piki & Co" width={309} height={220} loading="eager" format="webp"/>
+			</div>
+		</div>
+	</section>
+
+	<!-- Mission / CPS -->
+	<section class="section section--tinted" id="mission">
+		<div class="container">
+			<p class="section-eyebrow">Notre mission</p>
+			<h2 class="section-heading-pikico">Les compétences psychosociales (CPS) : le socle de <span class="title-highlitght">la santé mentale positive</span></h2>
+			<p class="section-lead">
+				Ce sont les compétences de vie ou compétences humaines qui permettent à votre enfant 
+				de faire face aux défis de l'existence, de maintenir son équilibre émotionnel et de construire 
+				des relations solides tout au long de sa vie. 
+			</p>
+			<div class="cps-grid">
+				<div class="cps-card">
+					<span class="cps-icon">🧠</span>
+					<h3>Compétences cognitives</h3>
+					<p>Conscience de soi, maîtrise de soi, pensée critique, prise de décision constructive, etc.</p>
+				</div>
+				<div class="cps-card">
+					<span class="cps-icon">💛</span>
+					<h3>Compétences émotionnelles</h3>
+					<p>Reconnaître, comprendre et savoir réguler ses émotions au quotidien.</p>
+				</div>
+				<div class="cps-card">
+					<span class="cps-icon">🤝</span>
+					<h3>Compétences sociales</h3>
+					<p>Empathie, communication efficace, création de lien, résolution de conflits.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Notre approche / valeurs -->
+	<section class="section" id="approche">
+		<div class="container">
+			<p class="section-eyebrow">Notre approche</p>
+			<h2 class="section-heading-pikico">Jouer et apprendre par les sens et l'émotion</h2>
+			<div class="values-grid">
+				<div class="value-item">
+					<div class="value-number">01</div>
+					<h3>Fondés sur la science</h3>
+					<p>
+					Nos jeux sont le résultat de plusieurs années de collaboration avec la recherche
+					académique française dans les domaines des sciences de l'éducation, de la psychologie
+					de l'apprentissage, de la didactique des langues et du Game Design. Cette collaboration
+					continue encore aujourd'hui.
+					</p>
+				</div>
+				<div class="value-item">
+					<div class="value-number">02</div>
+					<h3>Le jeu comme vecteur</h3>
+					<p>
+					Le jeu engage le joueur ou la joueuse dans une expérience sensorielle et émotionnelle. 
+					Cet engagement dans le ressenti favorise l’acquisition de nouvelles notions et le 
+					développement de compétences.
+					</p>
+				</div>
+				<div class="value-item">
+					<div class="value-number">03</div>
+					<h3>Conçus avec vous</h3>
+					<p>
+					Parents, enseignants et professionnels de santé contribuent à la co-construction
+					de nos outils pour qu'ils répondent aux vrais besoins du terrain et soient parfaitement
+					adaptés aux enfants, quelque soit leur stade de développement.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Produit phare -->
+	<section class="section section--tinted" id="biumiz">
+		<div class="container product-spotlight">
+			<div class="product-text">
+				<p class="section-eyebrow">notre premier jeu</p>
+				<h2 class="section-heading-pikico" style="text-align: left;">
+					<span class="title-highlitght">Biumiz</span>, le jeu qui construit l'équilibre mental de votre enfant</h2>
+			<p>
+				En collaboration avec des chercheuses de Paris 8 et de Strasbourg, Piki&nbsp;&amp;&nbsp;Co crée Biumiz, 
+				le premier jeu multisupports qui aide les enfants de 4 à 10 ans à développer leurs compétences psychosociales
+				en apprenant à communiquer en anglais tout en s’amusant en famille ou en classe.
+			</p>
+				<ul class="product-features">
+					<li>Jeux vidéo narratif et immersif</li>
+					<li>Contenus adaptés à l'âge et aux besoins de l'enfant</li>
+					<li>Tableau de bord de l'adulte pour suivre les progrès</li>
+					<li>Soutien et coaching de l'adulte pour accompanger l'enfant</li>
+					<li>Jeux de société pour prolonger l'expérience dans le réel</li>
+					<li>Sans publicité, sans achat intégré</li>
+				</ul>
+				<a href="/biumiz" class="btn btn-primary" style="margin-top: 1.5rem;">En savoir plus</a>
+			</div>
+			<div class="product-image">
+				<Image src={logoBiumizFull} alt="biumiz" width={661} height={1014} loading="eager" format="webp"/>
+			</div>
+		</div>
+	</section>
+
+	<!-- Blog preview -->
+	{posts.length > 0 && (
+		<section class="section" id="blog">
+			<div class="container">
+				<p class="section-eyebrow">Le blog</p>
+				<h2 class="section-heading-pikico">Nos derniers articles</h2>
+				<div class="blog-grid">
+				{posts.map(post => (
+				<article class="blog-card">
+					<div class="blog-card-body">
+						<div style="margin-bottom: 0.75rem;">
+							{post.data.tags?.map(tag => (
+								<a href={`/blog/tags/${tag}`} class="blog-card-tag" style="margin-right: 0.5rem;">
+								#{tag}
+								</a>
+							))}
+						</div>
+						<h3>
+							<a href={`/blog/${post.slug}`} class="blog-card-link">{post.data.title}</a>
+						</h3>
+						{post.data.description && (
+						<p>{post.data.description}</p>
+						)}
+						<p class="blog-card-meta">
+							{post.data.pubDate.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
+							{post.data.author && <> · {post.data.author}</>}
+						</p>
+					</div>
+				</article>
+				))}
+				</div>
+			<div style="text-align: center; margin-top: 2.5rem;">
+				<a href="/blog" class="btn btn-outline">Tous les articles</a>
+			</div>
+			</div>
+		</section>
+	)}
+
+	<!-- Partenaires -->
+	<section class="section section--tinted" id="partenaires">
+		<div class="container" style="text-align: center;">
+			<p class="section-eyebrow">Ils nous font confiance et nous accompagnent</p>
+			<h2 class="section-heading-pikico">Nos partenaires</h2>
+			<div class="partners-grid">
+				<div class="partner-card">
+					<Image src={conectus} alt="SATT Conectus d'Alsace" width={6184} 
+						height={2009} loading="eager" format="webp"/>
+				</div>
+				<div class="partner-card">
+					<Image src={cnrs} alt="Centre Nationale de la Recherche Scientifique" 
+						width={705} height={705} loading="eager" format="webp"/>
+				</div>
+				<div class="partner-card">
+					<Image src={unistra} alt="Université de Strasbourg" 
+						width={3310} height={1193} loading="eager" format="webp"/>
+				</div>
+				<div class="partner-card">
+					<Image src={deeptech} alt="Label Les DeepTech française" 
+						width={1891} height={1891} loading="eager" format="webp"/>
+				</div>
+			</div>
+			<div class="partners-grid">
+				<div class="partner-card">
+					<Image src={biovalley} alt="Biovalley France" 
+						width={4672} height={1244} loading="eager" format="webp"/>
+				</div>
+				<div class="partner-card">
+					<Image src={semia} alt="SEMIA Quest for Change" 
+						width={367} height={137} loading="eager" format="webp"/>
+				</div>
+				<div class="partner-card">
+					<Image src={frenchTech} alt="La FrenchTech Est" 
+						width={883} height={1093} loading="eager" format="webp"/>
+				</div>
+				<div class="partner-card">
+					<Image src={france2030} alt="Financé par le programme France 2030" 
+						width={322} height={316} loading="eager" format="webp"/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section " id="equipe">
+		<div class="container" style="text-align: center;">
+			<p class="section-eyebrow">Nous nous engageons à vos côtés</p>
+			<h2 class="section-heading-pikico">L'équipe</h2>
+			<div class="team-list">
+				{team.map((member) => (
+				<div class="team-card">
+					<div class="team-photo-wrapper">
+					<div class="photo-disk">
+						<Image src={member.photo} alt={`${member.prenom} ${member.nom}`}
+						width={300} height={300} format="webp"/>
+					</div>
+				</div>
+
+				<div class="team-info">
+					<h3 class="team-name">{member.prenom} <span>{member.nom}</span></h3>
+					<p class="team-role">{member.poste}</p>
+					<p class="team-description">{member.description}</p>
+				</div>
+				</div>
+			))}
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA final -->
+	<section class="section cta-final">
+		<div class="container" style="text-align: center;">
+			<h2>Prêt à construire l'avenir de votre enfant ?</h2>
+			<p style="color: var(--pikico-muted); max-width: 40rem; margin: 1rem auto 2rem;">
+				Rejoignez les familles et professionnel.le.s qui font confiance Piki&nbsp;&amp;&nbsp;Co
+				et qui développent les compétences psychosociales des enfants grâce au jeu.
+			</p>
+			<a href="/inscription" class="btn btn-primary">Rejoindre l'aventure</a>
+		</div>
+	</section>
+
+</PikiCoLayout>
+
+<style>
+	/* Hero */
+	.hero-section { padding-top: 4rem; padding-bottom: 4rem; }
+
+	.hero-grid {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 3rem;
+		align-items: center;
+	}
+
+	.hero-eyebrow {
+		font-size: 0.8rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--pikico-accent);
+		margin-bottom: 1rem;
+	}
+
+	.hero-lead {
+		font-size: 1.15rem;
+		color: var(--pikico-muted);
+		max-width: 38rem;
+		margin: 1.25rem 0 2rem;
+		line-height: 1.8;
+	}
+
+	.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+	.hero-logo {
+		width: 13rem;
+		height: auto;
+		opacity: 0.9;
+	}
+
+	/* Sections */
+	.section-eyebrow {
+		font-size: 0.8rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--pikico-accent);
+		margin-bottom: 0.75rem;
+		text-align: center;
+	}
+
+	.section-heading-pikico {
+		text-align: center;
+		margin-bottom: 1.25rem;
+	}
+
+	.section-lead {
+		text-align: center;
+		max-width: 44rem;
+		margin: 0 auto 3rem;
+		color: var(--pikico-muted);
+		font-size: 1.05rem;
+		line-height: 1.8;
+	}
+
+	/* CPS cards */
+	.cps-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+		gap: 1.5rem;
+	}
+
+	.cps-card {
+		background: white;
+		border: 1px solid var(--pikico-border);
+		border-radius: 0.75rem;
+		padding: 2rem;
+		text-align: center;
+	}
+
+	.cps-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+
+	.cps-card h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
+
+	.cps-card p { font-size: 0.9rem; color: var(--pikico-muted); }
+
+	/*Partner grid*/
+	.partners-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(9.375rem, 1fr));
+		gap: 2rem;
+		align-items: center;
+		justify-items: center;
+	}
+
+	.partner-card img {
+		max-width: 8rem;
+		height: auto;
+		transition: 0.3s ease;
+	}
+
+	/* Values */
+	.values-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+	.value-item { padding: 1.5rem 0; border-top: 2px solid var(--pikico-border); }
+
+	.value-number {
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--pikico-border);
+		margin-bottom: 0.5rem;
+		line-height: 1;
+	}
+
+	.value-item h3 { margin-bottom: 0.5rem; }
+
+	.value-item p { color: var(--pikico-muted); font-size: 0.95rem; line-height: 1.7; }
+
+	/* Product spotlight */
+	.product-spotlight {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		align-items: center;
+		text-align: center;
+	}
+
+	.product-text {
+		display: flex;
+		flex-direction: column;
+		align-items: center; /* Centre le bouton et les éléments textuels */
+	}
+
+	.product-features {
+		margin: 1.25rem 0;
+		padding-left: 0;
+		list-style-position: inside;
+		color: var(--pikico-muted);
+		font-size: 0.95rem;
+		line-height: 2;
+		text-align: left;
+		width: 100%;
+		max-width: 32rem;
+	}
+
+	.product-image {
+		display: block;
+		width: 100%;
+		max-width: 28rem;
+	}
+
+	.product-image img{
+		width: 100% !important;
+		height: auto !important;
+		border-radius: 1rem;
+		display: block;
+		}
+
+	@media (min-width: 48rem) {
+		.product-spotlight {
+			display: grid;
+			grid-template-columns: 1fr 1fr; /* Aligne sur deux colonnes côte à côte */
+			gap: 4rem;
+			align-items: center;
+			text-align: left; /* Aligne le texte à gauche sur ordinateur */
+		}
+
+		.product-text {
+			align-items: flex-start; /* Aligne le bouton à gauche */
+		}
+
+		.product-features {
+			margin: 1.25rem 0 0 1.25rem;
+			list-style-position: outside;
+			max-width: 100%;
+		}
+
+		.product-image {
+		max-width: 28rem; /* Redonne au logo sa grande taille sur ordinateur */
+		}
+	}
+
+	.team-list {
+		display: grid;
+		grid-template-columns: 1fr; /* Une carte par ligne */
+		gap: 1.5rem;
+		max-width: 55rem;
+		margin: 3rem auto 0;
+	}
+
+	@media (min-width: 64rem) {
+		.team-list {
+			grid-template-columns: 1fr 1fr; /* Deux cartes par ligne sur grand écran */
+			max-width: 65rem;
+		}
+	}
+
+	/* --- LA CARTE D'IDENTITÉ --- */
+	.team-card {
+		background: var(--light-purple);
+		border-radius: 1.5rem;
+		padding: 1rem;
+		display: flex;
+		flex-direction: column; /* Empilé par défaut sur mobile */
+		align-items: center;
+		gap: 1rem;
+		text-align: center;
+		transition: transform 0.3s ease;
+		box-shadow: 0 10px 25px -5px rgba(18, 19, 44, 0.3);
+	}
+
+	@media (min-width: 48rem) {
+		.team-card {
+			flex-direction: row; /* En colonnes (Photo | Texte) sur PC */
+			text-align: left;
+			padding: 1.75rem;
+		}
+	}
+
+	/* --- LE DISQUE PHOTO --- */
+	.team-photo-wrapper {
+		flex-shrink: 0;
+	}
+
+	.photo-disk {
+		width: 6rem;
+		height: 6rem;
+		border-radius: 50%; /* Forme de disque parfait */
+		overflow: hidden;
+		border: 0.25rem solid var(--white);
+		box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+	}
+
+	@media (min-width: 48rem) {
+		.photo-disk {
+			width: 7.5rem;
+			height: 7.5rem;
+		}
+	}
+
+	.photo-disk img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover; /* L'image remplit le disque sans déformation */
+	}
+
+	/* --- LES TEXTES --- */
+	.team-info {
+		display: flex;
+		flex-direction: column;
+		gap: 0rem;
+	}
+
+	.team-name {
+		font-family: var(--font-display);
+		font-size: 1.5rem;
+		color: var(--dark-purple);
+		margin: 0;
+		line-height: 1;
+	}
+
+	.team-name span {
+		color: var(--pikico-accent); /* Met en valeur le nom de famille */
+	}
+
+	.team-role {
+		font-size: 1rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--hair-blue);
+		margin-bottom: 0.2rem;
+	}
+
+	.team-description {
+		font-size: 1rem;
+		line-height: 1.5;
+		color: var(--dark-purple);
+		opacity: 0.9;
+		margin: 0;
+	}
+
+	/* CTA final */
+	.cta-final { 
+		background: var(--pikico-title); 
+	}
+	.cta-final h2 { color: white; }
+
+	/* Responsive */
+		@media (max-width: 48rem) {
+		.hero-grid { grid-template-columns: 1fr; }
+		.hero-visual { display: none; }
+	}
+</style>

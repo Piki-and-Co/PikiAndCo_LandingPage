@@ -1,0 +1,67 @@
+---
+// Pagefind search — index généré après `npm run build`
+// En mode dev (npm run dev), la recherche n'est pas disponible (pas d'index)
+---
+
+<div id="search-wrapper">
+  <div id="search"></div>
+</div>
+
+<!-- Pagefind UI — chargé depuis /_pagefind/ (généré au build) -->
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<script src="/pagefind/pagefind-ui.js" is:inline></script>
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof PagefindUI !== 'undefined') {
+      new PagefindUI({
+        element: '#search',
+        showSubResults: false,
+        debounceTimeoutMs: 100,
+        excerptLength: 20,
+        translations: {
+          placeholder: 'Rechercher un article…',
+          zero_results: 'Aucun résultat pour [SEARCH_TERM]',
+        },
+      });
+    } else {
+      // Mode dev : afficher un message à la place
+      const el = document.getElementById('search');
+      if (el) el.innerHTML = '<p class="search-dev-notice">🔍 Recherche disponible après <code>npm run build</code></p>';
+    }
+  });
+</script>
+
+<style>
+  #search-wrapper {
+    margin-bottom: 3rem;
+  }
+
+  /* Surcharge du thème Pagefind pour correspondre à la charte Piki & Co */
+  :root {
+    --pagefind-ui-scale: 0.95;
+    --pagefind-ui-primary: #6B46A0;
+    --pagefind-ui-text: #374151;
+    --pagefind-ui-background: #ffffff;
+    --pagefind-ui-border: #E9E5F6;
+    --pagefind-ui-tag: #F7F5FF;
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 0.5rem;
+    --pagefind-ui-font: 'Montserrat', sans-serif;
+  }
+
+  .search-dev-notice {
+    color: #6B7280;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    background: #F7F5FF;
+    border-radius: 0.5rem;
+    border: 1px solid #E9E5F6;
+  }
+
+  .search-dev-notice code {
+    background: #E9E5F6;
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.25rem;
+    font-size: 0.85em;
+  }
+</style>
