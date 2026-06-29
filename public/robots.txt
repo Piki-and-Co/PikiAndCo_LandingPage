@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://beta.piki-and-co.com/sitemap-index.xml
+Sitemap: https://piki-and-co.com/sitemap-index.xml
