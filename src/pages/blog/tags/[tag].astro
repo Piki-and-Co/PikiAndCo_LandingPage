@@ -19,7 +19,11 @@ export async function getStaticPaths() {
 const { tag, posts } = Astro.props;
 ---
 
-<PikiCoLayout title={`Tag : ${tag}`} description={`Articles Piki & Co sur le thème : ${tag}`}>
+<PikiCoLayout
+  title={`Tag : ${tag}`}
+  description={`Articles Piki & Co sur le thème : ${tag}`}
+  breadcrumbs={[{ name: 'Blog', href: '/blog' }, { name: `#${tag}`, href: `/blog/tags/${tag}` }]}
+>
   <div class="container section">
     <nav style="font-size: 0.875rem; color: var(--pikico-muted); margin-bottom: 2rem;">
       <a href="/blog">← Tous les articles</a>

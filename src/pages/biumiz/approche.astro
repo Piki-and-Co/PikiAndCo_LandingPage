@@ -39,8 +39,9 @@ const ApprocheFaqSchema = JSON.stringify({
 });
 ---
 <BiumizLayout
-		title="Notre approche" 
+		title="Notre approche"
 		description="Une toute nouvelle pédagogie issue de la recherche en sciences humaines"
+		breadcrumbs={[{ name: 'Biumiz', href: '/biumiz' }, { name: 'Notre approche', href: '/biumiz/approche' }]}
 		faqScema = {ApprocheFaqSchema}
 >
 	<Fragment slot="head">

@@ -13,15 +13,31 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  breadcrumbs?: Array<{ name: string; href: string }>;
 }
 
 const {
   title,
   description = "Piki & Co — Jouer, s'éveiller, s'accomplir.",
   image,
+  breadcrumbs = [],
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+
+const breadcrumbSchema = breadcrumbs.length > 0 ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": new URL('/', Astro.site).href },
+    ...breadcrumbs.map((crumb, i) => ({
+      "@type": "ListItem",
+      "position": i + 2,
+      "name": crumb.name,
+      "item": new URL(crumb.href, Astro.site).href,
+    })),
+  ],
+}) : null;
 const ogImage = image
   ? new URL(image, Astro.site).href
   : new URL('/assets/logo.png', Astro.site).href;
@@ -75,6 +91,7 @@ const orgSchema = JSON.stringify({
 
   <!-- JSON-LD -->
   <script type="application/ld+json" set:html={orgSchema} />
+  {breadcrumbSchema && <script type="application/ld+json" set:html={breadcrumbSchema} />}
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

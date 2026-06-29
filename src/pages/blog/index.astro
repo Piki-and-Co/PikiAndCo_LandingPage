@@ -9,7 +9,11 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
 ---
 
-<PikiCoLayout title="Blog" description="Actualités, science et coulisses de l'aventure Piki & Co et Biumiz.">
+<PikiCoLayout
+  title="Blog"
+  description="Actualités, science et coulisses de l'aventure Piki & Co et Biumiz."
+  breadcrumbs={[{ name: 'Blog', href: '/blog' }]}
+>
   <div class="container section">
     <h1>Blog</h1>
     <p style="color: var(--pikico-muted); margin-top: 0.5rem; max-width: 35rem; margin-bottom: 2.5rem;">
