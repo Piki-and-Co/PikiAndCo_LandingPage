@@ -1,0 +1,38 @@
+---
+import BiumizLayout from '@/layouts/BiumizLayout.astro';
+---
+
+<BiumizLayout
+  title="Participation au jeu concours"
+  description="Participez à notre jeu concours et tentez de gagner des abonnements à Biumiz !"
+  >
+  <section class="section" id="bulletin">
+	  <div class="container">
+		  <h2>Inscription au jeu concours</h2>
+		  <p>En renseignant ce formulaire, je participe au jeu concours organisé par Piki&nbsp;&amp;&nbsp;Co dans le cadre de la 
+		  révélation du prototype du jeu Biumiz à l'automne 2026.</p>
+		  <p>Les informations collectées, à savoir mon nom, mon prénom, mon adresse e-mail et, de manière facultative, mon 
+		  numéro de téléphone, sont utilisées uniquement pour gérer ma participation à ce jeu concours, être contacté·e pour 
+		  la remise du lot et recevoir des actualités de Piki&nbsp;&amp;&nbsp;Co autour de Biumiz, de l’éducation, 
+		  de la parentalité et des compétences humaines.</p>
+		  <p>Les données sont destinées à Piki&nbsp;&amp;&nbsp;Co et ne seront pas vendues à des tiers. Elles seront 
+		  conservées pour la durée nécessaire à l’organisation du jeu concours, puis supprimées, sauf consentement 
+		  spécifique de ma part pour recevoir les communications de Piki&nbsp;&amp;&nbsp;Co.</p>
+		  <p>Conformément au Règlement Général sur la Protection des Données, je peux demander l’accès, la rectification 
+		  ou la suppression de mes données à tout moment en contactant Piki&nbsp;&amp;&nbsp;Co à l’adresse suivante :</p>
+		  <p><a href="mailto:contact@piki-and-co.com">contact@piki-and-co.com</a></p>
+	  </div>
+
+  </section>
+</BiumizLayout>
+<style>
+	.section {
+		background: linear-gradient(to bottom, var(--biumiz-bg-start), var(--biumiz-bg-end)) !important;
+		color: var(--white) !important;
+	}
+
+	p {
+		text-align: left;
+		padding: 0.5rem 0; 
+	}
+</style>
